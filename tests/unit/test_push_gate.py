@@ -30,5 +30,13 @@ def test_push_gate_allows_only_complete_safe_context() -> None:
 
 def test_push_gate_refuses_stale_or_secret_patch() -> None:
     policy = PatchPolicy(("backend/**/*.py",), ())
-    assert evaluate_push_gate(_context(observed_head_sha="b" * 40), policy).reason_code == "stale_head_sha"
-    assert evaluate_push_gate(_context(diff="+++ b/backend/app/service.py\n+ghp_" + "a" * 36), policy).reason_code == "secret_detection"
+    assert (
+        evaluate_push_gate(_context(observed_head_sha="b" * 40), policy).reason_code
+        == "stale_head_sha"
+    )
+    assert (
+        evaluate_push_gate(
+            _context(diff="+++ b/backend/app/service.py\n+ghp_" + "a" * 36), policy
+        ).reason_code
+        == "secret_detection"
+    )

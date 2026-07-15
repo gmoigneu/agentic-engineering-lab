@@ -18,7 +18,9 @@ class CapabilityGateway:
     read_port: GitHubReadPort
     allowed_repository_ids: frozenset[int]
 
-    def fetch_snapshot(self, run_id: str, role: AgentRole, repository_id: int, pinned_sha: str) -> RepositorySnapshot:
+    def fetch_snapshot(
+        self, run_id: str, role: AgentRole, repository_id: int, pinned_sha: str
+    ) -> RepositorySnapshot:
         if role not in {AgentRole.SCOUT, AgentRole.ASSESSOR, AgentRole.CI}:
             raise PermissionError("role cannot read a repository snapshot")
         if repository_id not in self.allowed_repository_ids:

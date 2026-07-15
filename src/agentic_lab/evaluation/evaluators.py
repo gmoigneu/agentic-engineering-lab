@@ -21,5 +21,7 @@ def citation_coverage(artifact: ArtifactBase) -> EvaluationResult:
 def risk_evidence_coverage(artifact: RiskArtifact) -> EvaluationResult:
     result = citation_coverage(artifact)
     if not artifact.claims:
-        return EvaluationResult("risk_evidence_coverage", False, "risk output has no evidence claims")
+        return EvaluationResult(
+            "risk_evidence_coverage", False, "risk output has no evidence claims"
+        )
     return EvaluationResult("risk_evidence_coverage", result.passed, result.detail)

@@ -124,11 +124,19 @@ def create_app(
         return _detail(run, list_transitions(session, run.id))
 
     @app.get("/v1/runs/{run_id}/artifacts/{kind}")
-    def artifact_detail(run_id: UUID, kind: str, session: Session = Depends(get_session)) -> dict[str, object]:
-        artifact = session.scalar(select(Artifact).where(Artifact.run_id == run_id, Artifact.kind == kind))
+    def artifact_detail(
+        run_id: UUID, kind: str, session: Session = Depends(get_session)
+    ) -> dict[str, object]:
+        artifact = session.scalar(
+            select(Artifact).where(Artifact.run_id == run_id, Artifact.kind == kind)
+        )
         if artifact is None:
             raise HTTPException(status_code=404, detail="artifact not found")
-        return {"kind": artifact.kind, "schema_version": artifact.schema_version, "content": artifact.content_json}
+        return {
+            "kind": artifact.kind,
+            "schema_version": artifact.schema_version,
+            "content": artifact.content_json,
+        }
 
     @app.post("/v1/runs/{run_id}/review", status_code=status.HTTP_201_CREATED)
     def create_review(

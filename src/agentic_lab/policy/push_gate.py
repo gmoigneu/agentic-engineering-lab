@@ -23,13 +23,18 @@ class PushContext:
     diff: str
 
 
-def evaluate_push_gate(context: PushContext, patch_policy: PatchPolicy, now: datetime | None = None) -> PolicyResult:
+def evaluate_push_gate(
+    context: PushContext, patch_policy: PatchPolicy, now: datetime | None = None
+) -> PolicyResult:
     now = now or datetime.now(UTC)
     if context.opt_in_expires_at is None or _as_utc(context.opt_in_expires_at) <= now:
         return _deny(context, "missing_or_expired_opt_in")
     if not context.same_repository_branch:
         return _deny(context, "fork_branch_refused")
-    if context.observed_head_sha != context.pinned_sha or context.patch_base_sha != context.pinned_sha:
+    if (
+        context.observed_head_sha != context.pinned_sha
+        or context.patch_base_sha != context.pinned_sha
+    ):
         return _deny(context, "stale_head_sha")
     if context.failure_class != "repository" or not context.reproduction_passed:
         return _deny(context, "unreproduced_or_external_failure")

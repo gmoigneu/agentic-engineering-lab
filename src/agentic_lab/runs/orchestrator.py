@@ -27,9 +27,13 @@ def orchestrate_scout(session: Session, run: Run, gateway: ModelGateway, model_i
     try:
         artifact = run_scout(gateway, run.id, run.pinned_sha, run.task_text, model_id, budget)
     except ValueError as error:
-        transition_run(session, run, RunStatus.REFUSED, "invalid_model_output", "worker", {"error": str(error)})
+        transition_run(
+            session, run, RunStatus.REFUSED, "invalid_model_output", "worker", {"error": str(error)}
+        )
         return
-    sequence = (session.scalar(select(func.count(ModelCall.id)).where(ModelCall.run_id == run.id)) or 0) + 1
+    sequence = (
+        session.scalar(select(func.count(ModelCall.id)).where(ModelCall.run_id == run.id)) or 0
+    ) + 1
     session.add(
         ModelCall(
             run_id=run.id,

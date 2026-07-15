@@ -40,7 +40,7 @@ line-length = 100
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
-ignore = ["B008"]
+ignore = ["B008", "UP046"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["agentic_lab"]

@@ -13,7 +13,13 @@ def test_failed_check_routes_to_ci() -> None:
     with sessions.begin() as session:
         run, reason = _queue_check_run(
             session,
-            {"check_run": {"conclusion": "failure", "head_sha": "a" * 40, "pull_requests": [{"number": 1}]}},
+            {
+                "check_run": {
+                    "conclusion": "failure",
+                    "head_sha": "a" * 40,
+                    "pull_requests": [{"number": 1}],
+                }
+            },
             123,
             RunSource.WEBHOOK,
         )

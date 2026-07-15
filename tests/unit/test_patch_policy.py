@@ -1,7 +1,6 @@
 from agentic_lab.domain.enums import PolicyOutcome
 from agentic_lab.policy.patch import PatchPolicy, validate_unified_diff
 
-
 POLICY = PatchPolicy(
     allowed_source_paths=("backend/**/*.py",),
     protected_paths=("backend/**/auth*.py",),
@@ -9,7 +8,9 @@ POLICY = PatchPolicy(
 
 
 def test_allows_only_manifest_source_paths() -> None:
-    result = validate_unified_diff("--- a/backend/app/service.py\n+++ b/backend/app/service.py\n+fix", POLICY)
+    result = validate_unified_diff(
+        "--- a/backend/app/service.py\n+++ b/backend/app/service.py\n+fix", POLICY
+    )
     assert result.outcome is PolicyOutcome.ALLOW
     assert result.changed_paths == ("backend/app/service.py",)
 

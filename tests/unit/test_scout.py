@@ -35,11 +35,24 @@ def test_scout_accepts_cited_output() -> None:
         role=AgentRole.SCOUT,
         pinned_sha="a" * 40,
         claims=[Claim(id="one", statement="claim")],
-        citations=[Citation(claim_id="one", source_kind="file", locator="a.py#L1-L1", pinned_sha="a" * 40, excerpt_hash="b" * 64)],
+        citations=[
+            Citation(
+                claim_id="one",
+                source_kind="file",
+                locator="a.py#L1-L1",
+                pinned_sha="a" * 40,
+                excerpt_hash="b" * 64,
+            )
+        ],
         relevant_files=[],
         dependency_analysis="none",
         blast_radius="none",
         plan=[],
         confidence=0.5,
     )
-    assert run_scout(ScriptedModelGateway(artifact), run_id, "a" * 40, "map", "model@1", ModelBudget(1, 1, 1)) == artifact
+    assert (
+        run_scout(
+            ScriptedModelGateway(artifact), run_id, "a" * 40, "map", "model@1", ModelBudget(1, 1, 1)
+        )
+        == artifact
+    )

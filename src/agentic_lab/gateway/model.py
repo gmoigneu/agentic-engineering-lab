@@ -59,7 +59,9 @@ def validate_model_id(model_id: str, allowed_models: frozenset[str]) -> None:
 class OpenRouterModelGateway:
     """Provider adapter. The API key exists only in this trusted process."""
 
-    def __init__(self, api_key: str, allowed_models: frozenset[str], client: httpx.Client | None = None) -> None:
+    def __init__(
+        self, api_key: str, allowed_models: frozenset[str], client: httpx.Client | None = None
+    ) -> None:
         self._api_key = api_key
         self._allowed_models = allowed_models
         self._client = client or httpx.Client(base_url="https://openrouter.ai/api/v1", timeout=60)
@@ -72,13 +74,16 @@ class OpenRouterModelGateway:
         ]
         for attempt in range(2):
             response = self._client.post(
-                "/chat/completions",
+                "https://openrouter.ai/api/v1/chat/completions",
                 headers={"Authorization": f"Bearer {self._api_key}"},
                 json={
                     "model": request.model_id,
                     "messages": messages,
                     "response_format": {"type": "json_object"},
-                    "provider": {"allow_fallbacks": not request.evaluation, "data_collection": "deny"},
+                    "provider": {
+                        "allow_fallbacks": not request.evaluation,
+                        "data_collection": "deny",
+                    },
                     "metadata": {"run_id": str(request.run_id), "role": request.role},
                 },
             )
@@ -93,7 +98,8 @@ class OpenRouterModelGateway:
                 messages.append(
                     {
                         "role": "user",
-                        "content": "Return only corrected JSON matching this schema error: " + str(error),
+                        "content": "Return only corrected JSON matching this schema error: "
+                        + str(error),
                     }
                 )
         raise AssertionError("unreachable")

@@ -135,7 +135,9 @@ class RiskArtifact(ArtifactBase):
 
 
 class CIDiagnosisArtifact(ArtifactBase):
-    failure_class: Literal["repository", "external", "flaky", "permission", "secret", "infrastructure"]
+    failure_class: Literal[
+        "repository", "external", "flaky", "permission", "secret", "infrastructure"
+    ]
     diagnosis: str
     reproduction_recipe: str | None = None
     validation_recipe: str | None = None

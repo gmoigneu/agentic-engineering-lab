@@ -1,5 +1,3 @@
-from uuid import uuid4
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -16,8 +14,32 @@ def test_orchestrator_stores_valid_scout_artifact() -> None:
     Base.metadata.create_all(engine)
     sessions = sessionmaker(engine, expire_on_commit=False)
     with sessions.begin() as session:
-        run = create_queued_run(session, RunCreate(role=AgentRole.SCOUT, repository_id=1, pinned_sha="a" * 40, task_text="map"), RunSource.MANUAL, "operator")
+        run = create_queued_run(
+            session,
+            RunCreate(role=AgentRole.SCOUT, repository_id=1, pinned_sha="a" * 40, task_text="map"),
+            RunSource.MANUAL,
+            "operator",
+        )
         transition_run(session, run, RunStatus.LEASED, "worker_claimed", "worker")
-        artifact = ScoutArtifact(run_id=run.id, role=AgentRole.SCOUT, pinned_sha="a" * 40, claims=[Claim(id="c", statement="evidence")], citations=[Citation(claim_id="c", source_kind="file", locator="a.py#L1-L1", pinned_sha="a" * 40, excerpt_hash="b" * 64)], relevant_files=[], dependency_analysis="none", blast_radius="none", plan=[], confidence=1)
+        artifact = ScoutArtifact(
+            run_id=run.id,
+            role=AgentRole.SCOUT,
+            pinned_sha="a" * 40,
+            claims=[Claim(id="c", statement="evidence")],
+            citations=[
+                Citation(
+                    claim_id="c",
+                    source_kind="file",
+                    locator="a.py#L1-L1",
+                    pinned_sha="a" * 40,
+                    excerpt_hash="b" * 64,
+                )
+            ],
+            relevant_files=[],
+            dependency_analysis="none",
+            blast_radius="none",
+            plan=[],
+            confidence=1,
+        )
         orchestrate_scout(session, run, ScriptedModelGateway(artifact), "model@1")
         assert run.status is RunStatus.SUCCEEDED
