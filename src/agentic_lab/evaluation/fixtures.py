@@ -22,3 +22,12 @@ class EvaluationCase(BaseModel):
         if value not in {"development", "held_out"}:
             raise ValueError("split must be development or held_out")
         return value
+
+    def agent_input(self) -> dict[str, object]:
+        """Deliberately excludes labels, expected evidence, and scoring assertions."""
+        return {
+            "case_id": self.case_id,
+            "repository_id": self.repository_id,
+            "pinned_sha": self.pinned_sha,
+            "task_input": self.task_input,
+        }
