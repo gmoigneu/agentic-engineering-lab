@@ -49,3 +49,7 @@ def export_scorecard(
         "results": [asdict(item) for item in results],
     }
     destination.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+
+
+def held_out_complete(results: list[CaseResult], reviewed_case_ids: set[str]) -> bool:
+    return all(item.case_id in reviewed_case_ids for item in results if item.split == "held_out")
