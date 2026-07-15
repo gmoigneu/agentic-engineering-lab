@@ -181,3 +181,31 @@ class HumanReview(Base):
     missing_evidence: Mapped[list[str]] = mapped_column(JSON, default=list)
     notes: Mapped[str | None] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+class TargetManifest(Base):
+    __tablename__ = "target_manifests"
+    __table_args__ = (
+        UniqueConstraint("repository_id", "version", name="uq_manifest_repository_version"),
+    )
+
+    id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
+    repository_id: Mapped[int] = mapped_column(Integer, index=True)
+    version: Mapped[str] = mapped_column(String(100))
+    content: Mapped[dict[str, Any]] = mapped_column(JSON, nullable=False)
+    content_hash: Mapped[str] = mapped_column(String(64))
+    approved_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now()
+    )
+    retired_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class PullRequestOptIn(Base):
+    __tablename__ = "pull_request_opt_ins"
+
+    repository_id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    pull_number: Mapped[int] = mapped_column(Integer, primary_key=True)
+    enabled_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    enabled_by: Mapped[str] = mapped_column(String(255))
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    reason: Mapped[str] = mapped_column(Text)
