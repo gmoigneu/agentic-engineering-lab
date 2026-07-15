@@ -10,7 +10,9 @@ import time
 
 from agentic_lab.config.settings import get_settings
 from agentic_lab.db.session import build_session_factory
+from agentic_lab.domain.enums import RunStatus
 from agentic_lab.runs.leases import claim_next_run
+from agentic_lab.runs.service import transition_run
 
 
 def main() -> None:
@@ -19,7 +21,12 @@ def main() -> None:
     worker_id = f"worker:{socket.gethostname()}"
     while True:
         with sessions.begin() as session:
-            claim_next_run(session, worker_id, settings.lease_seconds)
+            run = claim_next_run(session, worker_id, settings.lease_seconds)
+            if run is not None:
+                # Provider and repository adapters are injected by deployment wiring.
+                # Until configured, preserve an auditable terminal outcome rather than
+                # silently leasing work forever.
+                transition_run(session, run, RunStatus.FAILED, "worker_not_configured", worker_id)
         time.sleep(1)
 
 
