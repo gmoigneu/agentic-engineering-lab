@@ -217,6 +217,8 @@ def create_app(
         except RunNotFoundError as error:
             raise HTTPException(status_code=404, detail="run not found") from error
         transitions = list_transitions(session, run.id)
+        artifacts = list(session.scalars(select(Artifact).where(Artifact.run_id == run.id)))
+        reviews = list(session.scalars(select(HumanReview).where(HumanReview.run_id == run.id)))
         items = "".join(
             f"<li>{escape(str(item.occurred_at))}: "
             f"{escape(item.from_status.value if item.from_status else 'none')} "
@@ -226,7 +228,9 @@ def create_app(
         return HTMLResponse(
             f"<html><body><h1>Run {run.id}</h1><p>Status: {escape(run.status.value)}</p>"
             f"<p>Pinned SHA: {escape(run.pinned_sha)}</p><h2>Transitions</h2>"
-            f"<ul>{items}</ul></body></html>"
+            f"<ul>{items}</ul><h2>Artifacts</h2>"
+            f"<p>{escape(', '.join(item.kind for item in artifacts) or 'none')}</p>"
+            f"<h2>Reviews</h2><p>{len(reviews)}</p></body></html>"
         )
 
     return app
