@@ -14,7 +14,7 @@ from agentic_lab.db.session import build_session_factory
 from agentic_lab.domain.enums import RunStatus
 from agentic_lab.gateway.model import ModelGateway, OpenRouterModelGateway
 from agentic_lab.runs.leases import claim_next_run
-from agentic_lab.runs.orchestrator import orchestrate_scout
+from agentic_lab.runs.orchestrator import orchestrate_assessor, orchestrate_scout
 from agentic_lab.runs.service import transition_run
 
 
@@ -27,6 +27,9 @@ class WorkerDependencies:
 def dispatch_run(session, run, worker_id: str, dependencies: WorkerDependencies) -> None:
     if run.role.value == "scout" and dependencies.model_gateway and dependencies.model_id:
         orchestrate_scout(session, run, dependencies.model_gateway, dependencies.model_id)
+        return
+    if run.role.value == "assessor" and dependencies.model_gateway and dependencies.model_id:
+        orchestrate_assessor(session, run, dependencies.model_gateway, dependencies.model_id)
         return
     transition_run(session, run, RunStatus.FAILED, "worker_role_not_configured", worker_id)
 
