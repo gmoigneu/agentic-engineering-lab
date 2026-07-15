@@ -21,6 +21,8 @@ class Settings(BaseSettings):
     max_tool_calls: int = Field(default=40, ge=1)
     max_wall_seconds: int = Field(default=1200, ge=1)
     max_usd: float = Field(default=3.0, gt=0)
+    openrouter_api_key: SecretStr | None = None
+    allowed_model_ids: frozenset[str] = Field(default_factory=frozenset)
 
     @field_validator("allowed_repository_ids", mode="before")
     @classmethod
@@ -32,6 +34,15 @@ class Settings(BaseSettings):
         if isinstance(value, str):
             return frozenset(int(part.strip()) for part in value.split(",") if part.strip())
         return frozenset(int(item) for item in value)  # type: ignore[arg-type]
+
+    @field_validator("allowed_model_ids", mode="before")
+    @classmethod
+    def parse_model_ids(cls, value: object) -> frozenset[str]:
+        if value is None or value == "":
+            return frozenset()
+        if isinstance(value, str):
+            return frozenset(part.strip() for part in value.split(",") if part.strip())
+        return frozenset(str(item) for item in value)  # type: ignore[arg-type]
 
 
 @lru_cache
