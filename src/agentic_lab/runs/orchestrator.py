@@ -6,6 +6,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from agentic_lab.agents.assessor import run_assessor
+from agentic_lab.agents.ci import classify_failure
 from agentic_lab.agents.scout import run_scout
 from agentic_lab.db.models import ModelCall, Run
 from agentic_lab.domain.enums import AgentRole, RunStatus
@@ -73,3 +74,12 @@ def orchestrate_assessor(session: Session, run: Run, gateway: ModelGateway, mode
     transition_run(session, run, RunStatus.EVALUATING, "risk_output_validated", "worker")
     store_artifact(session, artifact, "risk")
     transition_run(session, run, RunStatus.SUCCEEDED, "risk_artifact_stored", "worker")
+
+
+def refuse_ci_failure(session: Session, run: Run, redacted_log: str) -> None:
+    if run.role is not AgentRole.CI or run.status is not RunStatus.LEASED:
+        raise ValueError("only leased CI runs can be diagnosed")
+    transition_run(session, run, RunStatus.SNAPSHOTTING, "check_log_loaded", "worker")
+    failure_class = classify_failure(redacted_log)
+    if failure_class != "repository":
+        transition_run(session, run, RunStatus.REFUSED, f"ci_{failure_class}_failure", "worker")
