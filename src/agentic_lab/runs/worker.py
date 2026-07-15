@@ -12,7 +12,7 @@ from dataclasses import dataclass
 from agentic_lab.config.settings import get_settings
 from agentic_lab.db.session import build_session_factory
 from agentic_lab.domain.enums import RunStatus
-from agentic_lab.gateway.model import ModelGateway
+from agentic_lab.gateway.model import ModelGateway, OpenRouterModelGateway
 from agentic_lab.runs.leases import claim_next_run
 from agentic_lab.runs.orchestrator import orchestrate_scout
 from agentic_lab.runs.service import transition_run
@@ -31,11 +31,23 @@ def dispatch_run(session, run, worker_id: str, dependencies: WorkerDependencies)
     transition_run(session, run, RunStatus.FAILED, "worker_role_not_configured", worker_id)
 
 
+def build_dependencies(settings) -> WorkerDependencies:
+    if settings.openrouter_api_key is None or not settings.allowed_model_ids:
+        return WorkerDependencies(None, None)
+    model_id = sorted(settings.allowed_model_ids)[0]
+    return WorkerDependencies(
+        OpenRouterModelGateway(
+            settings.openrouter_api_key.get_secret_value(), settings.allowed_model_ids
+        ),
+        model_id,
+    )
+
+
 def main() -> None:
     settings = get_settings()
     sessions = build_session_factory(settings.database_url)
     worker_id = f"worker:{socket.gethostname()}"
-    dependencies = WorkerDependencies(None, None)
+    dependencies = build_dependencies(settings)
     while True:
         with sessions.begin() as session:
             run = claim_next_run(session, worker_id, settings.lease_seconds)
