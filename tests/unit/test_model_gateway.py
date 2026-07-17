@@ -57,6 +57,73 @@ def test_pydantic_gateway_exposes_only_safe_provider_http_details() -> None:
         asyncio.run(client.aclose())
 
 
+def test_pydantic_gateway_clears_prior_call_metadata_before_a_failed_run() -> None:
+    call_count = 0
+
+    def respond(_request: httpx.Request) -> httpx.Response:
+        nonlocal call_count
+        call_count += 1
+        if call_count == 1:
+            return httpx.Response(
+                200,
+                json={
+                    "id": "chatcmpl-success",
+                    "object": "chat.completion",
+                    "created": 1,
+                    "model": "model@1",
+                    "provider": "StreamLake",
+                    "choices": [
+                        {
+                            "index": 0,
+                            "message": {
+                                "role": "assistant",
+                                "content": '{"answer":"ok"}',
+                            },
+                            "finish_reason": "stop",
+                        }
+                    ],
+                    "usage": {
+                        "prompt_tokens": 11,
+                        "completion_tokens": 7,
+                        "total_tokens": 18,
+                        "cost": 0.0125,
+                    },
+                },
+            )
+        return httpx.Response(
+            429,
+            json={"error": {"code": 429, "message": "Provider rate limit reached"}},
+        )
+
+    client = httpx.AsyncClient(transport=httpx.MockTransport(respond))
+    try:
+        gateway = PydanticAIModelGateway(
+            "secret",
+            frozenset({"model@1"}),
+            frozenset({"StreamLake"}),
+            client=client,
+        )
+        request = ModelRequest(
+            uuid4(),
+            "scout",
+            "model@1",
+            "system",
+            "task",
+            "hash",
+            ModelBudget(2, 0, 1),
+        )
+
+        assert gateway.run_agent_loop(request, Output).answer == "ok"
+        assert gateway.last_call is not None
+
+        with pytest.raises(ModelGatewayError, match="provider HTTP 429"):
+            gateway.run_agent_loop(request, Output)
+
+        assert gateway.last_call is None
+    finally:
+        asyncio.run(client.aclose())
+
+
 def test_pydantic_gateway_exposes_a_bounded_output_failure_reason() -> None:
     def respond(_request: httpx.Request) -> httpx.Response:
         return httpx.Response(

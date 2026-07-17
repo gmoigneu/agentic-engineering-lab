@@ -123,6 +123,7 @@ class OpenRouterModelGateway:
         self.last_provider_allowlist: tuple[str, ...] = ()
 
     def run_agent_loop(self, request: ModelRequest, output_type: type[Output]) -> Output:
+        self.last_call = None
         self.last_request = request
         validate_model_id(request.model_id, self._allowed_models)
         if (
@@ -248,6 +249,7 @@ class PydanticAIModelGateway:
         self.trace_exporter = trace_exporter
 
     def run_agent_loop(self, request: ModelRequest, output_type: type[Output]) -> Output:
+        self.last_call = None
         self.last_request = request
         validate_model_id(request.model_id, self._allowed_models)
         providers = request.provider_allowlist or tuple(sorted(self._allowed_providers))
