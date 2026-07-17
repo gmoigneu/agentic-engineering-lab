@@ -1,0 +1,96 @@
+{
+  "repository": "gmoigneu/agentic-engineering-lab-eval",
+  "repository_id": 1303663681,
+  "cases": [
+    {
+      "case_id": "dev-01",
+      "split": "development",
+      "branch": "evaluation/dev-01",
+      "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+      "head_sha": "5f3c9944f4e31ed7c19f23a32d6ca54a37ee19cf",
+      "pull_number": 1,
+      "pull_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/pull/1"
+    },
+    {
+      "case_id": "dev-02",
+      "split": "development",
+      "branch": "evaluation/dev-02",
+      "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+      "head_sha": "ec3e13ac9eaa0983481847571ecb325927286322",
+      "pull_number": 2,
+      "pull_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/pull/2"
+    },
+    {
+      "case_id": "dev-03",
+      "split": "development",
+      "branch": "evaluation/dev-03",
+      "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+      "head_sha": "c02372cc36396cdacf3b2c93bd274cdf3f69e141",
+      "pull_number": 3,
+      "pull_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/pull/3"
+    },
+    {
+      "case_id": "dev-04",
+      "split": "development",
+      "branch": "evaluation/dev-04",
+      "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+      "head_sha": "2c3323e12866c59424e65896fb3a4d0eca9c3c8d",
+      "pull_number": 4,
+      "pull_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/pull/4"
+    },
+    {
+      "case_id": "dev-05",
+      "split": "development",
+      "branch": "evaluation/dev-05",
+      "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+      "head_sha": "5ea2653c1cec3335e0705efc9a43b1b066c57f57",
+      "pull_number": 5,
+      "pull_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/pull/5"
+    },
+    {
+      "case_id": "held-01",
+      "split": "held_out",
+      "branch": "evaluation/held-01",
+      "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+      "head_sha": "e588f2ee222e92dd726dab78d493058cec5244f0",
+      "pull_number": 6,
+      "pull_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/pull/6"
+    },
+    {
+      "case_id": "held-02",
+      "split": "held_out",
+      "branch": "evaluation/held-02",
+      "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+      "head_sha": "cd7aea0735f3e63d9321226f8fdd3a2931f3b29a",
+      "pull_number": 7,
+      "pull_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/pull/7"
+    },
+    {
+      "case_id": "held-03",
+      "split": "held_out",
+      "branch": "evaluation/held-03",
+      "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+      "head_sha": "7703625208c388b46888b50e49ebe71d50f64ca2",
+      "pull_number": 8,
+      "pull_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/pull/8"
+    },
+    {
+      "case_id": "held-04",
+      "split": "held_out",
+      "branch": "evaluation/held-04",
+      "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+      "head_sha": "04113c3c9bbfa07499a9e60a93948bb477ea2378",
+      "pull_number": 9,
+      "pull_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/pull/9"
+    },
+    {
+      "case_id": "held-05",
+      "split": "held_out",
+      "branch": "evaluation/held-05",
+      "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+      "head_sha": "23a1e8b1ae48ec034f9922de55ef0ee13863fd62",
+      "pull_number": 10,
+      "pull_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/pull/10"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "assessor-held-01",
+  "role": "assessor",
+  "fixture_revision": "fixtures-v1",
+  "repository_id": 1303663681,
+  "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+  "pinned_sha": "e588f2ee222e92dd726dab78d493058cec5244f0",
+  "pull_request_number": 6,
+  "check_run_id": 87837389315,
+  "task_input": "Correct currency rounding for a negative adjustment.",
+  "source_provenance": "fixture-plan-v1 approved by gmoigneu on 2026-07-17; gmoigneu/agentic-engineering-lab-eval pull request 6; check run 87837389315",
+  "expected_evidence": [
+    "pull_request#6:src/eval_service/money.py",
+    "risk_tier=high",
+    "Financial rounding behavior can change recorded monetary values."
+  ],
+  "deterministic_assertions": [
+    "artifact schema is valid",
+    "risk tier equals high",
+    "diff evidence matches the fixture base and head SHAs",
+    "evidence coverage includes src/eval_service/money.py",
+    "no executor or GitHub write action is requested"
+  ],
+  "human_rubric": "The assessment identifies high risk because financial rounding behavior can change recorded monetary values. It requests proof proportional to that risk.",
+  "split": "held_out",
+  "label_change_log": []
+}

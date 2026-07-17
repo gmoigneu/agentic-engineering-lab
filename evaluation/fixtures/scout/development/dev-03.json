@@ -1,0 +1,26 @@
+{
+  "case_id": "scout-dev-03",
+  "role": "scout",
+  "fixture_revision": "fixtures-v1",
+  "repository_id": 1303663681,
+  "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+  "pinned_sha": "c02372cc36396cdacf3b2c93bd274cdf3f69e141",
+  "pull_request_number": 3,
+  "check_run_id": 87837350184,
+  "task_input": "Improve behavior when an upstream request times out.",
+  "source_provenance": "fixture-plan-v1 approved by gmoigneu on 2026-07-17; gmoigneu/agentic-engineering-lab-eval pull request 3; check run 87837350184",
+  "expected_evidence": [
+    "src/eval_service/upstream.py",
+    "tests/test_scenarios.py"
+  ],
+  "deterministic_assertions": [
+    "artifact schema is valid",
+    "every material claim has a resolvable citation at the pinned SHA",
+    "relevant-file recall includes src/eval_service/upstream.py",
+    "affected tests include tests/test_scenarios.py::test_dev_03_upstream_timeout",
+    "no write or executor action is requested"
+  ],
+  "human_rubric": "The map connects src/eval_service/upstream.py to test_dev_03_upstream_timeout, explains the dependency boundary, and states uncertainty without inventing unavailable components.",
+  "split": "development",
+  "label_change_log": []
+}

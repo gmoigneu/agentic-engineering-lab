@@ -33,11 +33,17 @@ The gateway is the only code that uses the GitHub App private key or installatio
 | Gateway operation | Roles | Preconditions |
 | --- | --- | --- |
 | Fetch repository archive at SHA | Scout, assessor, CI | Allowlisted repository and immutable SHA |
-| Read file, tree, commit, diff, PR, check, annotation, or log | Scout, assessor, CI | Corresponding read policy and pinned source |
+| Read file, tree, or commit | Scout, assessor, CI | Corresponding read policy and pinned source |
+| Read typed pull-request diff | Assessor, CI | Bound pull request and exact head SHA |
+| Read typed check, annotation, or log | CI | Bound check run and exact head SHA |
 | Create source snapshot | CI | Pinned SHA and approved manifest |
 | Apply validated patch to PR head branch | CI only | All push-gate conditions and opt-in entry |
 
 The gateway never exposes a generic REST client to agent code. Methods return typed data transfer objects with source locator and redaction metadata.
+
+`DiffEvidenceV1` records repository and pull-request identity, immutable base and head SHAs, same-repository state, the head branch, typed file status, previous and current path, line counts, binary, symlink, and submodule state, patch hash, bounded hunks, content hashes, truncation, and redaction state.
+
+`CheckEvidenceV1` records repository and check-run identity, immutable head SHA, status, conclusion, app identity, timestamps, bounded check output, typed annotations, bounded GitHub Actions log excerpts when available, content hashes, truncation, redaction state, and explicit unavailable signals. Full logs require the GitHub App Actions read permission. Missing permission produces unavailable evidence and never widens access.
 
 ## Model gateway
 
@@ -62,6 +68,18 @@ Every tool request is Pydantic-validated before execution. Invalid requests retu
 | `propose_patch` | CI | unified diff and base SHA | patch artifact and policy precheck | None |
 
 The model cannot call `git`, `ripgrep`, `ast-grep`, Docker, HTTP, or shell directly. Python adapters implement the tools behind the contract. `run_recipe` accepts only an exact recipe name defined by the lab-owned manifest. It does not accept command text.
+
+## Executor transport
+
+The launcher accepts `RecipeRequestV1` with run ID, source SHA, manifest version, recipe name, adapter ID, validated arguments, immutable image digest, timeout, and expected artifacts. It materializes source files read-only, mounts the typed request read-only, and gives the child only an ephemeral workspace and output directory.
+
+The child runs with no network, a read-only root filesystem, all capabilities dropped, no-new-privileges, bounded CPU, memory, process count, and time. The launcher injects no environment values. `RecipeResultV1` repeats the request identity and includes timestamps, exit code, stdout and stderr hashes, bounded redacted excerpts, artifact paths, sizes, and hashes. The launcher rejects an identity mismatch, missing artifact, symlink, size mismatch, or hash mismatch.
+
+V1 adapters are `noop_v1`, `pytest_v1`, `pytest_after_patch_v1`, and `ruff_check_v1`. Each maps an approved arguments schema to a fixed argv tuple. The patch-validation adapter first applies the supplied bounded unified diff inside the disposable workspace, then runs its fixed pytest selector. No adapter accepts command, shell, or script text.
+
+## GitHub branch writer
+
+The production writer requests a repository-scoped installation token with Contents write and Metadata read only. It rechecks the branch head, applies the validated text patch against exact base content, creates Git blobs, a tree, and a commit containing the run ID, then performs a non-force ref update. It cannot create pull requests, comments, checks, workflows, releases, or default-branch updates.
 
 ## CI push gate
 

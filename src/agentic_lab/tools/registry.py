@@ -6,9 +6,10 @@ from threading import Lock
 from time import perf_counter
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from agentic_lab.domain.enums import AgentRole
+from agentic_lab.gateway.github_evidence import CheckEvidence, PullRequestDiffEvidence
 from agentic_lab.gateway.redaction import redact
 from agentic_lab.tools.snapshot import RepositorySnapshot
 
@@ -43,6 +44,14 @@ class GitHistoryInput(BaseModel):
     limit: int = Field(default=20, ge=1, le=100)
 
 
+class InspectDiffInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+
+class InspectCheckInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+
 @dataclass(frozen=True)
 class ToolExecution:
     sequence: int
@@ -58,6 +67,8 @@ class SnapshotToolRegistry:
     role: AgentRole
     snapshot: RepositorySnapshot
     max_calls: int
+    diff_evidence: PullRequestDiffEvidence | None = None
+    check_evidence: CheckEvidence | None = None
     extra_redaction_patterns: tuple[str, ...] = ()
     records: list[ToolExecution] = field(default_factory=list)
     _sequence_lock: Lock = field(default_factory=Lock, init=False, repr=False)
@@ -88,8 +99,16 @@ class SnapshotToolRegistry:
                     "parameters": input_type.model_json_schema(),
                 },
             }
-            for name, input_type in self._INPUTS.items()
+            for name, input_type in self._available_inputs().items()
         ]
+
+    def _available_inputs(self) -> dict[str, type[BaseModel]]:
+        inputs = dict(self._INPUTS)
+        if self.role in {AgentRole.ASSESSOR, AgentRole.CI} and self.diff_evidence is not None:
+            inputs["inspect_diff"] = InspectDiffInput
+        if self.role is AgentRole.CI and self.check_evidence is not None:
+            inputs["inspect_check"] = InspectCheckInput
+        return inputs
 
     def configure_evidence_window(self, max_calls: int, max_requests: int) -> None:
         if max_calls < 0 or max_calls > self.max_calls or max_requests < 0:
@@ -173,7 +192,7 @@ class SnapshotToolRegistry:
     def _execute_allowed(self, tool_name: str, arguments: dict[str, Any]) -> dict[str, Any]:
         status = "ok"
         try:
-            input_type = self._INPUTS.get(tool_name)
+            input_type = self._available_inputs().get(tool_name)
             if input_type is None:
                 raise ValueError("tool is not available to this role")
             validated = input_type.model_validate(arguments)
@@ -236,6 +255,10 @@ class SnapshotToolRegistry:
             return [item.model_dump() for item in self.snapshot.search_structure(**arguments)]
         if tool_name == "git_history":
             return [item.model_dump() for item in self.snapshot.git_history(**arguments)]
+        if tool_name == "inspect_diff" and self.diff_evidence is not None:
+            return self.diff_evidence.model_dump(mode="json")
+        if tool_name == "inspect_check" and self.check_evidence is not None:
+            return self.check_evidence.model_dump(mode="json")
         raise ValueError("tool is not available to this role")
 
 

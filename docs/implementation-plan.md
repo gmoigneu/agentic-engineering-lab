@@ -6,23 +6,23 @@ Implement one milestone at a time. Do not begin a later milestone until the prio
 
 ## Current implementation status
 
-Verified on 2026-07-16.
+Verified on 2026-07-17.
 
 | Milestone | State | Evidence and remaining gate |
 | --- | --- | --- |
 | 1. Lab foundation | Complete | Compose services are healthy, readiness passes, migrations are at head, and lease heartbeat plus reclaim behavior has integration coverage. |
 | 2. Scout vertical slice | Complete | A live pinned Scout run succeeded with resolvable citations, actual StreamLake usage and billed cost, a released lease, and a retrievable private Langfuse trace. |
-| 3. Evaluation baseline | Harness complete | Fixture validation, split isolation, exact five-case gates, scorecard export, and held-out review gates pass. Five approved development and five approved held-out Scout labels are still required. |
-| 4. Scout v1 and model comparison | Blocked on evaluation inputs | The comparison gate requires exactly three distinct pinned candidates under identical configuration. Candidate IDs, approved fixtures, runs, and reviews are not yet available. |
+| 3. Evaluation baseline | Complete | Fixture validation, split isolation, exact five-case gates, scorecard export, and held-out review gates pass. Thirty approved `fixtures-v1` files pin ten live pull requests and their first completed failing checks for repository `1303663681`. |
+| 4. Scout v1 and model comparison | Ready for execution | Three distinct model and provider pairs and ten Scout fixtures are approved. The comparison contract holds prompt, tools, manifest, run budget, tasks, evaluator, data collection, and fallback policy fixed while reporting candidate-specific pinned providers. Runs and reviews remain required. |
 | 5. Event control plane | Complete | Verified routing, deduplication, supersession, causal links, allowlists, and audited snapshot reads have automated coverage. |
-| 6. Pull-request risk assessor | Partial | The worker now supplies audited pinned snapshot tools and records tool calls. Typed pull-request diff evidence and five plus five approved assessor fixtures remain required. |
-| 7. CI diagnosis | Partial | Failure taxonomy, refusal artifacts, manifest validation, executor specifications, and credential-boundary tests exist. Typed check evidence, log adapters, a real disposable-container runner, and five plus five approved CI fixtures remain required. |
-| 8. CI safe patching | Partial | Patch policy, opt-in, one-attempt guard, exact-SHA recheck, durable decisions, and the narrow write port have tests. The CI tool loop, deterministic patch application in a disposable executor, and a production GitHub App branch writer remain required. |
+| 6. Pull-request risk assessor | Ready for execution | SHA-bound `DiffEvidenceV1`, audited gateway retrieval, the bound `inspect_diff` tool, and ten approved assessor fixtures have automated validation. Runs and reviews remain required. |
+| 7. CI diagnosis | Blocked on image publication | `CheckEvidenceV1`, check output, annotation and GitHub Actions log adapters, typed executor transport, fixed recipe adapters, a hardened Docker runner, and ten approved CI fixtures have automated coverage. The disposable-container boundary passed a live local probe. An immutable published executor image digest remains required. |
+| 8. CI safe patching | Partial | Patch policy, opt-in, one-attempt guard, exact-SHA recheck, durable decisions, strict text patch application, and the production GitHub App Git-object writer have automated coverage. The CI patch tool loop and an explicitly opted-in live evaluation PR remain required. |
 | 9. Held-out results | Blocked on release cycle | Held-out runs, manual reviews, frozen labels, and public redacted exports must come from the approved evaluation cycle. They must not be synthesized by the harness implementation. |
 
-The automated suite currently contains 73 passing tests. Static checks, documentation links, Compose health, API readiness, PostgreSQL migration state, live OpenRouter execution, durable model economics, worker heartbeat renewal, and private Langfuse retrieval have been verified.
+The automated suite currently contains 90 passing tests. Static checks, documentation links, Compose health, API readiness, PostgreSQL migration state, live OpenRouter execution, durable model economics, worker heartbeat renewal, private Langfuse retrieval, launcher Docker Engine access, the disposable executor boundary, deterministic repository seeding, fixture materialization, and patch-then-pytest execution in the evaluation image have been verified. The three approved model and provider endpoints and GitHub App installation for repository `1303663681` were verified read-only. The App grants Contents write as the only repository write permission.
 
-The next implementation tranche requires an approved contract update for typed diff and check evidence, executor recipe adapter selection, disposable-container input and output transport, and GitHub App patch application. Those details are not defined by the current manifest or tool schemas, so implementing them by convention would create an unreviewed capability boundary.
+The next evaluation tranche requires publishing the verified executor image at an immutable digest and rendering the lab-owned manifest against that digest. Scout comparison runs can then begin. No live GitHub write is authorized until one selected same-repository evaluation PR has a durable unexpired opt-in record.
 
 ## Milestone 1. Lab foundation
 

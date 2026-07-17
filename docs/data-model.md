@@ -9,7 +9,7 @@ PostgreSQL is authoritative. Store append-only event and transition records. Mut
 | Table | Required fields | Purpose |
 | --- | --- | --- |
 | `webhook_events` | id, delivery_id, event_name, repository_id, payload_hash, received_at, signature_valid | Immutable accepted or rejected delivery record |
-| `runs` | id, role, source, repository_id, pull_number, pinned_sha, status, manifest_version, policy_version, prompt_hash, model_config, budget, created_at, terminal_at | Run aggregate and query surface |
+| `runs` | id, role, source, repository_id, pull_number, check_run_id, pinned_sha, status, manifest_version, policy_version, prompt_hash, model_config, budget, created_at, terminal_at | Run aggregate and query surface |
 | `run_transitions` | id, run_id, from_status, to_status, reason_code, actor, occurred_at, metadata | Append-only state history |
 | `run_leases` | run_id, worker_id, acquired_at, heartbeat_at, expires_at, attempt | Durable worker ownership |
 | `artifacts` | id, run_id, kind, schema_version, content_json, content_hash, redaction_state, created_at | Canonical typed outputs and summaries |

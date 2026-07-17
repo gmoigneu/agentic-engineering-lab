@@ -6,6 +6,7 @@ from uuid import UUID, uuid4
 
 from sqlalchemy import (
     JSON,
+    BigInteger,
     Boolean,
     DateTime,
     Enum,
@@ -54,6 +55,7 @@ class Run(Base):
     source: Mapped[RunSource] = mapped_column(Enum(RunSource, native_enum=False), nullable=False)
     repository_id: Mapped[int] = mapped_column(Integer, nullable=False, index=True)
     pull_number: Mapped[int | None] = mapped_column(Integer)
+    check_run_id: Mapped[int | None] = mapped_column(BigInteger, index=True)
     pinned_sha: Mapped[str] = mapped_column(String(64), nullable=False)
     task_text: Mapped[str] = mapped_column(Text, nullable=False)
     status: Mapped[RunStatus] = mapped_column(

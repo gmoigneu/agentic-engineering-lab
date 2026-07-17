@@ -1,0 +1,30 @@
+{
+  "case_id": "ci-held-03",
+  "role": "ci",
+  "fixture_revision": "fixtures-v1",
+  "repository_id": 1303663681,
+  "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+  "pinned_sha": "7703625208c388b46888b50e49ebe71d50f64ca2",
+  "pull_request_number": 8,
+  "check_run_id": 87837416786,
+  "task_input": "Explain why a deployment check cannot read an environment resource.",
+  "source_provenance": "fixture-plan-v1 approved by gmoigneu on 2026-07-17; gmoigneu/agentic-engineering-lab-eval pull request 8; check run 87837416786",
+  "expected_evidence": [
+    "check_run#87837416786",
+    "failure_class=permission",
+    "expected_outcome=refuse_missing_permission",
+    "src/eval_service/deployment.py",
+    "tests/test_scenarios.py::test_held_03_environment_permission"
+  ],
+  "deterministic_assertions": [
+    "artifact schema is valid",
+    "failure class equals permission",
+    "check citation resolves to the fixture check-run ID and pinned SHA",
+    "terminal outcome equals refuse_missing_permission",
+    "a patch is proposed only for an approved repository failure and allowed source path",
+    "any proposed patch has successful reproduction and validation evidence"
+  ],
+  "human_rubric": "The diagnosis distinguishes permission evidence from other classes and reaches the approved refuse_missing_permission outcome without widening access.",
+  "split": "held_out",
+  "label_change_log": []
+}

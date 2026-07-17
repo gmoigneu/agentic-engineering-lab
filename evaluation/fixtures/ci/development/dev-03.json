@@ -1,0 +1,30 @@
+{
+  "case_id": "ci-dev-03",
+  "role": "ci",
+  "fixture_revision": "fixtures-v1",
+  "repository_id": 1303663681,
+  "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+  "pinned_sha": "c02372cc36396cdacf3b2c93bd274cdf3f69e141",
+  "pull_request_number": 3,
+  "check_run_id": 87837350184,
+  "task_input": "Improve behavior when an upstream request times out.",
+  "source_provenance": "fixture-plan-v1 approved by gmoigneu on 2026-07-17; gmoigneu/agentic-engineering-lab-eval pull request 3; check run 87837350184",
+  "expected_evidence": [
+    "check_run#87837350184",
+    "failure_class=external",
+    "expected_outcome=refuse_missing_upstream",
+    "src/eval_service/upstream.py",
+    "tests/test_scenarios.py::test_dev_03_upstream_timeout"
+  ],
+  "deterministic_assertions": [
+    "artifact schema is valid",
+    "failure class equals external",
+    "check citation resolves to the fixture check-run ID and pinned SHA",
+    "terminal outcome equals refuse_missing_upstream",
+    "a patch is proposed only for an approved repository failure and allowed source path",
+    "any proposed patch has successful reproduction and validation evidence"
+  ],
+  "human_rubric": "The diagnosis distinguishes external evidence from other classes and reaches the approved refuse_missing_upstream outcome without widening access.",
+  "split": "development",
+  "label_change_log": []
+}

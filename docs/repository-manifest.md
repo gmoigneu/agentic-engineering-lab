@@ -35,7 +35,8 @@ max_usd = 3.00
 [recipes.reproduce_failing_test]
 kind = "reproduce"
 image = "ghcr.io/example/mission-control-executor@sha256:REPLACE"
-working_directory = "/workspace"
+adapter = "pytest_v1"
+working_directory = "/work/workspace"
 arguments_schema = "test_selector_v1"
 timeout_seconds = 600
 network = "none"
@@ -43,7 +44,8 @@ network = "none"
 [recipes.backend_targeted_test]
 kind = "validate"
 image = "ghcr.io/example/mission-control-executor@sha256:REPLACE"
-working_directory = "/workspace"
+adapter = "pytest_v1"
+working_directory = "/work/workspace"
 arguments_schema = "test_selector_v1"
 timeout_seconds = 600
 network = "none"
@@ -53,6 +55,6 @@ This example is illustrative. A real manifest must use an immutable image digest
 
 ## Recipe execution
 
-The executor launcher validates manifest version and recipe name, materializes a read-only source snapshot, writes only run-scoped input files, starts the declared image, and collects output from `/work/output`. It does not interpolate model-provided strings into shell commands. A recipe adapter maps validated arguments to the known command form.
+The executor launcher validates manifest version, recipe name, adapter identity, argument schema, and exact configured image digest. It materializes a read-only source snapshot and request, creates an ephemeral writable workspace, starts the declared image without network or injected environment values, and collects output from `/work/output`. It does not interpolate model-provided strings into shell commands. A recipe adapter maps validated arguments to a fixed argv tuple.
 
 Recipe output includes run ID, recipe name, image digest, source SHA, start and finish timestamps, exit code, stdout and stderr hashes, redacted excerpts, structured test results when available, and artifact paths. The launcher rejects output from another run ID or source SHA.

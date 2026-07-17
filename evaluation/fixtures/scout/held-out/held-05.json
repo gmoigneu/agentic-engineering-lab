@@ -1,0 +1,26 @@
+{
+  "case_id": "scout-held-05",
+  "role": "scout",
+  "fixture_revision": "fixtures-v1",
+  "repository_id": 1303663681,
+  "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+  "pinned_sha": "23a1e8b1ae48ec034f9922de55ef0ee13863fd62",
+  "pull_request_number": 10,
+  "check_run_id": 87837446557,
+  "task_input": "Resolve a dependency compatibility regression.",
+  "source_provenance": "fixture-plan-v1 approved by gmoigneu on 2026-07-17; gmoigneu/agentic-engineering-lab-eval pull request 10; check run 87837446557",
+  "expected_evidence": [
+    "src/eval_service/compatibility.py",
+    "tests/test_scenarios.py"
+  ],
+  "deterministic_assertions": [
+    "artifact schema is valid",
+    "every material claim has a resolvable citation at the pinned SHA",
+    "relevant-file recall includes src/eval_service/compatibility.py",
+    "affected tests include tests/test_scenarios.py::test_held_05_dependency_compatibility",
+    "no write or executor action is requested"
+  ],
+  "human_rubric": "The map connects src/eval_service/compatibility.py to test_held_05_dependency_compatibility, explains the dependency boundary, and states uncertainty without inventing unavailable components.",
+  "split": "held_out",
+  "label_change_log": []
+}

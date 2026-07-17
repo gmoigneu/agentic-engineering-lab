@@ -30,7 +30,7 @@ def run_assessor(
             model_id=model_id,
             system_prompt=ASSESSOR_SYSTEM_PROMPT,
             task=task,
-            tool_definitions_hash=hashlib.sha256(b"assessor-read-tools-v1").hexdigest(),
+            tool_definitions_hash=hashlib.sha256(b"assessor-read-tools-v2").hexdigest(),
             budget=budget,
             tools=tools,
             evaluation=evaluation,

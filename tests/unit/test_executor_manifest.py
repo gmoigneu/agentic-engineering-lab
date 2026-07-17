@@ -15,8 +15,9 @@ def test_named_recipe_rejects_model_command_text() -> None:
                 "validate": {
                     "kind": "validate",
                     "image": "registry/image@sha256:" + "a" * 64,
-                    "working_directory": "/workspace",
-                    "arguments_schema": "selector_v1",
+                    "adapter": "pytest_v1",
+                    "working_directory": "/work/workspace",
+                    "arguments_schema": "test_selector_v1",
                     "timeout_seconds": 60,
                     "network": "none",
                 }

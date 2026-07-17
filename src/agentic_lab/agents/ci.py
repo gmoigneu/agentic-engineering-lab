@@ -33,7 +33,7 @@ def run_ci_diagnosis(
             model_id=model_id,
             system_prompt=CI_SYSTEM_PROMPT,
             task=task,
-            tool_definitions_hash=hashlib.sha256(b"ci-read-and-recipe-tools-v1").hexdigest(),
+            tool_definitions_hash=hashlib.sha256(b"ci-read-and-recipe-tools-v2").hexdigest(),
             budget=budget,
             tools=tools,
             evaluation=evaluation,

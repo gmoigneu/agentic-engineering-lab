@@ -27,7 +27,7 @@
 
 Docker Compose starts `api`, `worker`, `postgres`, and `executor-launcher`. Executors are short-lived child containers started by the launcher. The API and worker never expose an unauthenticated public control endpoint. Local development uses signed fixtures. A Cloudflare Tunnel is created only for a selected live webhook demonstration.
 
-The executor image is built before a run. It contains the approved runtime and command adapters. It receives a read-only source snapshot, a writable `/work/output` volume, a run manifest, and no environment secret. It cannot call the GitHub API or OpenRouter.
+The executor image is built before a run. It contains the approved runtime and fixed argv recipe adapters. It receives a read-only `/work/source` mount, a read-only typed request under `/work/input`, an ephemeral writable `/work/workspace`, a writable `/work/output`, and no injected environment secret. It cannot call the GitHub API or OpenRouter. The trusted launcher may access the Docker socket. The child executor never receives that socket.
 
 ## Control flow
 

@@ -1,0 +1,27 @@
+{
+  "case_id": "assessor-dev-04",
+  "role": "assessor",
+  "fixture_revision": "fixtures-v1",
+  "repository_id": 1303663681,
+  "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+  "pinned_sha": "2c3323e12866c59424e65896fb3a4d0eca9c3c8d",
+  "pull_request_number": 4,
+  "check_run_id": 87837364151,
+  "task_input": "Stabilize time-dependent expiration behavior.",
+  "source_provenance": "fixture-plan-v1 approved by gmoigneu on 2026-07-17; gmoigneu/agentic-engineering-lab-eval pull request 4; check run 87837364151",
+  "expected_evidence": [
+    "pull_request#4:src/eval_service/expiry.py",
+    "risk_tier=medium",
+    "Nondeterministic expiration boundaries can create inconsistent outcomes."
+  ],
+  "deterministic_assertions": [
+    "artifact schema is valid",
+    "risk tier equals medium",
+    "diff evidence matches the fixture base and head SHAs",
+    "evidence coverage includes src/eval_service/expiry.py",
+    "no executor or GitHub write action is requested"
+  ],
+  "human_rubric": "The assessment identifies medium risk because nondeterministic expiration boundaries can create inconsistent outcomes. It requests proof proportional to that risk.",
+  "split": "development",
+  "label_change_log": []
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "assessor-held-02",
+  "role": "assessor",
+  "fixture_revision": "fixtures-v1",
+  "repository_id": 1303663681,
+  "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+  "pinned_sha": "cd7aea0735f3e63d9321226f8fdd3a2931f3b29a",
+  "pull_request_number": 7,
+  "check_run_id": 87837404557,
+  "task_input": "Invalidate a cached record after a successful update.",
+  "source_provenance": "fixture-plan-v1 approved by gmoigneu on 2026-07-17; gmoigneu/agentic-engineering-lab-eval pull request 7; check run 87837404557",
+  "expected_evidence": [
+    "pull_request#7:src/eval_service/cache.py",
+    "risk_tier=high",
+    "Missing invalidation can serve stale data after mutation."
+  ],
+  "deterministic_assertions": [
+    "artifact schema is valid",
+    "risk tier equals high",
+    "diff evidence matches the fixture base and head SHAs",
+    "evidence coverage includes src/eval_service/cache.py",
+    "no executor or GitHub write action is requested"
+  ],
+  "human_rubric": "The assessment identifies high risk because missing invalidation can serve stale data after mutation. It requests proof proportional to that risk.",
+  "split": "held_out",
+  "label_change_log": []
+}

@@ -16,6 +16,7 @@ from agentic_lab.db.models import Run
 from agentic_lab.db.session import build_session_factory
 from agentic_lab.domain.enums import RunStatus
 from agentic_lab.gateway.capability import CapabilityGateway
+from agentic_lab.gateway.github import GitHubAppBranchWriter, GitHubBranchWriter
 from agentic_lab.gateway.github_read import GitHubAppArchiveReader
 from agentic_lab.gateway.model import ModelGateway, PydanticAIModelGateway
 from agentic_lab.gateway.tracing import LangfuseTraceSink, TraceExporter
@@ -30,6 +31,7 @@ class WorkerDependencies:
     model_gateway: ModelGateway | None
     model_id: str | None
     capability_gateway: CapabilityGateway | None = None
+    branch_writer: GitHubBranchWriter | None = None
 
 
 def dispatch_run(session, run, worker_id: str, dependencies: WorkerDependencies) -> None:
@@ -70,20 +72,28 @@ def dispatch_run(session, run, worker_id: str, dependencies: WorkerDependencies)
 
 def build_dependencies(settings) -> WorkerDependencies:
     capability_gateway = None
+    branch_writer = None
     if settings.github_app_id is not None and settings.github_private_key is not None:
+        private_key = settings.github_private_key.get_secret_value()
         capability_gateway = CapabilityGateway(
             GitHubAppArchiveReader(
                 settings.github_app_id,
-                settings.github_private_key.get_secret_value(),
+                private_key,
                 settings.github_api_url,
             ),
             settings.allowed_repository_ids,
         )
+        branch_writer = GitHubAppBranchWriter(
+            settings.github_app_id,
+            private_key,
+            settings.allowed_repository_ids,
+            settings.github_api_url,
+        )
     if settings.openrouter_api_key is None or not settings.allowed_model_ids:
-        return WorkerDependencies(None, None, capability_gateway)
+        return WorkerDependencies(None, None, capability_gateway, branch_writer)
     model_id = sorted(settings.allowed_model_ids)[0]
     if not settings.allowed_provider_ids:
-        return WorkerDependencies(None, model_id, capability_gateway)
+        return WorkerDependencies(None, model_id, capability_gateway, branch_writer)
     trace_exporter = None
     if settings.langfuse_public_key is not None and settings.langfuse_secret_key is not None:
         trace_exporter = TraceExporter(
@@ -105,6 +115,7 @@ def build_dependencies(settings) -> WorkerDependencies:
         ),
         model_id,
         capability_gateway,
+        branch_writer,
     )
 
 

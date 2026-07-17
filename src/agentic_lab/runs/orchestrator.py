@@ -87,9 +87,7 @@ def orchestrate_scout(
         _record_tool_calls(session, run, tools)
         return
     except ModelGatewayError as error:
-        _record_terminal_error(
-            session, run, "model_gateway_failure", str(error), RunStatus.FAILED
-        )
+        _record_terminal_error(session, run, "model_gateway_failure", str(error), RunStatus.FAILED)
         _record_model_call(session, run, gateway, model_id, started)
         _record_tool_calls(session, run, tools)
         return
@@ -159,9 +157,7 @@ def orchestrate_assessor(
         _record_tool_calls(session, run, tools)
         return
     except ModelGatewayError as error:
-        _record_terminal_error(
-            session, run, "model_gateway_failure", str(error), RunStatus.FAILED
-        )
+        _record_terminal_error(session, run, "model_gateway_failure", str(error), RunStatus.FAILED)
         _record_model_call(session, run, gateway, model_id, started)
         _record_tool_calls(session, run, tools)
         return
@@ -235,9 +231,7 @@ def orchestrate_ci(
         _record_tool_calls(session, run, tools)
         return
     except ModelGatewayError as error:
-        _record_terminal_error(
-            session, run, "model_gateway_failure", str(error), RunStatus.FAILED
-        )
+        _record_terminal_error(session, run, "model_gateway_failure", str(error), RunStatus.FAILED)
         _record_model_call(session, run, gateway, model_id, started)
         _record_tool_calls(session, run, tools)
         return
@@ -420,12 +414,37 @@ def _snapshot_tools(
             DatabaseCapabilityAudit(session),
         )
     try:
-        snapshot = gateway.fetch_snapshot(
-            str(run.id), run.role, run.repository_id, run.pinned_sha
-        )
+        snapshot = gateway.fetch_snapshot(str(run.id), run.role, run.repository_id, run.pinned_sha)
     except (FileNotFoundError, PermissionError, ValueError):
         return None
-    return SnapshotToolRegistry(run.role, snapshot, int(run.budget.get("tool_calls", 40)))
+    diff_evidence = None
+    check_evidence = None
+    try:
+        if run.pull_number is not None:
+            diff_evidence = gateway.fetch_pull_request_diff(
+                str(run.id),
+                run.role,
+                run.repository_id,
+                run.pull_number,
+                run.pinned_sha,
+            )
+        if run.role is AgentRole.CI and run.check_run_id is not None:
+            check_evidence = gateway.fetch_check_evidence(
+                str(run.id),
+                run.role,
+                run.repository_id,
+                run.check_run_id,
+                run.pinned_sha,
+            )
+    except (FileNotFoundError, PermissionError, ValueError):
+        return None
+    return SnapshotToolRegistry(
+        run.role,
+        snapshot,
+        int(run.budget.get("tool_calls", 40)),
+        diff_evidence=diff_evidence,
+        check_evidence=check_evidence,
+    )
 
 
 def _pin_model_configuration(run: Run, system_prompt: str, model_id: str, evaluation: bool) -> None:

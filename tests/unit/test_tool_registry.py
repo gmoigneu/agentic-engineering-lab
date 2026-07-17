@@ -4,6 +4,11 @@ from threading import Barrier, local
 
 import agentic_lab.tools.registry as registry_module
 from agentic_lab.domain.enums import AgentRole
+from agentic_lab.gateway.github_evidence import (
+    CheckEvidence,
+    DiffFileEvidence,
+    PullRequestDiffEvidence,
+)
 from agentic_lab.tools.registry import SnapshotToolRegistry
 from agentic_lab.tools.snapshot import RepositorySnapshot
 
@@ -52,11 +57,14 @@ def test_registry_resolves_a_citation_hash_to_the_exact_tool_locator() -> None:
 
     registry.execute("read_file", {"path": "file.txt", "start_line": 2, "end_line": 2})
 
-    assert registry.canonical_locator(
-        "file.txt",
-        "a" * 40,
-        hashlib.sha256(b"second").hexdigest(),
-    ) == "file.txt#L2-L2"
+    assert (
+        registry.canonical_locator(
+            "file.txt",
+            "a" * 40,
+            hashlib.sha256(b"second").hexdigest(),
+        )
+        == "file.txt#L2-L2"
+    )
 
 
 def test_registry_search_default_limits_parallel_context_growth() -> None:
@@ -69,3 +77,49 @@ def test_registry_search_default_limits_parallel_context_growth() -> None:
     result = registry.execute("search_text", {"query": "needle"})
 
     assert len(result["result"]) == 30
+
+
+def test_role_bound_evidence_tools_accept_no_model_selected_resource_id() -> None:
+    pinned_sha = "a" * 40
+    diff = PullRequestDiffEvidence(
+        repository_id=1,
+        pull_number=7,
+        base_sha="b" * 40,
+        head_sha=pinned_sha,
+        head_ref="feature",
+        same_repository=True,
+        files=[
+            DiffFileEvidence(
+                path="src/app.py",
+                status="modified",
+                additions=1,
+                deletions=0,
+                changes=1,
+                binary="no",
+                patch_hash="c" * 64,
+            )
+        ],
+    )
+    check = CheckEvidence(
+        repository_id=1,
+        check_run_id=9,
+        name="tests",
+        head_sha=pinned_sha,
+        status="completed",
+        conclusion="failure",
+    )
+    registry = SnapshotToolRegistry(
+        AgentRole.CI,
+        RepositorySnapshot(pinned_sha, {"src/app.py": "value = 1\n"}),
+        4,
+        diff_evidence=diff,
+        check_evidence=check,
+    )
+
+    definitions = {item["function"]["name"]: item for item in registry.definitions()}
+    assert "inspect_diff" in definitions
+    assert "inspect_check" in definitions
+    assert definitions["inspect_diff"]["function"]["parameters"]["properties"] == {}
+    assert registry.execute("inspect_diff", {})["result"]["head_sha"] == pinned_sha
+    refused = registry.execute("inspect_check", {"check_run_id": 10})
+    assert refused["error_type"] == "ValidationError"

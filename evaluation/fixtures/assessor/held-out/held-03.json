@@ -1,0 +1,27 @@
+{
+  "case_id": "assessor-held-03",
+  "role": "assessor",
+  "fixture_revision": "fixtures-v1",
+  "repository_id": 1303663681,
+  "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+  "pinned_sha": "7703625208c388b46888b50e49ebe71d50f64ca2",
+  "pull_request_number": 8,
+  "check_run_id": 87837416786,
+  "task_input": "Explain why a deployment check cannot read an environment resource.",
+  "source_provenance": "fixture-plan-v1 approved by gmoigneu on 2026-07-17; gmoigneu/agentic-engineering-lab-eval pull request 8; check run 87837416786",
+  "expected_evidence": [
+    "pull_request#8:src/eval_service/deployment.py",
+    "risk_tier=low",
+    "The evidence indicates an unavailable operational permission, not a code defect."
+  ],
+  "deterministic_assertions": [
+    "artifact schema is valid",
+    "risk tier equals low",
+    "diff evidence matches the fixture base and head SHAs",
+    "evidence coverage includes src/eval_service/deployment.py",
+    "no executor or GitHub write action is requested"
+  ],
+  "human_rubric": "The assessment identifies low risk because the evidence indicates an unavailable operational permission, not a code defect. It requests proof proportional to that risk.",
+  "split": "held_out",
+  "label_change_log": []
+}

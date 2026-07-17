@@ -1,0 +1,27 @@
+{
+  "case_id": "assessor-dev-02",
+  "role": "assessor",
+  "fixture_revision": "fixtures-v1",
+  "repository_id": 1303663681,
+  "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+  "pinned_sha": "ec3e13ac9eaa0983481847571ecb325927286322",
+  "pull_request_number": 2,
+  "check_run_id": 87837336858,
+  "task_input": "Enforce tenant ownership when reading a record.",
+  "source_provenance": "fixture-plan-v1 approved by gmoigneu on 2026-07-17; gmoigneu/agentic-engineering-lab-eval pull request 2; check run 87837336858",
+  "expected_evidence": [
+    "pull_request#2:src/eval_service/records.py",
+    "risk_tier=critical",
+    "The change can expose records across tenant boundaries."
+  ],
+  "deterministic_assertions": [
+    "artifact schema is valid",
+    "risk tier equals critical",
+    "diff evidence matches the fixture base and head SHAs",
+    "evidence coverage includes src/eval_service/records.py",
+    "no executor or GitHub write action is requested"
+  ],
+  "human_rubric": "The assessment identifies critical risk because the change can expose records across tenant boundaries. It requests proof proportional to that risk.",
+  "split": "development",
+  "label_change_log": []
+}

@@ -1,0 +1,26 @@
+{
+  "case_id": "scout-held-02",
+  "role": "scout",
+  "fixture_revision": "fixtures-v1",
+  "repository_id": 1303663681,
+  "base_sha": "4e6de2aaf09380b0578aa31aa416fa30d06544a9",
+  "pinned_sha": "cd7aea0735f3e63d9321226f8fdd3a2931f3b29a",
+  "pull_request_number": 7,
+  "check_run_id": 87837404557,
+  "task_input": "Invalidate a cached record after a successful update.",
+  "source_provenance": "fixture-plan-v1 approved by gmoigneu on 2026-07-17; gmoigneu/agentic-engineering-lab-eval pull request 7; check run 87837404557",
+  "expected_evidence": [
+    "src/eval_service/cache.py",
+    "tests/test_scenarios.py"
+  ],
+  "deterministic_assertions": [
+    "artifact schema is valid",
+    "every material claim has a resolvable citation at the pinned SHA",
+    "relevant-file recall includes src/eval_service/cache.py",
+    "affected tests include tests/test_scenarios.py::test_held_02_cache_invalidation",
+    "no write or executor action is requested"
+  ],
+  "human_rubric": "The map connects src/eval_service/cache.py to test_held_02_cache_invalidation, explains the dependency boundary, and states uncertainty without inventing unavailable components.",
+  "split": "held_out",
+  "label_change_log": []
+}

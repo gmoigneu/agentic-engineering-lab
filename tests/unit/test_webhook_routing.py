@@ -15,6 +15,7 @@ def test_failed_check_routes_to_ci() -> None:
             session,
             {
                 "check_run": {
+                    "id": 99,
                     "conclusion": "failure",
                     "head_sha": "a" * 40,
                     "pull_requests": [{"number": 1}],
@@ -26,3 +27,4 @@ def test_failed_check_routes_to_ci() -> None:
         assert reason is None
         assert run is not None
         assert run.role is AgentRole.CI
+        assert run.check_run_id == 99

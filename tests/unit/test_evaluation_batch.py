@@ -20,8 +20,12 @@ def _fixture(case_id: str, split: str, role: str = "scout") -> dict[str, object]
     return {
         "case_id": case_id,
         "role": role,
+        "fixture_revision": "fixtures-v1",
         "repository_id": 1,
+        "base_sha": "b" * 40,
         "pinned_sha": "a" * 40,
+        "pull_request_number": 1,
+        "check_run_id": 2,
         "task_input": "map",
         "source_provenance": "fixture",
         "expected_evidence": ["a.py"],
@@ -31,13 +35,17 @@ def _fixture(case_id: str, split: str, role: str = "scout") -> dict[str, object]
     }
 
 
-def _configuration(model_id: str = "model@1", split: str = "development"):
+def _configuration(
+    model_id: str = "model@1",
+    split: str = "development",
+    provider: str = "StreamLake",
+):
     return BatchConfiguration(
         batch_id=f"batch-{model_id}",
         role=AgentRole.SCOUT,
         split=split,
         model_id=model_id,
-        provider_policy=ProviderPolicy(provider_allowlist=("StreamLake",)),
+        provider_policy=ProviderPolicy(provider_allowlist=(provider,)),
         prompt_hash="a" * 64,
         tool_definitions_hash="b" * 64,
         manifest_version="read-only-v1",
@@ -109,10 +117,7 @@ def test_role_dataset_requires_five_cases_in_each_isolated_split(tmp_path: Path)
 
 
 def test_held_out_scorecard_requires_review_for_every_case(tmp_path: Path) -> None:
-    results = [
-        CaseResult(f"case-{index}", "held_out", True, "succeeded", {})
-        for index in range(5)
-    ]
+    results = [CaseResult(f"case-{index}", "held_out", True, "succeeded", {}) for index in range(5)]
     assert not held_out_complete(results, set())
     assert held_out_complete(results, {item.case_id for item in results})
 
@@ -121,7 +126,9 @@ def test_held_out_scorecard_requires_review_for_every_case(tmp_path: Path) -> No
 
 
 def test_model_comparison_requires_exactly_three_pinned_candidates() -> None:
-    candidates = [_configuration(f"model@{index}") for index in range(1, 4)]
+    candidates = [
+        _configuration(f"model@{index}", provider=f"provider-{index}") for index in range(1, 4)
+    ]
 
     validate_comparison(candidates)
 
@@ -129,3 +136,8 @@ def test_model_comparison_requires_exactly_three_pinned_candidates() -> None:
         validate_comparison(candidates[:2])
     with pytest.raises(ValueError, match="latest aliases"):
         validate_comparison([*candidates[:2], _configuration("model-latest")])
+
+    mismatched = candidates.copy()
+    mismatched[2] = mismatched[2].model_copy(update={"fixture_revision": "different-fixtures"})
+    with pytest.raises(ValueError, match="share task and policy"):
+        validate_comparison(mismatched)

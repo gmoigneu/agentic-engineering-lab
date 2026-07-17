@@ -15,7 +15,9 @@ class Writer:
     def head_sha(self, repository_id: int, branch: str) -> str:
         return self.head
 
-    def apply_unified_diff(self, repository_id: int, branch: str, base_sha: str, diff: str) -> str:
+    def apply_unified_diff(
+        self, repository_id: int, branch: str, base_sha: str, diff: str, run_id: str
+    ) -> str:
         self.applied = True
         return "b" * 40
 

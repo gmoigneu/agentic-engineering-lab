@@ -2,7 +2,7 @@
 
 ## Dataset structure
 
-Each agent has five development cases and five held-out cases. Store fixtures in version control with a case ID, target repository ID, pinned SHA, task input, source provenance, expected evidence, deterministic assertions, human rubric, split, and label-change log. Held-out scoring keys must not be mounted into an agent runtime or included in a model prompt.
+Each agent has five development cases and five held-out cases. Store fixtures in version control with a case ID, fixture revision, target repository ID, base and head SHAs, pull-request number, check-run ID, task input, source provenance, expected evidence, deterministic assertions, human rubric, split, and label-change log. Held-out scoring keys must not be mounted into an agent runtime or included in a model prompt. Scout input receives neither pull-request nor check-run identity. Assessor input receives the pull-request number. CI input receives both role-required locators.
 
 Development cases support implementation iteration. Held-out cases support final reporting only. A run records split, fixture revision, evaluator version, prompt hash, manifest version, policy version, model ID, provider, and actual cost.
 
@@ -39,9 +39,11 @@ Compute metrics per role, model, provider, prompt version, manifest version, dat
 
 ## Model comparison protocol
 
-Use the scout first. Compare exactly three pinned candidate classes under the same prompt, tools, manifests, budgets, tasks, evaluator versions, and provider constraints. Never use latest aliases or automatic fallback. Report actual provider, input and output usage, billed cost, latency, retries, completion rate, unsupported claims, and human review minutes.
+Use the scout first. Compare exactly three pinned candidate classes under the same prompt, tools, manifests, budgets, tasks, evaluator versions, data-collection policy, and fallback policy. Pin exactly one provider for each candidate. Provider identity may differ when a model is unavailable from the other candidates' providers. Treat that difference as a named limitation and attribute every result to the actual provider. Never use latest aliases or automatic fallback. Report actual provider, input and output usage, billed cost, latency, retries, completion rate, unsupported claims, and human review minutes.
 
 Do not choose a global winner. A lower-cost candidate wins a role only when it lowers cost per successful outcome without increasing hidden review work or safety failures. State sample size and single-repository limitations in every public result.
+
+The approved $10 cycle reserves $6 for the thirty-run Scout comparison, $2 for ten assessor runs with the selected Scout candidate, and $2 for ten CI runs with that candidate. Every run has a $0.20 hard ceiling. Stop a tranche before submission when its recorded cumulative cost plus the next run ceiling would exceed its allocation.
 
 ## Reporting
 

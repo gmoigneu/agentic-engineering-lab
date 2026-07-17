@@ -181,7 +181,8 @@ def test_recipe_contract_rejects_nested_command_keys() -> None:
                 "validate": {
                     "kind": "validate",
                     "image": "image@sha256:" + "a" * 64,
-                    "working_directory": "/workspace",
+                    "adapter": "noop_v1",
+                    "working_directory": "/work/workspace",
                     "arguments_schema": "none_v1",
                     "timeout_seconds": 60,
                     "network": "none",
@@ -206,7 +207,7 @@ def test_durable_ci_push_uses_opt_in_and_exact_sha_recheck() -> None:
             return "a" * 40
 
         def apply_unified_diff(
-            self, repository_id: int, branch: str, base_sha: str, diff: str
+            self, repository_id: int, branch: str, base_sha: str, diff: str, run_id: str
         ) -> str:
             self.writes += 1
             return "c" * 40

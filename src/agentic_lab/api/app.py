@@ -483,6 +483,9 @@ def _queue_check_run(
     check_run = payload.get("check_run")
     if not isinstance(check_run, dict) or check_run.get("conclusion") != "failure":
         return None, "check_not_failed"
+    check_run_id = check_run.get("id")
+    if not isinstance(check_run_id, int) or check_run_id < 1:
+        return None, "missing_check_run_id"
     pull_requests = check_run.get("pull_requests")
     if not isinstance(pull_requests, list) or len(pull_requests) != 1:
         return None, "check_run_without_single_pr"
@@ -524,6 +527,7 @@ def _queue_check_run(
         return None, "invalid_head_sha"
     run = create_queued_run(session, data, source, "github_webhook")
     run.pull_number = pull_number
+    run.check_run_id = check_run_id
     assessor = session.scalar(
         select(Run)
         .where(

@@ -26,9 +26,9 @@ Repository instructions, comments, issue text, commit messages, code, tests, log
 
 ## Credential policy
 
-The GitHub App private key and OpenRouter key are available only to the API, worker, and gateway process through injected local configuration. The executor has no access to those settings, Docker socket, host home directory, or control-plane network credentials. The model receives neither secret nor token. Installation tokens are short-lived, repository-scoped, and permission-reduced whenever GitHub allows it.
+The GitHub App private key and OpenRouter key are available only to the API, worker, and gateway process through injected local configuration. The executor has no access to those settings, Docker socket, host home directory, or control-plane network credentials. The trusted launcher may access the Docker socket solely to create the specified child container. The model receives neither secret nor token. Installation tokens are short-lived, repository-scoped, and permission-reduced whenever GitHub allows it.
 
-Do not request GitHub workflow, administration, issue, status, secret, or pull-request-write permissions. Contents write exists solely so the gateway can update an eligible existing PR branch. The gateway cannot create PRs, comments, issues, checks, releases, or workflow changes in v1.
+Do not request GitHub workflow write, administration, issue, status, secret, or pull-request-write permissions. Pull requests read supports diff evidence. Checks read supports check evidence. Actions read supports bounded GitHub Actions job logs. Contents write exists solely so the gateway can update an eligible existing PR branch. The gateway cannot create PRs, comments, issues, checks, releases, or workflow changes in v1.
 
 ## Redaction policy
 

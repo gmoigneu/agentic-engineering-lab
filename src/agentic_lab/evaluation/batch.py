@@ -18,12 +18,20 @@ class ProviderPolicy(BaseModel):
     allow_fallbacks: Literal[False] = False
 
 
+class BatchBudget(BaseModel):
+    max_turns: int = Field(default=12, ge=1, le=100)
+    max_tool_calls: int = Field(default=40, ge=1, le=1_000)
+    max_usd: float = Field(default=3.0, gt=0, le=10)
+    max_wall_seconds: int = Field(default=1_200, ge=1, le=86_400)
+
+
 class BatchConfiguration(BaseModel):
     batch_id: str = Field(min_length=1)
     role: AgentRole
     split: Literal["development", "held_out"]
     model_id: str = Field(min_length=1)
     provider_policy: ProviderPolicy
+    budget: BatchBudget = Field(default_factory=BatchBudget)
     prompt_hash: str = Field(min_length=64, max_length=64)
     tool_definitions_hash: str = Field(min_length=64, max_length=64)
     manifest_version: str = Field(min_length=1)
@@ -173,9 +181,14 @@ def validate_comparison(configurations: list[BatchConfiguration]) -> None:
         raise ValueError("a model comparison requires exactly three candidates")
     if len({configuration.model_id for configuration in configurations}) != 3:
         raise ValueError("comparison candidates must use distinct pinned model IDs")
-    baseline = configurations[0].model_dump(exclude={"batch_id", "model_id"})
     if any(
-        configuration.model_dump(exclude={"batch_id", "model_id"}) != baseline
+        len(configuration.provider_policy.provider_allowlist) != 1
+        for configuration in configurations
+    ):
+        raise ValueError("each comparison candidate requires exactly one pinned provider")
+    baseline = configurations[0].model_dump(exclude={"batch_id", "model_id", "provider_policy"})
+    if any(
+        configuration.model_dump(exclude={"batch_id", "model_id", "provider_policy"}) != baseline
         for configuration in configurations[1:]
     ):
         raise ValueError("comparison candidates must share task and policy configuration")

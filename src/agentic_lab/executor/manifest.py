@@ -4,12 +4,20 @@ import re
 from dataclasses import dataclass
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
+
+ADAPTER_ARGUMENT_SCHEMAS = {
+    "noop_v1": "none_v1",
+    "pytest_v1": "test_selector_v1",
+    "pytest_after_patch_v1": "patch_test_selector_v1",
+    "ruff_check_v1": "none_v1",
+}
 
 
 class Recipe(BaseModel):
     kind: Literal["setup", "reproduce", "validate"]
     image: str
+    adapter: Literal["noop_v1", "pytest_v1", "pytest_after_patch_v1", "ruff_check_v1"]
     working_directory: str
     arguments_schema: str
     timeout_seconds: int = Field(gt=0, le=3600)
@@ -27,15 +35,19 @@ class Recipe(BaseModel):
     @field_validator("working_directory")
     @classmethod
     def confined_working_directory(cls, value: str) -> str:
-        if value not in {"/workspace", "/work/source"}:
-            raise ValueError("recipe working directory must be inside the executor workspace")
+        if value != "/work/workspace":
+            raise ValueError("v1 recipes must run inside the ephemeral executor workspace")
         return value
 
     @field_validator("expected_output_artifacts")
     @classmethod
     def safe_output_artifacts(cls, value: list[str]) -> list[str]:
         if any(
-            not item or item.startswith("/") or ".." in item.split("/") or "\x00" in item
+            not item
+            or item == "result.json"
+            or item.startswith("/")
+            or ".." in item.split("/")
+            or "\x00" in item
             for item in value
         ):
             raise ValueError("output artifacts must be relative to the output directory")
@@ -47,6 +59,13 @@ class Recipe(BaseModel):
         if value != "none":
             raise ValueError("v1 recipes must disable network access")
         return value
+
+    @model_validator(mode="after")
+    def adapter_matches_arguments(self) -> Recipe:
+        expected = ADAPTER_ARGUMENT_SCHEMAS[self.adapter]
+        if self.arguments_schema != expected:
+            raise ValueError(f"{self.adapter} requires the {expected} arguments schema")
+        return self
 
 
 class ManifestBudgets(BaseModel):
@@ -127,5 +146,21 @@ def _validate_arguments(schema: str, arguments: dict[str, Any]) -> None:
             or any(character in selector for character in ";|&`$\n")
         ):
             raise ValueError("test selector contains unsafe characters")
+        return
+    if schema == "patch_test_selector_v1":
+        if set(arguments) != {"selector", "unified_diff"}:
+            raise ValueError("patch_test_selector_v1 requires selector and unified_diff")
+        selector = arguments["selector"]
+        diff = arguments["unified_diff"]
+        if not isinstance(selector, str) or not isinstance(diff, str):
+            raise ValueError("patch_test_selector_v1 arguments must be strings")
+        if (
+            not selector
+            or len(selector) > 500
+            or any(character in selector for character in ";|&`$\n")
+        ):
+            raise ValueError("test selector contains unsafe characters")
+        if not diff or len(diff.encode()) > 100_000:
+            raise ValueError("unified diff is empty or oversized")
         return
     raise ValueError("unknown recipe arguments schema")

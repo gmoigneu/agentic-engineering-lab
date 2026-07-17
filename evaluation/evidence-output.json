@@ -1,0 +1,127 @@
+{
+  "schema_version": "evaluation-evidence-v1",
+  "repository": "gmoigneu/agentic-engineering-lab-eval",
+  "repository_id": 1303663681,
+  "checks": [
+    {
+      "case_id": "dev-01",
+      "check_run_id": 87837330047,
+      "name": "test",
+      "head_sha": "5f3c9944f4e31ed7c19f23a32d6ca54a37ee19cf",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-07-17T08:11:39Z",
+      "completed_at": "2026-07-17T08:11:47Z",
+      "details_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/actions/runs/29565580196/job/87837330047",
+      "app_slug": "github-actions"
+    },
+    {
+      "case_id": "dev-02",
+      "check_run_id": 87837336858,
+      "name": "test",
+      "head_sha": "ec3e13ac9eaa0983481847571ecb325927286322",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-07-17T08:11:41Z",
+      "completed_at": "2026-07-17T08:11:48Z",
+      "details_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/actions/runs/29565582288/job/87837336858",
+      "app_slug": "github-actions"
+    },
+    {
+      "case_id": "dev-03",
+      "check_run_id": 87837350184,
+      "name": "test",
+      "head_sha": "c02372cc36396cdacf3b2c93bd274cdf3f69e141",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-07-17T08:11:45Z",
+      "completed_at": "2026-07-17T08:11:56Z",
+      "details_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/actions/runs/29565586488/job/87837350184",
+      "app_slug": "github-actions"
+    },
+    {
+      "case_id": "dev-04",
+      "check_run_id": 87837364151,
+      "name": "test",
+      "head_sha": "2c3323e12866c59424e65896fb3a4d0eca9c3c8d",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-07-17T08:11:50Z",
+      "completed_at": "2026-07-17T08:12:00Z",
+      "details_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/actions/runs/29565590672/job/87837364151",
+      "app_slug": "github-actions"
+    },
+    {
+      "case_id": "dev-05",
+      "check_run_id": 87837377965,
+      "name": "test",
+      "head_sha": "5ea2653c1cec3335e0705efc9a43b1b066c57f57",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-07-17T08:11:55Z",
+      "completed_at": "2026-07-17T08:12:05Z",
+      "details_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/actions/runs/29565594888/job/87837377965",
+      "app_slug": "github-actions"
+    },
+    {
+      "case_id": "held-01",
+      "check_run_id": 87837389315,
+      "name": "test",
+      "head_sha": "e588f2ee222e92dd726dab78d493058cec5244f0",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-07-17T08:11:58Z",
+      "completed_at": "2026-07-17T08:12:15Z",
+      "details_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/actions/runs/29565598211/job/87837389315",
+      "app_slug": "github-actions"
+    },
+    {
+      "case_id": "held-02",
+      "check_run_id": 87837404557,
+      "name": "test",
+      "head_sha": "cd7aea0735f3e63d9321226f8fdd3a2931f3b29a",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-07-17T08:12:04Z",
+      "completed_at": "2026-07-17T08:12:15Z",
+      "details_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/actions/runs/29565602734/job/87837404557",
+      "app_slug": "github-actions"
+    },
+    {
+      "case_id": "held-03",
+      "check_run_id": 87837416786,
+      "name": "test",
+      "head_sha": "7703625208c388b46888b50e49ebe71d50f64ca2",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-07-17T08:12:08Z",
+      "completed_at": "2026-07-17T08:12:15Z",
+      "details_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/actions/runs/29565606627/job/87837416786",
+      "app_slug": "github-actions"
+    },
+    {
+      "case_id": "held-04",
+      "check_run_id": 87837432597,
+      "name": "test",
+      "head_sha": "04113c3c9bbfa07499a9e60a93948bb477ea2378",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-07-17T08:12:13Z",
+      "completed_at": "2026-07-17T08:12:20Z",
+      "details_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/actions/runs/29565611326/job/87837432597",
+      "app_slug": "github-actions"
+    },
+    {
+      "case_id": "held-05",
+      "check_run_id": 87837446557,
+      "name": "test",
+      "head_sha": "23a1e8b1ae48ec034f9922de55ef0ee13863fd62",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-07-17T08:12:17Z",
+      "completed_at": "2026-07-17T08:12:26Z",
+      "details_url": "https://github.com/gmoigneu/agentic-engineering-lab-eval/actions/runs/29565615754/job/87837446557",
+      "app_slug": "github-actions"
+    }
+  ]
+}

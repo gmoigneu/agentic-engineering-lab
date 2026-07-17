@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic import Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -32,6 +33,8 @@ class Settings(BaseSettings):
     langfuse_secret_key: SecretStr | None = None
     langfuse_host: str | None = None
     executor_image_digest: str | None = None
+    executor_transport_root: Path = Path("/tmp/agentic-lab-executor")
+    executor_host_transport_root: Path = Path("/tmp/agentic-lab-executor")
     require_target_manifest: bool = False
 
     @field_validator(

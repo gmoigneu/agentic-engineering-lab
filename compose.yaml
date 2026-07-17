@@ -66,6 +66,14 @@ services:
       AGENTIC_LAB_OPERATOR_TOKEN: ${AGENTIC_LAB_OPERATOR_TOKEN:?set in .env}
       AGENTIC_LAB_GITHUB_WEBHOOK_SECRET: ${AGENTIC_LAB_GITHUB_WEBHOOK_SECRET:?set in .env}
       AGENTIC_LAB_ALLOWED_REPOSITORY_IDS: ${AGENTIC_LAB_ALLOWED_REPOSITORY_IDS:?set in .env}
+      AGENTIC_LAB_EXECUTOR_IMAGE_DIGEST: ${AGENTIC_LAB_EXECUTOR_IMAGE_DIGEST:-}
+      AGENTIC_LAB_EXECUTOR_TRANSPORT_ROOT: /tmp/agentic-lab-executor
+      AGENTIC_LAB_EXECUTOR_HOST_TRANSPORT_ROOT: /tmp/agentic-lab-executor
+    volumes:
+      - /tmp/agentic-lab-executor:/tmp/agentic-lab-executor
+      - /var/run/docker.sock:/var/run/docker.sock
+    group_add:
+      - "0"
     depends_on:
       postgres:
         condition: service_healthy
