@@ -27,5 +27,5 @@ def adapter_argv(request: RecipeExecutionRequest) -> tuple[str, ...]:
     if request.adapter == "ruff_check_v1":
         if request.arguments:
             raise ValueError("ruff_check_v1 does not accept arguments")
-        return (sys.executable, "-m", "ruff", "check", ".")
+        return (sys.executable, "-m", "ruff", "check", "--no-cache", ".")
     raise ValueError("unknown recipe adapter")

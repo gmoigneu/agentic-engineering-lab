@@ -30,6 +30,7 @@ def execute_request(
     workspace_directory.chmod(0o700)
     output_directory.mkdir(parents=True, exist_ok=True)
     shutil.copytree(source_directory, workspace_directory, dirs_exist_ok=True, symlinks=False)
+    workspace_directory.chmod(0o700)
     for path in workspace_directory.rglob("*"):
         path.chmod(0o700 if path.is_dir() else 0o600)
     if request.adapter == "pytest_after_patch_v1":

@@ -520,8 +520,8 @@
     "semantic_hash": ""
   },
   "docs/implementation-plan.md": {
-    "mtime": 1784276408.0301945,
-    "ast_hash": "508853debb2b28150089f3ec0b24e8de",
+    "mtime": 1784278533.8465915,
+    "ast_hash": "97472fcc371bec8e78fa4daf44da8ec3",
     "semantic_hash": ""
   },
   "docs/repository-manifest.md": {
@@ -550,13 +550,13 @@
     "semantic_hash": ""
   },
   "src/agentic_lab/executor/adapter.py": {
-    "mtime": 1784274914.1254108,
-    "ast_hash": "f69fa143e284b977c63a4d166efe23d0",
+    "mtime": 1784278485.7544286,
+    "ast_hash": "8532422a674e615d19872c406b1015b3",
     "semantic_hash": ""
   },
   "src/agentic_lab/executor/adapters.py": {
-    "mtime": 1784274914.1245744,
-    "ast_hash": "53a34eac23cd0a0b1b35d091eb7b7ce7",
+    "mtime": 1784278485.7548125,
+    "ast_hash": "9fef67a9122435d1bdc8c8b2a0b2d4e1",
     "semantic_hash": ""
   },
   "src/agentic_lab/executor/noop.py": {
@@ -595,8 +595,8 @@
     "semantic_hash": ""
   },
   "tests/unit/test_executor_transport.py": {
-    "mtime": 1784273771.0731027,
-    "ast_hash": "b2a26736b75fa95de8d5ba9e40348634",
+    "mtime": 1784278498.1986861,
+    "ast_hash": "8dd37a78a40d6240389769485d166e62",
     "semantic_hash": ""
   },
   "tests/unit/test_github_writer.py": {
@@ -812,6 +812,21 @@
   "tests/unit/test_evaluation_materialize.py": {
     "mtime": 1784276298.4291167,
     "ast_hash": "273ee596a0b7ce4f0926344a2c72c453",
+    "semantic_hash": ""
+  },
+  "evaluation/manifests/eval-v1.json": {
+    "mtime": 1784278183.8221257,
+    "ast_hash": "45c0fc098c1a815e64f874fc0270fd90",
+    "semantic_hash": ""
+  },
+  "scripts/probe_evaluation_executor.py": {
+    "mtime": 1784278425.3871608,
+    "ast_hash": "ad5ba942c812b328298e44742786ddc4",
+    "semantic_hash": ""
+  },
+  "tests/unit/test_evaluation_executor_probe.py": {
+    "mtime": 1784278303.8013034,
+    "ast_hash": "9e574dd451e71155a4c6d37f6ddff856",
     "semantic_hash": ""
   }
 }

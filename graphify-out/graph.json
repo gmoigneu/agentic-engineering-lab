@@ -348,6 +348,94 @@
       "norm_label": "main()"
     },
     {
+      "label": "probe_evaluation_executor.py",
+      "file_type": "code",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_probe_evaluation_executor",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "probe_evaluation_executor.py"
+    },
+    {
+      "label": "_run()",
+      "file_type": "code",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "scripts_probe_evaluation_executor_run",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "_run()"
+    },
+    {
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "scripts_probe_evaluation_executor_py_path",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "path"
+    },
+    {
+      "label": "_snapshot_at()",
+      "file_type": "code",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "scripts_probe_evaluation_executor_snapshot_at",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "_snapshot_at()"
+    },
+    {
+      "label": "_execute()",
+      "file_type": "code",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "scripts_probe_evaluation_executor_execute",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "_execute()"
+    },
+    {
+      "label": "probe()",
+      "file_type": "code",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L113",
+      "_origin": "ast",
+      "id": "scripts_probe_evaluation_executor_probe",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "probe()"
+    },
+    {
+      "label": "SnapshotLoader",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "snapshotloader",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "snapshotloader"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L139",
+      "_origin": "ast",
+      "id": "scripts_probe_evaluation_executor_main",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "main()"
+    },
+    {
       "label": "render_evaluation_manifest.py",
       "file_type": "code",
       "source_file": "scripts/render_evaluation_manifest.py",
@@ -618,8 +706,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_agents_scout",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "scout.py"
     },
     {
@@ -629,8 +717,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_agentic_lab_agents_scout_run_scout",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "run_scout()"
     },
     {
@@ -640,8 +728,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_agents_scout_py_uuid",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "uuid"
     },
     {
@@ -805,8 +893,8 @@
       "source_location": "L546",
       "_origin": "ast",
       "id": "src_agentic_lab_api_app_summary",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "_summary()"
     },
     {
@@ -816,8 +904,8 @@
       "source_location": "L561",
       "_origin": "ast",
       "id": "src_agentic_lab_api_app_detail",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "_detail()"
     },
     {
@@ -882,8 +970,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_config_settings",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "settings.py"
     },
     {
@@ -893,8 +981,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_agentic_lab_config_settings_settings",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "settings"
     },
     {
@@ -904,8 +992,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "basesettings",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "basesettings"
     },
     {
@@ -915,8 +1003,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "src_agentic_lab_config_settings_settings_empty_secret_is_none",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": ".empty_secret_is_none()"
     },
     {
@@ -926,8 +1014,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "src_agentic_lab_config_settings_settings_empty_app_id_is_none",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": ".empty_app_id_is_none()"
     },
     {
@@ -937,8 +1025,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_agentic_lab_config_settings_settings_parse_repository_ids",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": ".parse_repository_ids()"
     },
     {
@@ -948,8 +1036,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "src_agentic_lab_config_settings_settings_parse_model_ids",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": ".parse_model_ids()"
     },
     {
@@ -959,8 +1047,8 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "src_agentic_lab_config_settings_settings_parse_provider_ids",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": ".parse_provider_ids()"
     },
     {
@@ -970,8 +1058,8 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "src_agentic_lab_config_settings_settings_readiness_errors",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": ".readiness_errors()"
     },
     {
@@ -981,8 +1069,8 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "src_agentic_lab_config_settings_get_settings",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "get_settings()"
     },
     {
@@ -992,8 +1080,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_agentic_lab_config_settings_rationale_12",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "process configuration. secrets are intentionally never serialized or logged."
     },
     {
@@ -1014,8 +1102,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_db_base",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "base.py"
     },
     {
@@ -1025,8 +1113,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_agentic_lab_db_base_base",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "base"
     },
     {
@@ -1036,8 +1124,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "declarativebase",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "declarativebase"
     },
     {
@@ -1047,8 +1135,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "models.py"
     },
     {
@@ -1058,8 +1146,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_webhookevent",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "webhookevent"
     },
     {
@@ -1102,8 +1190,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_artifact",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "artifact"
     },
     {
@@ -1113,8 +1201,8 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_citationrecord",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "citationrecord"
     },
     {
@@ -1124,8 +1212,8 @@
       "source_location": "L136",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_policydecision",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "policydecision"
     },
     {
@@ -1135,8 +1223,8 @@
       "source_location": "L151",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_toolcall",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "toolcall"
     },
     {
@@ -1146,8 +1234,8 @@
       "source_location": "L166",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_modelcall",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "modelcall"
     },
     {
@@ -1157,8 +1245,8 @@
       "source_location": "L182",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_humanreview",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "humanreview"
     },
     {
@@ -1168,8 +1256,8 @@
       "source_location": "L196",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_targetmanifest",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "targetmanifest"
     },
     {
@@ -1179,8 +1267,8 @@
       "source_location": "L213",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_pullrequestoptin",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "pullrequestoptin"
     },
     {
@@ -1190,8 +1278,8 @@
       "source_location": "L224",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_evaluation",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "evaluation"
     },
     {
@@ -1201,8 +1289,8 @@
       "source_location": "L238",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_runcausallink",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "runcausallink"
     },
     {
@@ -1212,8 +1300,8 @@
       "source_location": "L255",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_redactionevent",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "redactionevent"
     },
     {
@@ -1223,8 +1311,8 @@
       "source_location": "L269",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_webhookrunlink",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "webhookrunlink"
     },
     {
@@ -1234,8 +1322,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_db_session",
-      "community": 1,
-      "community_name": "Run",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "session.py"
     },
     {
@@ -1245,8 +1333,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_agentic_lab_db_session_build_session_factory",
-      "community": 1,
-      "community_name": "Run",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "build_session_factory()"
     },
     {
@@ -1256,8 +1344,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_db_session_py_sessionmaker",
-      "community": 1,
-      "community_name": "Run",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "sessionmaker"
     },
     {
@@ -1267,8 +1355,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_db_session_py_session",
-      "community": 1,
-      "community_name": "Run",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "session"
     },
     {
@@ -1289,8 +1377,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_enums",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "enums.py"
     },
     {
@@ -1300,8 +1388,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_enums_agentrole",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "agentrole"
     },
     {
@@ -1311,8 +1399,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "strenum",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "strenum"
     },
     {
@@ -1322,8 +1410,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_enums_runsource",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "runsource"
     },
     {
@@ -1333,8 +1421,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_enums_runstatus",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "runstatus"
     },
     {
@@ -1344,8 +1432,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_enums_policyoutcome",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "policyoutcome"
     },
     {
@@ -1355,8 +1443,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "schemas.py"
     },
     {
@@ -1377,8 +1465,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_py_basemodel",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "basemodel"
     },
     {
@@ -1399,8 +1487,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_runsummary",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "runsummary"
     },
     {
@@ -1410,8 +1498,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_runtransitionsummary",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "runtransitionsummary"
     },
     {
@@ -1421,8 +1509,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_rundetail",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "rundetail"
     },
     {
@@ -1432,8 +1520,8 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_runcreateresponse",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "runcreateresponse"
     },
     {
@@ -1443,8 +1531,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_webhookresponse",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "webhookresponse"
     },
     {
@@ -1454,8 +1542,8 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_githubreplay",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "githubreplay"
     },
     {
@@ -1465,8 +1553,8 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_citation",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "citation"
     },
     {
@@ -1476,8 +1564,8 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_citation_immutable_citation_sha",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".immutable_citation_sha()"
     },
     {
@@ -1498,8 +1586,8 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_claim",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "claim"
     },
     {
@@ -1509,8 +1597,8 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_artifactbase",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "artifactbase"
     },
     {
@@ -1520,8 +1608,8 @@
       "source_location": "L118",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_artifactbase_immutable_artifact_sha",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".immutable_artifact_sha()"
     },
     {
@@ -1542,8 +1630,8 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_evidencelocator",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "evidencelocator"
     },
     {
@@ -1553,8 +1641,8 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_scoutplanstep",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "scoutplanstep"
     },
     {
@@ -1564,8 +1652,8 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_scoutartifact",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "scoutartifact"
     },
     {
@@ -1575,8 +1663,8 @@
       "source_location": "L158",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_terminalerror",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "terminalerror"
     },
     {
@@ -1586,8 +1674,8 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_riskartifact",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "riskartifact"
     },
     {
@@ -1597,8 +1685,8 @@
       "source_location": "L173",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_cidiagnosisartifact",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "cidiagnosisartifact"
     },
     {
@@ -1608,8 +1696,8 @@
       "source_location": "L183",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_refusalartifact",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "refusalartifact"
     },
     {
@@ -1619,8 +1707,8 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_recipeevidence",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "recipeevidence"
     },
     {
@@ -1630,8 +1718,8 @@
       "source_location": "L198",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_patchartifact",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "patchartifact"
     },
     {
@@ -1641,8 +1729,8 @@
       "source_location": "L209",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_patchartifact_immutable_base_sha",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".immutable_base_sha()"
     },
     {
@@ -1663,8 +1751,8 @@
       "source_location": "L225",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_humanreviewcreate",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "humanreviewcreate"
     },
     {
@@ -1674,8 +1762,8 @@
       "source_location": "L234",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_immutable_sha",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "_immutable_sha()"
     },
     {
@@ -1685,8 +1773,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_rationale_72",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "a stored signed fixture replayed through the same verification path."
     },
     {
@@ -2037,8 +2125,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_evaluation_evaluators",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "evaluators.py"
     },
     {
@@ -2048,8 +2136,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_agentic_lab_evaluation_evaluators_evaluationresult",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "evaluationresult"
     },
     {
@@ -2059,8 +2147,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_agentic_lab_evaluation_evaluators_citation_coverage",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "citation_coverage()"
     },
     {
@@ -2070,8 +2158,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_agentic_lab_evaluation_evaluators_risk_evidence_coverage",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "risk_evidence_coverage()"
     },
     {
@@ -2081,8 +2169,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_agentic_lab_evaluation_evaluators_citation_resolution",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "citation_resolution()"
     },
     {
@@ -2092,8 +2180,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_agentic_lab_evaluation_evaluators_scout_relevant_file_recall",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "scout_relevant_file_recall()"
     },
     {
@@ -2103,8 +2191,8 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "src_agentic_lab_evaluation_evaluators_tool_permission_compliance",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "tool_permission_compliance()"
     },
     {
@@ -2202,8 +2290,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_evaluation_service",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 6,
+      "community_name": "EvaluationCase",
       "norm_label": "service.py"
     },
     {
@@ -2213,8 +2301,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_agentic_lab_evaluation_service_store_evaluation",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 6,
+      "community_name": "EvaluationCase",
       "norm_label": "store_evaluation()"
     },
     {
@@ -2224,8 +2312,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_evaluation_service_py_session",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 6,
+      "community_name": "EvaluationCase",
       "norm_label": "session"
     },
     {
@@ -2287,7 +2375,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L105",
+      "source_location": "L106",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_adapter_main",
       "community": 5,
@@ -2298,7 +2386,7 @@
       "label": "_safe_artifact_path()",
       "file_type": "code",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L127",
+      "source_location": "L128",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_adapter_safe_artifact_path",
       "community": 5,
@@ -2309,7 +2397,7 @@
       "label": "_apply_workspace_diff()",
       "file_type": "code",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L138",
+      "source_location": "L139",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_adapter_apply_workspace_diff",
       "community": 5,
@@ -2477,7 +2565,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": "manifest.py"
     },
@@ -2499,7 +2587,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_py_basemodel",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": "basemodel"
     },
@@ -2565,7 +2653,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_manifestbudgets",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": "manifestbudgets"
     },
@@ -2587,7 +2675,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_executionmanifest_canonical_repository",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".canonical_repository()"
     },
@@ -2598,7 +2686,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_executionmanifest_safe_globs",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".safe_globs()"
     },
@@ -2620,7 +2708,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_validate_recipe_request",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": "validate_recipe_request()"
     },
@@ -2631,7 +2719,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_contains_command_key",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": "_contains_command_key()"
     },
@@ -2642,7 +2730,7 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_validate_arguments",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": "_validate_arguments()"
     },
@@ -2653,7 +2741,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_py_any",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": "any"
     },
@@ -2719,7 +2807,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_service_recipelaunchpayload_bounded_snapshot",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".bounded_snapshot()"
     },
@@ -2785,7 +2873,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_transport_recipeexecutionrequest_immutable_sha",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".immutable_sha()"
     },
@@ -2796,7 +2884,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_transport_recipeexecutionrequest_safe_artifact_paths",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".safe_artifact_paths()"
     },
@@ -3225,8 +3313,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_githubappbranchwriter_init",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".__init__()"
     },
     {
@@ -3236,8 +3324,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_py_client",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "client"
     },
     {
@@ -3357,8 +3445,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_app",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "github_app.py"
     },
     {
@@ -3368,8 +3456,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_app_githubappinstallationauth",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "githubappinstallationauth"
     },
     {
@@ -3379,8 +3467,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_app_githubappinstallationauth_init",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".__init__()"
     },
     {
@@ -3390,8 +3478,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_app_py_client",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "client"
     },
     {
@@ -3401,8 +3489,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_app_githubappinstallationauth_installation_token",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".installation_token()"
     },
     {
@@ -3412,8 +3500,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_app_githubappinstallationauth_headers",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".headers()"
     },
     {
@@ -3423,8 +3511,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "github_evidence.py"
     },
     {
@@ -3434,8 +3522,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_untrustedevidencetext",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "untrustedevidencetext"
     },
     {
@@ -3445,8 +3533,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_py_basemodel",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "basemodel"
     },
     {
@@ -3467,8 +3555,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_diffhunkevidence",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "diffhunkevidence"
     },
     {
@@ -3478,8 +3566,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_difffileevidence",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "difffileevidence"
     },
     {
@@ -3489,8 +3577,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_difffileevidence_safe_path",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".safe_path()"
     },
     {
@@ -3511,8 +3599,8 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_pullrequestdiffevidence_immutable_sha",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".immutable_sha()"
     },
     {
@@ -3522,8 +3610,8 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_checkannotationevidence",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "checkannotationevidence"
     },
     {
@@ -3533,8 +3621,8 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_checkannotationevidence_safe_path",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".safe_path()"
     },
     {
@@ -3555,8 +3643,8 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_checkevidence_immutable_sha",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".immutable_sha()"
     },
     {
@@ -3566,8 +3654,8 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_bounded_untrusted_text",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "bounded_untrusted_text()"
     },
     {
@@ -3577,8 +3665,8 @@
       "source_location": "L150",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_parse_diff_hunks",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "parse_diff_hunks()"
     },
     {
@@ -3665,8 +3753,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "githubapparchivereader"
     },
     {
@@ -3676,8 +3764,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader_init",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".__init__()"
     },
     {
@@ -3687,8 +3775,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_py_client",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "client"
     },
     {
@@ -3698,8 +3786,8 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader_fetch_snapshot",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".fetch_snapshot()"
     },
     {
@@ -3709,8 +3797,8 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader_fetch_pull_request_diff",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".fetch_pull_request_diff()"
     },
     {
@@ -3720,8 +3808,8 @@
       "source_location": "L181",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader_fetch_check_evidence",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": ".fetch_check_evidence()"
     },
     {
@@ -3731,8 +3819,8 @@
       "source_location": "L272",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader_github_actions_logs",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "._github_actions_logs()"
     },
     {
@@ -3742,8 +3830,8 @@
       "source_location": "L313",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader_installation_token",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "._installation_token()"
     },
     {
@@ -3753,8 +3841,8 @@
       "source_location": "L316",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader_repository_name",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "._repository_name()"
     },
     {
@@ -3764,8 +3852,8 @@
       "source_location": "L326",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader_paginated",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "._paginated()"
     },
     {
@@ -3775,8 +3863,8 @@
       "source_location": "L359",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader_validate_sha",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "._validate_sha()"
     },
     {
@@ -3786,8 +3874,8 @@
       "source_location": "L365",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader_read_archive",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "._read_archive()"
     },
     {
@@ -3797,8 +3885,8 @@
       "source_location": "L394",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_githubapparchivereader_headers",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "._headers()"
     },
     {
@@ -3819,8 +3907,8 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_read_rationale_67",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "trusted github app adapter that returns only a credential-free pinned snapshot."
     },
     {
@@ -3907,8 +3995,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_scriptedmodelgateway",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "scriptedmodelgateway"
     },
     {
@@ -3918,8 +4006,8 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_scriptedmodelgateway_init",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": ".__init__()"
     },
     {
@@ -4237,8 +4325,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_rationale_57",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test adapter. production configuration must use a provider-backed gateway."
     },
     {
@@ -4358,8 +4446,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_redaction",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "redaction.py"
     },
     {
@@ -4369,8 +4457,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_redaction_redactionresult",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "redactionresult"
     },
     {
@@ -4380,8 +4468,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_redaction_redact",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "redact()"
     },
     {
@@ -4578,8 +4666,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_policy_audit",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "audit.py"
     },
     {
@@ -4589,8 +4677,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_agentic_lab_policy_audit_record_decision",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "record_decision()"
     },
     {
@@ -4600,8 +4688,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_policy_audit_py_session",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "session"
     },
     {
@@ -4611,8 +4699,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_agentic_lab_policy_audit_databasecapabilityaudit",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "databasecapabilityaudit"
     },
     {
@@ -4622,8 +4710,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_agentic_lab_policy_audit_databasecapabilityaudit_init",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": ".__init__()"
     },
     {
@@ -4633,8 +4721,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_agentic_lab_policy_audit_databasecapabilityaudit_record",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": ".record()"
     },
     {
@@ -4919,8 +5007,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "heartbeat.py"
     },
     {
@@ -4930,8 +5018,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaselosterror",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "leaselosterror"
     },
     {
@@ -4941,8 +5029,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_py_runtimeerror",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "runtimeerror"
     },
     {
@@ -4952,8 +5040,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "leaseheartbeat"
     },
     {
@@ -4963,8 +5051,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_init",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": ".__init__()"
     },
     {
@@ -4974,8 +5062,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_py_any",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "any"
     },
     {
@@ -4985,8 +5073,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_enter",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": ".__enter__()"
     },
     {
@@ -4996,8 +5084,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_exit",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": ".__exit__()"
     },
     {
@@ -5007,8 +5095,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_is_alive",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": ".is_alive()"
     },
     {
@@ -5018,8 +5106,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_wait_until_renewed",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": ".wait_until_renewed()"
     },
     {
@@ -5029,8 +5117,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_wait_until_lost",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": ".wait_until_lost()"
     },
     {
@@ -5040,8 +5128,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_run",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "._run()"
     },
     {
@@ -5051,8 +5139,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_rationale_14",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "renew one durable lease while its worker attempt is active."
     },
     {
@@ -5788,8 +5876,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "snapshot.py"
     },
     {
@@ -5799,8 +5887,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_sourcelocator",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "sourcelocator"
     },
     {
@@ -5810,8 +5898,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_py_basemodel",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "basemodel"
     },
     {
@@ -5821,8 +5909,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_treeentry",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "treeentry"
     },
     {
@@ -5832,8 +5920,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_filereadresult",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "filereadresult"
     },
     {
@@ -5843,8 +5931,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_textmatch",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "textmatch"
     },
     {
@@ -5854,8 +5942,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_structurematch",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "structurematch"
     },
     {
@@ -5865,8 +5953,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_historyentry",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "historyentry"
     },
     {
@@ -5876,8 +5964,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_repositorysnapshot",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "repositorysnapshot"
     },
     {
@@ -5887,8 +5975,8 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_repositorysnapshot_post_init",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".__post_init__()"
     },
     {
@@ -5898,8 +5986,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_repositorysnapshot_list_tree",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".list_tree()"
     },
     {
@@ -5909,8 +5997,8 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_repositorysnapshot_read_file",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".read_file()"
     },
     {
@@ -5920,8 +6008,8 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_repositorysnapshot_search_text",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".search_text()"
     },
     {
@@ -5931,8 +6019,8 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_repositorysnapshot_search_structure",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".search_structure()"
     },
     {
@@ -5942,8 +6030,8 @@
       "source_location": "L179",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_repositorysnapshot_git_history",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".git_history()"
     },
     {
@@ -5953,8 +6041,8 @@
       "source_location": "L190",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_repositorysnapshot_locator",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "._locator()"
     },
     {
@@ -5964,8 +6052,8 @@
       "source_location": "L202",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_repositorysnapshot_safe_path",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "._safe_path()"
     },
     {
@@ -5975,8 +6063,8 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_truncate_utf8",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "_truncate_utf8()"
     },
     {
@@ -5986,8 +6074,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_rationale_61",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "an immutable, credential-free source snapshot supplied by the gateway."
     },
     {
@@ -5997,8 +6085,8 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_rationale_147",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "search parsed structure without exposing ast-grep or shell command text."
     },
     {
@@ -6019,8 +6107,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_contract_test_api_contract",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "test_api_contract.py"
     },
     {
@@ -6030,8 +6118,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_contract_test_api_contract_test_manual_run_requires_operator_and_allowlisted_repository",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "test_manual_run_requires_operator_and_allowlisted_repository()"
     },
     {
@@ -6063,8 +6151,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_contract_test_executor_api",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "test_executor_api.py"
     },
     {
@@ -6074,8 +6162,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_contract_test_executor_api_runner",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "runner"
     },
     {
@@ -6085,8 +6173,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_contract_test_executor_api_runner_run",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": ".run()"
     },
     {
@@ -6096,8 +6184,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "tests_contract_test_executor_api_test_executor_api_requires_operator_auth_allowlist_and_exact_image_digest",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "test_executor_api_requires_operator_auth_allowlist_and_exact_image_digest()"
     },
     {
@@ -6107,8 +6195,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "test_intake_and_leases.py"
     },
     {
@@ -6118,8 +6206,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_app",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "_app()"
     },
     {
@@ -6129,8 +6217,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "testclient",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "testclient"
     },
     {
@@ -6140,8 +6228,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_py_sessionmaker",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "sessionmaker"
     },
     {
@@ -6151,8 +6239,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_signature",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "_signature()"
     },
     {
@@ -6162,8 +6250,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_test_valid_signed_delivery_creates_one_queued_run_and_deduplicates",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "test_valid_signed_delivery_creates_one_queued_run_and_deduplicates()"
     },
     {
@@ -6173,8 +6261,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_test_invalid_signature_records_safe_metadata_without_a_run",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "test_invalid_signature_records_safe_metadata_without_a_run()"
     },
     {
@@ -6184,8 +6272,8 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_test_signed_fixture_replay_uses_the_intake_path",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "test_signed_fixture_replay_uses_the_intake_path()"
     },
     {
@@ -6206,8 +6294,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_integration_test_worker_heartbeat",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "test_worker_heartbeat.py"
     },
     {
@@ -6217,8 +6305,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_integration_test_worker_heartbeat_sessions",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "_sessions()"
     },
     {
@@ -6228,8 +6316,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "tests_integration_test_worker_heartbeat_claimed_run",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "_claimed_run()"
     },
     {
@@ -6239,8 +6327,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_integration_test_worker_heartbeat_test_heartbeat_renews_lease_during_long_work",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "test_heartbeat_renews_lease_during_long_work()"
     },
     {
@@ -6250,8 +6338,8 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "tests_integration_test_worker_heartbeat_test_heartbeat_reports_lease_ownership_loss",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "test_heartbeat_reports_lease_ownership_loss()"
     },
     {
@@ -6261,8 +6349,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_assessor",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_assessor.py"
     },
     {
@@ -6272,8 +6360,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_unit_test_assessor_test_assessor_requires_evidence_coverage",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_assessor_requires_evidence_coverage()"
     },
     {
@@ -6327,8 +6415,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "test_completion_contracts.py"
     },
     {
@@ -6349,8 +6437,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_snapshot_tools_are_bounded_and_resolve_citations",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_snapshot_tools_are_bounded_and_resolve_citations()"
     },
     {
@@ -6360,8 +6448,8 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_snapshot_locator_hash_matches_the_exact_cited_excerpt",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "test_snapshot_locator_hash_matches_the_exact_cited_excerpt()"
     },
     {
@@ -6371,8 +6459,8 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_snapshot_bounds_model_visible_file_and_search_content",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "test_snapshot_bounds_model_visible_file_and_search_content()"
     },
     {
@@ -6382,8 +6470,8 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_ci_orchestration_persists_evidence_bearing_refusal",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_ci_orchestration_persists_evidence_bearing_refusal()"
     },
     {
@@ -6393,8 +6481,8 @@
       "source_location": "L150",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_fixture_and_evaluation_records_require_scoring_inputs",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 6,
+      "community_name": "EvaluationCase",
       "norm_label": "test_fixture_and_evaluation_records_require_scoring_inputs()"
     },
     {
@@ -6404,8 +6492,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_py_path",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 6,
+      "community_name": "EvaluationCase",
       "norm_label": "path"
     },
     {
@@ -6426,8 +6514,8 @@
       "source_location": "L200",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_durable_ci_push_uses_opt_in_and_exact_sha_recheck",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_durable_ci_push_uses_opt_in_and_exact_sha_recheck()"
     },
     {
@@ -6552,6 +6640,61 @@
       "norm_label": "test_approved_cycle_records_repository_reviewer_budget_and_candidates()"
     },
     {
+      "label": "test_evaluation_executor_probe.py",
+      "file_type": "code",
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_unit_test_evaluation_executor_probe",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "test_evaluation_executor_probe.py"
+    },
+    {
+      "label": "Runner",
+      "file_type": "code",
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "tests_unit_test_evaluation_executor_probe_runner",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "runner"
+    },
+    {
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "tests_unit_test_evaluation_executor_probe_runner_run",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": ".run()"
+    },
+    {
+      "label": "test_probe_requires_expected_reproduction_patch_and_lint_outcomes()",
+      "file_type": "code",
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "tests_unit_test_evaluation_executor_probe_test_probe_requires_expected_reproduction_patch_and_lint_outcomes",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "test_probe_requires_expected_reproduction_patch_and_lint_outcomes()"
+    },
+    {
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "tests_unit_test_evaluation_executor_probe_py_path",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "path"
+    },
+    {
       "label": "test_evaluation_manifest_render.py",
       "file_type": "code",
       "source_file": "tests/unit/test_evaluation_manifest_render.py",
@@ -6591,8 +6734,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_evaluation_materialize",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 7,
+      "community_name": "TraceExporter",
       "norm_label": "test_evaluation_materialize.py"
     },
     {
@@ -6602,8 +6745,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_unit_test_evaluation_materialize_test_materializer_freezes_live_identity_for_all_role_splits",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 7,
+      "community_name": "TraceExporter",
       "norm_label": "test_materializer_freezes_live_identity_for_all_role_splits()"
     },
     {
@@ -6613,8 +6756,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_unit_test_evaluation_materialize_py_path",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 7,
+      "community_name": "TraceExporter",
       "norm_label": "path"
     },
     {
@@ -6668,8 +6811,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_evaluators",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_evaluators.py"
     },
     {
@@ -6679,8 +6822,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "tests_unit_test_evaluators_test_material_claim_requires_resolvable_citation",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_material_claim_requires_resolvable_citation()"
     },
     {
@@ -6690,7 +6833,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_executor_manifest",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": "test_executor_manifest.py"
     },
@@ -6701,7 +6844,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "tests_unit_test_executor_manifest_test_named_recipe_rejects_model_command_text",
-      "community": 5,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": "test_named_recipe_rejects_model_command_text()"
     },
@@ -6772,10 +6915,21 @@
       "norm_label": "test_fixed_adapter_runs_without_shell_or_inherited_secrets()"
     },
     {
+      "label": "test_ruff_adapter_disables_ephemeral_cache()",
+      "file_type": "code",
+      "source_file": "tests/unit/test_executor_transport.py",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "tests_unit_test_executor_transport_test_ruff_adapter_disables_ephemeral_cache",
+      "community": 5,
+      "community_name": "ValueError",
+      "norm_label": "test_ruff_adapter_disables_ephemeral_cache()"
+    },
+    {
       "label": "test_patch_adapter_applies_diff_then_runs_fixed_pytest()",
       "file_type": "code",
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L78",
+      "source_location": "L103",
       "_origin": "ast",
       "id": "tests_unit_test_executor_transport_test_patch_adapter_applies_diff_then_runs_fixed_pytest",
       "community": 5,
@@ -6786,7 +6940,7 @@
       "label": "test_docker_runner_builds_a_credential_free_hardened_invocation()",
       "file_type": "code",
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L109",
+      "source_location": "L134",
       "_origin": "ast",
       "id": "tests_unit_test_executor_transport_test_docker_runner_builds_a_credential_free_hardened_invocation",
       "community": 5,
@@ -6877,8 +7031,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_github_read",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "test_github_read.py"
     },
     {
@@ -6888,8 +7042,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_unit_test_github_read_test_reader_refuses_mutable_or_missing_archive",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "test_reader_refuses_mutable_or_missing_archive()"
     },
     {
@@ -6899,8 +7053,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_unit_test_github_read_test_github_app_reader_returns_credential_free_snapshot",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "test_github_app_reader_returns_credential_free_snapshot()"
     },
     {
@@ -6910,8 +7064,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "tests_unit_test_github_read_test_github_app_reader_returns_sha_bound_redacted_diff_and_check_evidence",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "test_github_app_reader_returns_sha_bound_redacted_diff_and_check_evidence()"
     },
     {
@@ -7185,8 +7339,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_orchestrator",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_orchestrator.py"
     },
     {
@@ -7196,8 +7350,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_unit_test_orchestrator_test_orchestrator_stores_valid_scout_artifact",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_orchestrator_stores_valid_scout_artifact()"
     },
     {
@@ -7218,8 +7372,8 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "tests_unit_test_orchestrator_test_orchestrator_correlates_redacted_model_trace_to_run",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_orchestrator_correlates_redacted_model_trace_to_run()"
     },
     {
@@ -7229,8 +7383,8 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "tests_unit_test_orchestrator_test_orchestrator_records_trace_redaction_block_without_export",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_orchestrator_records_trace_redaction_block_without_export()"
     },
     {
@@ -7240,8 +7394,8 @@
       "source_location": "L178",
       "_origin": "ast",
       "id": "tests_unit_test_orchestrator_test_assessor_receives_audited_snapshot_tools",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_assessor_receives_audited_snapshot_tools()"
     },
     {
@@ -7328,8 +7482,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_policy_audit",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_policy_audit.py"
     },
     {
@@ -7339,8 +7493,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_unit_test_policy_audit_test_policy_decisions_are_durable",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_policy_decisions_are_durable()"
     },
     {
@@ -7427,8 +7581,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_scout",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_scout.py"
     },
     {
@@ -7438,8 +7592,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_unit_test_scout_test_scout_rejects_uncited_material_claim",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_scout_rejects_uncited_material_claim()"
     },
     {
@@ -7449,8 +7603,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_unit_test_scout_test_scout_accepts_cited_output",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_scout_accepts_cited_output()"
     },
     {
@@ -7460,8 +7614,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "tests_unit_test_scout_test_scout_supplies_durable_identity_and_bounded_evidence_strategy",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_scout_supplies_durable_identity_and_bounded_evidence_strategy()"
     },
     {
@@ -7471,8 +7625,8 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "tests_unit_test_scout_test_scout_canonicalizes_and_resolves_model_citations",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_scout_canonicalizes_and_resolves_model_citations()"
     },
     {
@@ -7482,8 +7636,8 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "tests_unit_test_scout_test_scout_rejects_citations_not_returned_by_its_tools",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_scout_rejects_citations_not_returned_by_its_tools()"
     },
     {
@@ -7493,8 +7647,8 @@
       "source_location": "L186",
       "_origin": "ast",
       "id": "tests_unit_test_scout_test_scout_discards_extra_unresolved_citation_when_claim_remains_supported",
-      "community": 10,
-      "community_name": "_process_github_delivery",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "test_scout_discards_extra_unresolved_citation_when_claim_remains_supported()"
     },
     {
@@ -7526,8 +7680,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_tool_registry",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "test_tool_registry.py"
     },
     {
@@ -7537,8 +7691,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_unit_test_tool_registry_test_parallel_tool_calls_receive_unique_monotonic_sequences",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "test_parallel_tool_calls_receive_unique_monotonic_sequences()"
     },
     {
@@ -7548,8 +7702,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "tests_unit_test_tool_registry_test_evidence_limit_refuses_repository_access_without_exceeding_run_budget",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "test_evidence_limit_refuses_repository_access_without_exceeding_run_budget()"
     },
     {
@@ -7559,8 +7713,8 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "tests_unit_test_tool_registry_test_registry_resolves_a_citation_hash_to_the_exact_tool_locator",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "test_registry_resolves_a_citation_hash_to_the_exact_tool_locator()"
     },
     {
@@ -7570,8 +7724,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "tests_unit_test_tool_registry_test_registry_search_default_limits_parallel_context_growth",
-      "community": 0,
-      "community_name": "RepositorySnapshot",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "test_registry_search_default_limits_parallel_context_growth()"
     },
     {
@@ -9987,6 +10141,301 @@
       "_origin": "ast",
       "source": "tests_unit_test_evaluation_materialize_test_materializer_freezes_live_identity_for_all_role_splits",
       "target": "scripts_materialize_evaluation_fixtures_materialize"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor",
+      "target": "scripts_probe_evaluation_executor_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor",
+      "target": "scripts_probe_evaluation_executor_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor",
+      "target": "scripts_probe_evaluation_executor_probe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor",
+      "target": "scripts_probe_evaluation_executor_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor",
+      "target": "scripts_probe_evaluation_executor_snapshot_at",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_run",
+      "target": "scripts_probe_evaluation_executor_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_snapshot_at",
+      "target": "scripts_probe_evaluation_executor_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L145",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_main",
+      "target": "scripts_probe_evaluation_executor_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_probe",
+      "target": "scripts_probe_evaluation_executor_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_snapshot_at",
+      "target": "scripts_probe_evaluation_executor_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_snapshot_at",
+      "target": "src_agentic_lab_tools_snapshot_repositorysnapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_snapshot_at",
+      "target": "valueerror"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_execute",
+      "target": "src_agentic_lab_evaluation_fixtures_evaluationcase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_execute",
+      "target": "src_agentic_lab_executor_launcher_containerrunner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_execute",
+      "target": "src_agentic_lab_executor_launcher_launch_recipe"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_execute",
+      "target": "src_agentic_lab_executor_manifest_executionmanifest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_execute",
+      "target": "src_agentic_lab_executor_manifest_reciperequest"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_execute",
+      "target": "src_agentic_lab_tools_snapshot_repositorysnapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_probe",
+      "target": "scripts_probe_evaluation_executor_execute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L153",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_main",
+      "target": "scripts_probe_evaluation_executor_probe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_probe",
+      "target": "snapshotloader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_probe",
+      "target": "src_agentic_lab_executor_launcher_containerrunner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_probe",
+      "target": "src_agentic_lab_executor_launcher_default_docker_runner"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scripts/probe_evaluation_executor.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_probe_evaluation_executor_probe",
+      "target": "valueerror"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_evaluation_executor_probe_test_probe_requires_expected_reproduction_patch_and_lint_outcomes",
+      "target": "scripts_probe_evaluation_executor_probe"
     },
     {
       "relation": "contains",
@@ -17894,7 +18343,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter",
@@ -17916,7 +18365,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L105",
+      "source_location": "L106",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter",
@@ -17927,7 +18376,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L127",
+      "source_location": "L128",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter",
@@ -17939,7 +18388,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_execute_request",
@@ -17963,7 +18412,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_execute_request",
@@ -17976,7 +18425,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_execute_request",
@@ -18012,7 +18461,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L76",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_execute_request",
@@ -18024,7 +18473,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L43",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_execute_request",
@@ -18036,7 +18485,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L56",
+      "source_location": "L57",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_execute_request",
@@ -18059,7 +18508,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L117",
+      "source_location": "L118",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_main",
@@ -18084,10 +18533,22 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L103",
+      "source_location": "L128",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_executor_transport_test_patch_adapter_applies_diff_then_runs_fixed_pytest",
+      "target": "src_agentic_lab_executor_adapter_execute_request"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tests/unit/test_executor_transport.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_executor_transport_test_ruff_adapter_disables_ephemeral_cache",
       "target": "src_agentic_lab_executor_adapter_execute_request"
     },
     {
@@ -18095,7 +18556,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_apply_workspace_diff",
@@ -18107,7 +18568,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L113",
+      "source_location": "L114",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_main",
@@ -18119,7 +18580,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L127",
+      "source_location": "L128",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_safe_artifact_path",
@@ -18132,7 +18593,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L115",
+      "source_location": "L116",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_main",
@@ -18143,7 +18604,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L146",
+      "source_location": "L147",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_apply_workspace_diff",
@@ -18156,7 +18617,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L130",
+      "source_location": "L131",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_safe_artifact_path",
@@ -18168,7 +18629,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L150",
+      "source_location": "L151",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_apply_workspace_diff",
@@ -18180,7 +18641,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L144",
+      "source_location": "L145",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_apply_workspace_diff",
@@ -18192,7 +18653,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/executor/adapter.py",
-      "source_location": "L140",
+      "source_location": "L141",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_executor_adapter_apply_workspace_diff",
@@ -18396,7 +18857,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L138",
+      "source_location": "L163",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_executor_transport_test_docker_runner_builds_a_credential_free_hardened_invocation",
@@ -18667,7 +19128,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L137",
+      "source_location": "L162",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_executor_transport_test_docker_runner_builds_a_credential_free_hardened_invocation",
@@ -19661,10 +20122,22 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L79",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_executor_transport_test_patch_adapter_applies_diff_then_runs_fixed_pytest",
+      "target": "src_agentic_lab_executor_transport_recipeexecutionrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/unit/test_executor_transport.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_executor_transport_test_ruff_adapter_disables_ephemeral_cache",
       "target": "src_agentic_lab_executor_transport_recipeexecutionrequest",
       "confidence_score": 1.0
     },
@@ -19792,6 +20265,29 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_contract_test_executor_api_runner_run",
+      "target": "src_agentic_lab_executor_transport_recipeexecutionresult"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L6",
+      "weight": 0.8,
+      "_origin": "ast",
+      "source": "tests_unit_test_evaluation_executor_probe_runner",
+      "target": "src_agentic_lab_executor_transport_recipeexecutionresult",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_evaluation_executor_probe_runner_run",
       "target": "src_agentic_lab_executor_transport_recipeexecutionresult"
     },
     {
@@ -20008,7 +20504,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L113",
+      "source_location": "L138",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_executor_transport_test_docker_runner_builds_a_credential_free_hardened_invocation",
@@ -30069,12 +30565,35 @@
       "target": "src_agentic_lab_tools_snapshot_repositorysnapshot"
     },
     {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "_origin": "ast",
+      "source": "tests_unit_test_evaluation_executor_probe_runner",
+      "target": "src_agentic_lab_tools_snapshot_repositorysnapshot",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_evaluation_executor_probe_test_probe_requires_expected_reproduction_patch_and_lint_outcomes",
+      "target": "src_agentic_lab_tools_snapshot_repositorysnapshot"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L152",
+      "source_location": "L177",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_executor_transport_test_docker_runner_builds_a_credential_free_hardened_invocation",
@@ -31090,6 +31609,63 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_evaluation_executor_probe",
+      "target": "tests_unit_test_evaluation_executor_probe_runner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_evaluation_executor_probe",
+      "target": "tests_unit_test_evaluation_executor_probe_test_probe_requires_expected_reproduction_patch_and_lint_outcomes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_evaluation_executor_probe_runner",
+      "target": "tests_unit_test_evaluation_executor_probe_runner_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_evaluation_executor_probe_test_probe_requires_expected_reproduction_patch_and_lint_outcomes",
+      "target": "tests_unit_test_evaluation_executor_probe_runner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/unit/test_evaluation_executor_probe.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_evaluation_executor_probe_test_probe_requires_expected_reproduction_patch_and_lint_outcomes",
+      "target": "tests_unit_test_evaluation_executor_probe_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tests/unit/test_evaluation_manifest_render.py",
       "source_location": "L13",
       "weight": 1.0,
@@ -31132,18 +31708,6 @@
       "source": "tests_unit_test_evaluation_materialize_test_materializer_freezes_live_identity_for_all_role_splits",
       "target": "tests_unit_test_evaluation_materialize_py_path",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "indirect_call",
-      "context": "argument",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "tests/unit/test_evaluation_materialize.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "tests_unit_test_evaluation_materialize_test_materializer_freezes_live_identity_for_all_role_splits",
-      "target": "tests_unit_test_launcher_runner_run"
     },
     {
       "relation": "contains",
@@ -31251,7 +31815,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L109",
+      "source_location": "L134",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_executor_transport",
@@ -31273,11 +31837,22 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L78",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_executor_transport",
       "target": "tests_unit_test_executor_transport_test_patch_adapter_applies_diff_then_runs_fixed_pytest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/unit/test_executor_transport.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_executor_transport",
+      "target": "tests_unit_test_executor_transport_test_ruff_adapter_disables_ephemeral_cache",
       "confidence_score": 1.0
     },
     {
@@ -31296,7 +31871,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L112",
+      "source_location": "L137",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_executor_transport_test_docker_runner_builds_a_credential_free_hardened_invocation",
@@ -31356,7 +31931,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L109",
+      "source_location": "L134",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_executor_transport_test_docker_runner_builds_a_credential_free_hardened_invocation",
@@ -31380,10 +31955,22 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "tests/unit/test_executor_transport.py",
-      "source_location": "L78",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_executor_transport_test_patch_adapter_applies_diff_then_runs_fixed_pytest",
+      "target": "tests_unit_test_executor_transport_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/unit/test_executor_transport.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_unit_test_executor_transport_test_ruff_adapter_disables_ephemeral_cache",
       "target": "tests_unit_test_executor_transport_py_path",
       "confidence_score": 1.0
     },
@@ -34095,5 +34682,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "adbaece0e1bd6c85676752ce3a44110c83433939"
+  "built_at_commit": "05cb5f92288b78478ffe4f32a11e93eb801c7e8f"
 }

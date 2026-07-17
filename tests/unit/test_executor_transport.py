@@ -72,7 +72,32 @@ def test_fixed_adapter_runs_without_shell_or_inherited_secrets(tmp_path: Path) -
 
     assert result.exit_code == 0
     assert result.adapter == "noop_v1"
+    assert stat.S_IMODE(workspace.stat().st_mode) == 0o700
     assert (workspace / "app.py").read_text() == "value = 1\n"
+
+
+def test_ruff_adapter_disables_ephemeral_cache(tmp_path: Path) -> None:
+    request = RecipeExecutionRequest(
+        run_id="run-lint",
+        source_sha="a" * 40,
+        manifest_version="v1",
+        recipe_name="lint",
+        adapter="ruff_check_v1",
+        arguments={},
+        image_digest="executor@sha256:" + "b" * 64,
+        timeout_seconds=10,
+    )
+    source = tmp_path / "source"
+    workspace = tmp_path / "workspace"
+    output = tmp_path / "output"
+    source.mkdir()
+    (source / "app.py").write_text("value = 1\n")
+    source.chmod(0o500)
+
+    result = execute_request(request, source, workspace, output)
+
+    assert result.exit_code == 0
+    assert not (workspace / ".ruff_cache").exists()
 
 
 def test_patch_adapter_applies_diff_then_runs_fixed_pytest(tmp_path: Path) -> None:
