@@ -1,3 +1,5 @@
+from datetime import UTC, datetime
+
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 
@@ -44,9 +46,14 @@ def test_orchestrator_stores_valid_scout_artifact() -> None:
             blast_radius="none",
             plan=[],
             confidence=1,
+            created_at=datetime(2020, 1, 1, tzinfo=UTC),
         )
+        before = datetime.now(UTC)
         orchestrate_scout(session, run, ScriptedModelGateway(artifact), "model@1")
+        stored = session.scalar(select(Artifact).where(Artifact.run_id == run.id))
         assert run.status is RunStatus.SUCCEEDED
+        assert stored is not None
+        assert datetime.fromisoformat(stored.content_json["created_at"]) >= before
 
 
 def test_orchestrator_persists_safe_model_gateway_details() -> None:

@@ -1,16 +1,16 @@
 # Graph Report - agentic-engineering-lab  (2026-07-17)
 
 ## Corpus Check
-- 167 files · ~53,386 words
+- 167 files · ~53,472 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 889 nodes · 2169 edges · 66 communities (55 shown, 11 thin omitted)
-- Extraction: 60% EXTRACTED · 40% INFERRED · 0% AMBIGUOUS · INFERRED: 877 edges (avg confidence: 0.68)
+- 889 nodes · 2170 edges · 66 communities (55 shown, 11 thin omitted)
+- Extraction: 60% EXTRACTED · 40% INFERRED · 0% AMBIGUOUS · INFERRED: 878 edges (avg confidence: 0.68)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `bc5863f1`
+- Built from commit: `68f32a1e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -79,16 +79,16 @@
 10. `PolicyOutcome` - 26 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `test_snapshot_bounds_model_visible_file_and_search_content()` --calls--> `RepositorySnapshot`  [INFERRED]
-  tests/unit/test_completion_contracts.py → src/agentic_lab/tools/snapshot.py
-- `test_snapshot_locator_hash_matches_the_exact_cited_excerpt()` --calls--> `RepositorySnapshot`  [INFERRED]
-  tests/unit/test_completion_contracts.py → src/agentic_lab/tools/snapshot.py
 - `_execute()` --calls--> `launch_recipe()`  [INFERRED]
   scripts/probe_evaluation_executor.py → src/agentic_lab/executor/launcher.py
 - `_execute()` --calls--> `RecipeRequest`  [INFERRED]
   scripts/probe_evaluation_executor.py → src/agentic_lab/executor/manifest.py
 - `probe()` --calls--> `default_docker_runner()`  [INFERRED]
   scripts/probe_evaluation_executor.py → src/agentic_lab/executor/launcher.py
+- `test_probe_requires_expected_reproduction_patch_and_lint_outcomes()` --calls--> `probe()`  [INFERRED]
+  tests/unit/test_evaluation_executor_probe.py → scripts/probe_evaluation_executor.py
+- `test_failed_check_routes_to_ci()` --calls--> `_queue_check_run()`  [INFERRED]
+  tests/unit/test_webhook_routing.py → src/agentic_lab/api/app.py
 
 ## Import Cycles
 - None detected.
@@ -113,11 +113,11 @@ Nodes (22): AsyncClient, LangfuseClient, LangfuseTraceSink, Any, Protocol, Match
 
 ### Community 4 - "push_validated_patch"
 Cohesion: 0.07
-Nodes (38): main(), Path, render(), apply_validated_patch(), GitHubAppBranchWriter, GitHubBranchWriter, Protocol, Narrow port implemented only by the trusted GitHub App adapter. (+30 more)
+Nodes (37): main(), Path, render(), apply_validated_patch(), GitHubAppBranchWriter, GitHubBranchWriter, Protocol, Narrow port implemented only by the trusted GitHub App adapter. (+29 more)
 
 ### Community 5 - "ValueError"
-Cohesion: 0.26
-Nodes (13): ExecutorSpec, BaseModel, RecipeExecutionRequest, RecipeExecutionResult, RecipeOutputArtifact, Path, _request(), _result() (+5 more)
+Cohesion: 0.29
+Nodes (9): RecipeExecutionRequest, Path, _request(), _result(), test_docker_runner_builds_a_credential_free_hardened_invocation(), test_fixed_adapter_runs_without_shell_or_inherited_secrets(), test_patch_adapter_applies_diff_then_runs_fixed_pytest(), test_ruff_adapter_disables_ephemeral_cache() (+1 more)
 
 ### Community 6 - "EvaluationCase"
 Cohesion: 0.07
@@ -176,8 +176,8 @@ Cohesion: 0.25
 Nodes (7): Audit and incident response, Authoritative inputs, Credential policy, Patch policy, Redaction policy, Security and policy specification, Trust boundaries
 
 ### Community 20 - "ExecutionManifest"
-Cohesion: 0.12
-Nodes (18): launch_recipe(), _contains_command_key(), ExecutionManifest, ManifestBudgets, Any, BaseModel, RecipeRequest, _validate_arguments() (+10 more)
+Cohesion: 0.16
+Nodes (16): ExecutorSpec, launch_recipe(), _contains_command_key(), ExecutionManifest, ManifestBudgets, Any, BaseModel, RecipeRequest (+8 more)
 
 ### Community 21 - "Implementation rules"
 Cohesion: 0.33
@@ -224,8 +224,8 @@ Cohesion: 0.29
 Nodes (5): Approval gate, Development split, Evaluation fixture plan v1, Held-out split, Evaluation fixture approval
 
 ### Community 59 - "ValueError"
-Cohesion: 0.22
-Nodes (12): _pydantic_tools(), FileReadResult, HistoryEntry, BaseModel, Search parsed structure without exposing ast-grep or shell command text., An immutable, credential-free source snapshot supplied by the gateway., RepositorySnapshot, SourceLocator (+4 more)
+Cohesion: 0.17
+Nodes (15): _pydantic_tools(), FileReadResult, HistoryEntry, BaseModel, Search parsed structure without exposing ast-grep or shell command text., An immutable, credential-free source snapshot supplied by the gateway., RepositorySnapshot, SourceLocator (+7 more)
 
 ### Community 60 - "ValueError"
 Cohesion: 0.13
@@ -248,8 +248,8 @@ Cohesion: 0.36
 Nodes (9): _execute(), main(), probe(), Path, _run(), _snapshot_at(), SnapshotLoader, ContainerRunner (+1 more)
 
 ### Community 65 - "Runner"
-Cohesion: 0.50
-Nodes (3): Path, Runner, test_probe_requires_expected_reproduction_patch_and_lint_outcomes()
+Cohesion: 0.25
+Nodes (7): BaseModel, RecipeExecutionResult, RecipeOutputArtifact, stable_result_hash(), Path, Runner, test_probe_requires_expected_reproduction_patch_and_lint_outcomes()
 
 ## Knowledge Gaps
 - **116 isolated node(s):** `agentic-engineering-lab`, `Usage`, `What graphify is for`, `Step 0 - GitHub repos and multi-path merge (only if a URL or several paths)`, `Step 1 - Ensure graphify is installed` (+111 more)
@@ -261,7 +261,7 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `AgentRole` connect `AgentRole` to `RepositorySnapshot`, `Run`, `SnapshotToolRegistry`, `EvaluationCase`, `TraceExporter`, `PolicyOutcome`?**
   _High betweenness centrality (0.089) - this node is a cross-community bridge._
-- **Why does `RepositorySnapshot` connect `ValueError` to `ContainerRunner`, `RepositorySnapshot`, `Run`, `SnapshotToolRegistry`, `Runner`, `ValueError`, `PolicyOutcome`, `ExecutionManifest`, `ExecutorTransport`?**
+- **Why does `RepositorySnapshot` connect `ValueError` to `ContainerRunner`, `Runner`, `RepositorySnapshot`, `Run`, `SnapshotToolRegistry`, `ValueError`, `PolicyOutcome`, `ExecutionManifest`, `ExecutorTransport`?**
   _High betweenness centrality (0.084) - this node is a cross-community bridge._
 - **Why does `SnapshotToolRegistry` connect `SnapshotToolRegistry` to `RepositorySnapshot`, `Run`, `AgentRole`, `PolicyOutcome`, `ValueError`?**
   _High betweenness centrality (0.038) - this node is a cross-community bridge._

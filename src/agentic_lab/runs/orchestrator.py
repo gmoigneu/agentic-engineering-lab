@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from datetime import UTC, datetime
 from time import perf_counter
 
 from sqlalchemy import func, select
@@ -105,6 +106,7 @@ def orchestrate_scout(
         return
     _record_model_call(session, run, gateway, model_id, started)
     _record_tool_calls(session, run, tools)
+    artifact = artifact.model_copy(update={"created_at": datetime.now(UTC)})
     transition_run(session, run, RunStatus.EVALUATING, "scout_output_validated", "worker")
     record = store_artifact(session, artifact, "scout")
     if record.redaction_state == "blocked":
@@ -175,6 +177,7 @@ def orchestrate_assessor(
         return
     _record_model_call(session, run, gateway, model_id, started)
     _record_tool_calls(session, run, tools)
+    artifact = artifact.model_copy(update={"created_at": datetime.now(UTC)})
     transition_run(session, run, RunStatus.EVALUATING, "risk_output_validated", "worker")
     record = store_artifact(session, artifact, "risk")
     if record.redaction_state == "blocked":
@@ -249,6 +252,7 @@ def orchestrate_ci(
         return
     _record_model_call(session, run, gateway, model_id, started)
     _record_tool_calls(session, run, tools)
+    artifact = artifact.model_copy(update={"created_at": datetime.now(UTC)})
     transition_run(session, run, RunStatus.EVALUATING, "ci_diagnosis_validated", "worker")
     record = store_artifact(session, artifact, "ci_diagnosis")
     if record.redaction_state == "blocked":
