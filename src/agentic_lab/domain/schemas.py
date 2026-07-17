@@ -4,7 +4,7 @@ from datetime import UTC, datetime
 from typing import Literal
 from uuid import UUID
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 from agentic_lab.domain.enums import AgentRole, RunSource, RunStatus
 
@@ -35,6 +35,9 @@ class RunSummary(BaseModel):
     pinned_sha: str
     status: RunStatus
     created_at: datetime
+    terminal_at: datetime | None = None
+    manifest_version: str
+    policy_version: str
 
 
 class RunTransitionSummary(BaseModel):
@@ -46,7 +49,11 @@ class RunTransitionSummary(BaseModel):
 
 
 class RunDetail(RunSummary):
+    request_id: UUID | None = None
     transitions: list[RunTransitionSummary]
+    artifacts: list[str] = Field(default_factory=list)
+    langfuse_trace_id: str | None = None
+    event_delivery_id: str | None = None
 
 
 class RunCreateResponse(BaseModel):
@@ -77,6 +84,18 @@ class Citation(BaseModel):
     pinned_sha: str = Field(min_length=40, max_length=64)
     excerpt_hash: str = Field(min_length=64, max_length=64)
 
+    @field_validator("pinned_sha")
+    @classmethod
+    def immutable_citation_sha(cls, value: str) -> str:
+        return _immutable_sha(value)
+
+    @field_validator("excerpt_hash")
+    @classmethod
+    def hexadecimal_excerpt_hash(cls, value: str) -> str:
+        if any(character not in "0123456789abcdef" for character in value):
+            raise ValueError("excerpt_hash must be lowercase hexadecimal")
+        return value
+
 
 class Claim(BaseModel):
     id: str = Field(min_length=1, max_length=100)
@@ -93,6 +112,23 @@ class ArtifactBase(BaseModel):
     claims: list[Claim] = Field(default_factory=list)
     unknowns: list[str] = Field(default_factory=list)
     citations: list[Citation] = Field(default_factory=list)
+
+    @field_validator("pinned_sha")
+    @classmethod
+    def immutable_artifact_sha(cls, value: str) -> str:
+        return _immutable_sha(value)
+
+    @model_validator(mode="after")
+    def stable_claims_and_citations(self) -> ArtifactBase:
+        claim_ids = [claim.id for claim in self.claims]
+        if len(claim_ids) != len(set(claim_ids)):
+            raise ValueError("claim IDs must be unique")
+        known_claims = set(claim_ids)
+        if any(citation.claim_id not in known_claims for citation in self.citations):
+            raise ValueError("citations must refer to a claim in the artifact")
+        if any(citation.pinned_sha != self.pinned_sha for citation in self.citations):
+            raise ValueError("citation SHA must match artifact SHA")
+        return self
 
 
 class EvidenceLocator(BaseModel):
@@ -150,10 +186,54 @@ class RefusalArtifact(ArtifactBase):
     next_action: str
 
 
+class RecipeEvidence(BaseModel):
+    recipe_name: str
+    image_digest: str
+    exit_code: int
+    started_at: datetime
+    finished_at: datetime
+    output_hash: str = Field(min_length=64, max_length=64)
+
+
+class PatchArtifact(ArtifactBase):
+    base_sha: str
+    unified_diff: str = Field(min_length=1, max_length=100_000)
+    changed_paths: list[str]
+    patch_hash: str = Field(min_length=64, max_length=64)
+    reproduction: RecipeEvidence
+    validation: RecipeEvidence
+    policy_result: str
+
+    @field_validator("base_sha")
+    @classmethod
+    def immutable_base_sha(cls, value: str) -> str:
+        return _immutable_sha(value)
+
+    @model_validator(mode="after")
+    def patch_identity(self) -> PatchArtifact:
+        import hashlib
+
+        if self.base_sha != self.pinned_sha:
+            raise ValueError("patch base SHA must match pinned SHA")
+        if hashlib.sha256(self.unified_diff.encode()).hexdigest() != self.patch_hash:
+            raise ValueError("patch hash does not match unified diff")
+        if not self.changed_paths:
+            raise ValueError("patch must declare changed paths")
+        return self
+
+
 class HumanReviewCreate(BaseModel):
     reviewer: str = Field(min_length=1, max_length=255)
-    outcome: str = Field(min_length=1, max_length=100)
+    outcome: Literal["successful", "failed", "correctly_refused"]
     minutes: int = Field(ge=0, le=1_440)
     disposition: Literal["accepted", "edited", "rejected"]
     missing_evidence: list[str] = Field(default_factory=list)
     notes: str | None = Field(default=None, max_length=10_000)
+
+
+def _immutable_sha(value: str) -> str:
+    if len(value) not in {40, 64} or any(
+        character not in "0123456789abcdef" for character in value
+    ):
+        raise ValueError("SHA must be lowercase hexadecimal and immutable")
+    return value

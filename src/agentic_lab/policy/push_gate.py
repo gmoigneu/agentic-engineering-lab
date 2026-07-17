@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import hashlib
+import json
 from dataclasses import dataclass
 from datetime import UTC, datetime
 
@@ -45,12 +47,39 @@ def evaluate_push_gate(
     secret_result = redact(context.diff)
     if secret_result.detected:
         return _deny(context, "secret_detection")
-    return validate_unified_diff(context.diff, patch_policy)
+    patch_result = validate_unified_diff(context.diff, patch_policy)
+    return PolicyResult(
+        patch_result.outcome,
+        patch_result.reason_code,
+        patch_result.changed_paths,
+        _context_hash(context),
+    )
 
 
 def _deny(context: PushContext, reason: str) -> PolicyResult:
-    return PolicyResult(PolicyOutcome.DENY, reason, (), redact(context.diff).content_hash)
+    return PolicyResult(PolicyOutcome.DENY, reason, (), _context_hash(context))
 
 
 def _as_utc(value: datetime) -> datetime:
     return value.replace(tzinfo=UTC) if value.tzinfo is None else value
+
+
+def _context_hash(context: PushContext) -> str:
+    payload = {
+        "run_id": context.run_id,
+        "pinned_sha": context.pinned_sha,
+        "observed_head_sha": context.observed_head_sha,
+        "patch_base_sha": context.patch_base_sha,
+        "opt_in_expires_at": (
+            _as_utc(context.opt_in_expires_at).isoformat()
+            if context.opt_in_expires_at is not None
+            else None
+        ),
+        "same_repository_branch": context.same_repository_branch,
+        "reproduction_passed": context.reproduction_passed,
+        "validation_passed": context.validation_passed,
+        "failure_class": context.failure_class,
+        "attempt_count": context.attempt_count,
+        "diff_hash": redact(context.diff).content_hash,
+    }
+    return hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()

@@ -26,6 +26,16 @@ services:
       AGENTIC_LAB_MAX_TOOL_CALLS: ${AGENTIC_LAB_MAX_TOOL_CALLS:-40}
       AGENTIC_LAB_MAX_WALL_SECONDS: ${AGENTIC_LAB_MAX_WALL_SECONDS:-1200}
       AGENTIC_LAB_MAX_USD: ${AGENTIC_LAB_MAX_USD:-3.00}
+      AGENTIC_LAB_REQUIRE_TARGET_MANIFEST: ${AGENTIC_LAB_REQUIRE_TARGET_MANIFEST:-true}
+      AGENTIC_LAB_OPENROUTER_API_KEY: ${AGENTIC_LAB_OPENROUTER_API_KEY:-}
+      AGENTIC_LAB_ALLOWED_MODEL_IDS: ${AGENTIC_LAB_ALLOWED_MODEL_IDS:-}
+      AGENTIC_LAB_ALLOWED_PROVIDER_IDS: ${AGENTIC_LAB_ALLOWED_PROVIDER_IDS:-}
+      AGENTIC_LAB_GITHUB_APP_ID: ${AGENTIC_LAB_GITHUB_APP_ID:-}
+      AGENTIC_LAB_GITHUB_PRIVATE_KEY: ${AGENTIC_LAB_GITHUB_PRIVATE_KEY:-}
+      AGENTIC_LAB_LANGFUSE_PUBLIC_KEY: ${AGENTIC_LAB_LANGFUSE_PUBLIC_KEY:-}
+      AGENTIC_LAB_LANGFUSE_SECRET_KEY: ${AGENTIC_LAB_LANGFUSE_SECRET_KEY:-}
+      AGENTIC_LAB_LANGFUSE_HOST: ${AGENTIC_LAB_LANGFUSE_HOST:-}
+      AGENTIC_LAB_EXECUTOR_IMAGE_DIGEST: ${AGENTIC_LAB_EXECUTOR_IMAGE_DIGEST:-}
     depends_on:
       postgres:
         condition: service_healthy
@@ -45,6 +55,26 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      executor-launcher:
+        condition: service_healthy
+
+  executor-launcher:
+    build: .
+    command: ["uvicorn", "agentic_lab.executor.service:app", "--host", "0.0.0.0", "--port", "8010"]
+    environment:
+      AGENTIC_LAB_DATABASE_URL: ${AGENTIC_LAB_DATABASE_URL:?set in .env}
+      AGENTIC_LAB_OPERATOR_TOKEN: ${AGENTIC_LAB_OPERATOR_TOKEN:?set in .env}
+      AGENTIC_LAB_GITHUB_WEBHOOK_SECRET: ${AGENTIC_LAB_GITHUB_WEBHOOK_SECRET:?set in .env}
+      AGENTIC_LAB_ALLOWED_REPOSITORY_IDS: ${AGENTIC_LAB_ALLOWED_REPOSITORY_IDS:?set in .env}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test:
+        ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://127.0.0.1:8010/healthz')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
 
 volumes:
   postgres_data:

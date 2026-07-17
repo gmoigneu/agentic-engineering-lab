@@ -6,7 +6,7 @@ from uuid import UUID
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from agentic_lab.db.models import Run, RunTransition
+from agentic_lab.db.models import Run, RunCausalLink, RunTransition
 from agentic_lab.domain.enums import ALLOWED_TRANSITIONS, TERMINAL_STATUSES, RunSource, RunStatus
 from agentic_lab.domain.schemas import RunCreate
 
@@ -37,6 +37,47 @@ def create_queued_run(session: Session, data: RunCreate, source: RunSource, acto
     _record_transition(session, run, None, RunStatus.RECEIVED, "intake_received", actor)
     transition_run(session, run, RunStatus.QUEUED, "intake_accepted", actor)
     return run
+
+
+def link_runs(session: Session, source: Run, target: Run, relation: str) -> RunCausalLink:
+    if source.id == target.id:
+        raise ValueError("a run cannot be causally linked to itself")
+    link = RunCausalLink(source_run_id=source.id, target_run_id=target.id, relation=relation)
+    session.add(link)
+    return link
+
+
+def supersede_active_runs(
+    session: Session,
+    repository_id: int,
+    pull_number: int,
+    newer_sha: str,
+    actor: str,
+) -> list[Run]:
+    active_statuses = set(ALLOWED_TRANSITIONS) - TERMINAL_STATUSES
+    candidates = list(
+        session.scalars(
+            select(Run).where(
+                Run.repository_id == repository_id,
+                Run.pull_number == pull_number,
+                Run.pinned_sha != newer_sha,
+                Run.status.in_(active_statuses),
+            )
+        )
+    )
+    superseded: list[Run] = []
+    for candidate in candidates:
+        if RunStatus.SUPERSEDED in ALLOWED_TRANSITIONS.get(candidate.status, frozenset()):
+            transition_run(
+                session,
+                candidate,
+                RunStatus.SUPERSEDED,
+                "newer_human_head_sha",
+                actor,
+                {"replacement_sha": newer_sha},
+            )
+            superseded.append(candidate)
+    return superseded
 
 
 def transition_run(

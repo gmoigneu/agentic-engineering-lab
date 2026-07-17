@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import UTC, datetime, timedelta
+from uuid import UUID
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -54,6 +55,14 @@ def heartbeat_lease(session: Session, run_id: object, worker_id: str, lease_seco
         return False
     lease.heartbeat_at = now
     lease.expires_at = now + timedelta(seconds=lease_seconds)
+    return True
+
+
+def release_lease(session: Session, run_id: UUID, worker_id: str) -> bool:
+    lease = session.get(RunLease, run_id)
+    if lease is None or lease.worker_id != worker_id:
+        return False
+    session.delete(lease)
     return True
 
 

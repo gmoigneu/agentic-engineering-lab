@@ -14,6 +14,12 @@ class ExecutorSpec:
     image: str
     network: str
     environment: dict[str, str]
+    working_directory: str
+    timeout_seconds: int
+    read_only_snapshot: bool = True
+    writable_output_only: bool = True
+    docker_socket: bool = False
+    host_home: bool = False
 
 
 class ContainerRunner(Protocol):
@@ -24,7 +30,15 @@ def launch_recipe(
     runner: ContainerRunner, manifest: ExecutionManifest, request: RecipeRequest
 ) -> dict[str, object]:
     recipe = validate_recipe_request(manifest, request)
-    spec = ExecutorSpec(request.run_id, request.source_sha, recipe.image, recipe.network, {})
+    spec = ExecutorSpec(
+        request.run_id,
+        request.source_sha,
+        recipe.image,
+        recipe.network,
+        {},
+        recipe.working_directory,
+        recipe.timeout_seconds,
+    )
     started = datetime.now(UTC)
     exit_code = runner.run(spec, request.recipe_name, request.arguments)
     return {

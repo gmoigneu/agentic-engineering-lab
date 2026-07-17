@@ -51,8 +51,18 @@ TERMINAL_STATUSES = frozenset(
 ALLOWED_TRANSITIONS: dict[RunStatus, frozenset[RunStatus]] = {
     RunStatus.RECEIVED: frozenset({RunStatus.REJECTED, RunStatus.QUEUED}),
     RunStatus.QUEUED: frozenset({RunStatus.LEASED, RunStatus.CANCELLED, RunStatus.SUPERSEDED}),
-    RunStatus.LEASED: frozenset({RunStatus.SNAPSHOTTING, RunStatus.RUNNING, RunStatus.FAILED}),
-    RunStatus.SNAPSHOTTING: frozenset({RunStatus.RUNNING, RunStatus.REFUSED, RunStatus.FAILED}),
+    RunStatus.LEASED: frozenset(
+        {
+            RunStatus.SNAPSHOTTING,
+            RunStatus.RUNNING,
+            RunStatus.CANCELLED,
+            RunStatus.SUPERSEDED,
+            RunStatus.FAILED,
+        }
+    ),
+    RunStatus.SNAPSHOTTING: frozenset(
+        {RunStatus.RUNNING, RunStatus.REFUSED, RunStatus.SUPERSEDED, RunStatus.FAILED}
+    ),
     RunStatus.RUNNING: frozenset(
         {
             RunStatus.EVALUATING,

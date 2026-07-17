@@ -8,7 +8,8 @@ from html import escape
 from uuid import UUID, uuid4
 
 from fastapi import Depends, FastAPI, Header, HTTPException, Request, Response, status
-from fastapi.responses import HTMLResponse
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import ValidationError
 from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
@@ -16,7 +17,14 @@ from sqlalchemy.orm import Session, sessionmaker
 
 from agentic_lab.api.security import payload_hash, verify_github_signature
 from agentic_lab.config.settings import Settings, get_settings
-from agentic_lab.db.models import Artifact, HumanReview, Run, WebhookEvent
+from agentic_lab.db.models import (
+    Artifact,
+    HumanReview,
+    ModelCall,
+    Run,
+    WebhookEvent,
+    WebhookRunLink,
+)
 from agentic_lab.db.session import build_session_factory
 from agentic_lab.domain.enums import AgentRole, RunSource, RunStatus
 from agentic_lab.domain.schemas import (
@@ -29,11 +37,14 @@ from agentic_lab.domain.schemas import (
     RunTransitionSummary,
     WebhookResponse,
 )
+from agentic_lab.policy.manifest_registry import active_manifest
 from agentic_lab.runs.service import (
     RunNotFoundError,
     create_queued_run,
     get_run,
+    link_runs,
     list_transitions,
+    supersede_active_runs,
     transition_run,
 )
 
@@ -51,6 +62,24 @@ def create_app(
     app = FastAPI(title="Agentic Engineering Lab", lifespan=lifespan)
     app.state.settings = settings
     app.state.sessions = sessions
+
+    @app.exception_handler(HTTPException)
+    async def http_error(request: Request, error: HTTPException) -> JSONResponse:
+        return JSONResponse(
+            status_code=error.status_code,
+            content={"detail": error.detail, "request_id": str(request.state.request_id)},
+            headers=error.headers,
+        )
+
+    @app.exception_handler(RequestValidationError)
+    async def validation_error(request: Request, error: RequestValidationError) -> JSONResponse:
+        return JSONResponse(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            content={
+                "detail": error.errors(include_input=False),
+                "request_id": str(request.state.request_id),
+            },
+        )
 
     def get_session(request: Request) -> Generator[Session, None, None]:
         with request.app.state.sessions() as session:
@@ -79,6 +108,12 @@ def create_app(
 
     @app.get("/readyz")
     def readyz(request: Request, session: Session = Depends(get_session)) -> dict[str, str]:
+        configuration_errors = request.app.state.settings.readiness_errors()
+        if configuration_errors:
+            raise HTTPException(
+                status_code=503,
+                detail={"configuration_errors": list(configuration_errors)},
+            )
         try:
             session.execute(select(1))
         except Exception as error:
@@ -94,7 +129,12 @@ def create_app(
     ) -> RunCreateResponse:
         _validate_manual_request(payload, request.app.state.settings)
         with session.begin():
-            run = create_queued_run(session, payload, RunSource.MANUAL, "operator")
+            manifest = active_manifest(session, payload.repository_id)
+            if manifest is None and request.app.state.settings.require_target_manifest:
+                raise HTTPException(status_code=409, detail="no approved target manifest")
+            effective = _with_effective_budget(payload, request.app.state.settings, manifest)
+            run = create_queued_run(session, effective, RunSource.MANUAL, "operator")
+            run.manifest_version = manifest.manifest_version if manifest else "read-only-v1"
         return RunCreateResponse(request_id=request.state.request_id, run=_summary(run))
 
     @app.post("/v1/runs/{run_id}/cancel", response_model=RunCreateResponse)
@@ -116,16 +156,19 @@ def create_app(
         return RunCreateResponse(request_id=request.state.request_id, run=_summary(run))
 
     @app.get("/v1/runs/{run_id}", response_model=RunDetail)
-    def run_detail(run_id: UUID, session: Session = Depends(get_session)) -> RunDetail:
+    def run_detail(
+        run_id: UUID, request: Request, session: Session = Depends(get_session)
+    ) -> dict[str, object]:
         try:
             run = get_run(session, run_id)
         except RunNotFoundError as error:
             raise HTTPException(status_code=404, detail="run not found") from error
-        return _detail(run, list_transitions(session, run.id))
+        detail = _detail(run, list_transitions(session, run.id), session)
+        return {"request_id": request.state.request_id, **detail.model_dump(mode="json")}
 
     @app.get("/v1/runs/{run_id}/artifacts/{kind}")
     def artifact_detail(
-        run_id: UUID, kind: str, session: Session = Depends(get_session)
+        run_id: UUID, kind: str, request: Request, session: Session = Depends(get_session)
     ) -> dict[str, object]:
         artifact = session.scalar(
             select(Artifact).where(Artifact.run_id == run_id, Artifact.kind == kind)
@@ -133,6 +176,7 @@ def create_app(
         if artifact is None:
             raise HTTPException(status_code=404, detail="artifact not found")
         return {
+            "request_id": request.state.request_id,
             "kind": artifact.kind,
             "schema_version": artifact.schema_version,
             "content": artifact.content_json,
@@ -142,6 +186,7 @@ def create_app(
     def create_review(
         run_id: UUID,
         payload: HumanReviewCreate,
+        request: Request,
         _: None = Depends(operator_auth),
         session: Session = Depends(get_session),
     ) -> dict[str, str]:
@@ -151,7 +196,7 @@ def create_app(
             except RunNotFoundError as error:
                 raise HTTPException(status_code=404, detail="run not found") from error
             session.add(HumanReview(run_id=run_id, **payload.model_dump()))
-        return {"status": "recorded"}
+        return {"status": "recorded", "request_id": str(request.state.request_id)}
 
     @app.post("/webhooks/github", response_model=WebhookResponse)
     async def github_webhook(
@@ -219,17 +264,30 @@ def create_app(
         transitions = list_transitions(session, run.id)
         artifacts = list(session.scalars(select(Artifact).where(Artifact.run_id == run.id)))
         reviews = list(session.scalars(select(HumanReview).where(HumanReview.run_id == run.id)))
+        detail = _detail(run, transitions, session)
         items = "".join(
             f"<li>{escape(str(item.occurred_at))}: "
             f"{escape(item.from_status.value if item.from_status else 'none')} "
             f"to {escape(item.to_status.value)} ({escape(item.reason_code)})</li>"
             for item in transitions
         )
+        artifact_sections = "".join(
+            f"<h3>{escape(item.kind)}</h3>"
+            f"<pre>{escape(json.dumps(item.content_json, indent=2))}</pre>"
+            for item in artifacts
+        )
+        trace_link = "none"
+        trace_host = app.state.settings.langfuse_host
+        if trace_host and detail.langfuse_trace_id:
+            trace_url = f"{trace_host.rstrip('/')}/trace/{detail.langfuse_trace_id}"
+            trace_link = f"<a href='{escape(trace_url)}'>{escape(detail.langfuse_trace_id)}</a>"
         return HTMLResponse(
             f"<html><body><h1>Run {run.id}</h1><p>Status: {escape(run.status.value)}</p>"
-            f"<p>Pinned SHA: {escape(run.pinned_sha)}</p><h2>Transitions</h2>"
+            f"<p>Pinned SHA: {escape(run.pinned_sha)}</p>"
+            f"<p>Event: {escape(detail.event_delivery_id or 'manual')}</p>"
+            f"<p>Trace: {trace_link}</p><h2>Transitions</h2>"
             f"<ul>{items}</ul><h2>Artifacts</h2>"
-            f"<p>{escape(', '.join(item.kind for item in artifacts) or 'none')}</p>"
+            f"{artifact_sections or '<p>none</p>'}"
             f"<h2>Reviews</h2><p>{len(reviews)}</p></body></html>"
         )
 
@@ -253,6 +311,34 @@ def _validate_manual_request(payload: RunCreate, settings: Settings) -> None:
             raise HTTPException(status_code=422, detail="budget must not be negative")
         if value > limits[name]:
             raise HTTPException(status_code=422, detail="budget exceeds configured maximum")
+
+
+def _with_effective_budget(payload: RunCreate, settings: Settings, manifest: object) -> RunCreate:
+    budget = _effective_budget(settings, manifest, payload.budget)
+    for name, requested in payload.budget.items():
+        if requested > budget[name]:
+            raise HTTPException(status_code=422, detail="budget exceeds target manifest maximum")
+    return payload.model_copy(update={"budget": budget})
+
+
+def _effective_budget(
+    settings: Settings, manifest: object, requested: dict[str, int | float]
+) -> dict[str, int | float]:
+    global_limits: dict[str, int | float] = {
+        "model_turns": settings.max_model_turns,
+        "tool_calls": settings.max_tool_calls,
+        "wall_seconds": settings.max_wall_seconds,
+        "usd": settings.max_usd,
+    }
+    manifest_budgets = getattr(manifest, "budgets", None)
+    manifest_limits: dict[str, int | float] = {
+        "model_turns": getattr(manifest_budgets, "max_model_turns", settings.max_model_turns),
+        "tool_calls": getattr(manifest_budgets, "max_tool_calls", settings.max_tool_calls),
+        "wall_seconds": getattr(manifest_budgets, "max_wall_seconds", settings.max_wall_seconds),
+        "usd": getattr(manifest_budgets, "max_usd", settings.max_usd),
+    }
+    ceilings = {name: min(global_limits[name], manifest_limits[name]) for name in global_limits}
+    return {name: requested.get(name, ceiling) for name, ceiling in ceilings.items()}
 
 
 def _record_invalid_delivery(
@@ -291,27 +377,42 @@ def _process_github_delivery(
     try:
         payload = json.loads(raw_body)
     except json.JSONDecodeError as error:
+        _record_safe_rejection(session, delivery_id, event_name, raw_body, "invalid_json")
         raise HTTPException(status_code=400, detail="invalid JSON payload") from error
     repository_id = _repository_id(payload)
-    with session.begin():
-        existing = session.scalar(
-            select(WebhookEvent.id).where(WebhookEvent.delivery_id == delivery_id)
-        )
-        if existing is not None:
-            return WebhookResponse(request_id=uuid4(), accepted=True, duplicate=True)
-        event = WebhookEvent(
-            delivery_id=delivery_id,
-            event_name=event_name,
-            repository_id=repository_id,
-            payload_hash=payload_hash(raw_body),
-            signature_valid=True,
-        )
-        session.add(event)
-        session.flush()
-        run, reason = _queue_webhook_run(
-            session, event_name, payload, repository_id, settings, source
-        )
-        event.rejection_reason = reason
+    try:
+        with session.begin():
+            existing = session.scalar(
+                select(WebhookEvent.id).where(WebhookEvent.delivery_id == delivery_id)
+            )
+            if existing is not None:
+                return WebhookResponse(request_id=uuid4(), accepted=True, duplicate=True)
+            event = WebhookEvent(
+                delivery_id=delivery_id,
+                event_name=event_name,
+                repository_id=repository_id,
+                payload_hash=payload_hash(raw_body),
+                signature_valid=True,
+            )
+            session.add(event)
+            session.flush()
+            manifest = (
+                active_manifest(session, repository_id) if repository_id is not None else None
+            )
+            if manifest is None and settings.require_target_manifest:
+                run, reason = None, "missing_target_manifest"
+            else:
+                run, reason = _queue_webhook_run(
+                    session, event_name, payload, repository_id, settings, source
+                )
+                if run is not None:
+                    run.manifest_version = manifest.manifest_version if manifest else "read-only-v1"
+                    run.budget = _effective_budget(settings, manifest, run.budget)
+                    session.add(WebhookRunLink(webhook_event_id=event.id, run_id=run.id))
+            event.rejection_reason = reason
+    except IntegrityError:
+        session.rollback()
+        return WebhookResponse(request_id=uuid4(), accepted=True, duplicate=True)
     return WebhookResponse(request_id=uuid4(), accepted=True, run_id=run.id if run else None)
 
 
@@ -339,6 +440,8 @@ def _queue_webhook_run(
     if not isinstance(payload, dict):
         return None, "unsupported_event"
     if event_name == "check_run":
+        if payload.get("action") not in {None, "completed"}:
+            return None, "check_run_not_completed"
         return _queue_check_run(session, payload, repository_id, source)
     if event_name != "pull_request":
         return None, "unsupported_event"
@@ -349,6 +452,9 @@ def _queue_webhook_run(
     head = pull_request.get("head")
     if not isinstance(head, dict) or not isinstance(head.get("sha"), str):
         return None, "missing_head_sha"
+    pull_number = pull_request.get("number", payload.get("number"))
+    if not isinstance(pull_number, int) or pull_number < 1:
+        pull_number = None
     try:
         data = RunCreate(
             role=AgentRole.ASSESSOR,
@@ -358,7 +464,17 @@ def _queue_webhook_run(
         )
     except ValidationError:
         return None, "invalid_head_sha"
-    return create_queued_run(session, data, source, "github_webhook"), None
+    superseded = []
+    sender = payload.get("sender")
+    if pull_number is not None and (not isinstance(sender, dict) or sender.get("type") != "Bot"):
+        superseded = supersede_active_runs(
+            session, repository_id, pull_number, head["sha"], "github_webhook"
+        )
+    run = create_queued_run(session, data, source, "github_webhook")
+    run.pull_number = pull_number
+    for previous in superseded:
+        link_runs(session, previous, run, "superseded_by")
+    return run, None
 
 
 def _queue_check_run(
@@ -376,6 +492,27 @@ def _queue_check_run(
     head_sha = check_run.get("head_sha")
     if not isinstance(head_sha, str):
         return None, "missing_head_sha"
+    pull_number = pull_request.get("number")
+    if not isinstance(pull_number, int) or pull_number < 1:
+        return None, "missing_pull_number"
+    head_repository = (
+        pull_request.get("head", {}).get("repo")
+        if isinstance(pull_request.get("head"), dict)
+        else None
+    )
+    if isinstance(head_repository, dict) and head_repository.get("id") != repository_id:
+        return None, "fork_branch_refused"
+    existing = session.scalar(
+        select(Run).where(
+            Run.role == AgentRole.CI,
+            Run.repository_id == repository_id,
+            Run.pull_number == pull_number,
+            Run.pinned_sha == head_sha,
+            Run.status.not_in({RunStatus.SUPERSEDED, RunStatus.CANCELLED}),
+        )
+    )
+    if existing is not None:
+        return None, "duplicate_ci_head_sha"
     try:
         data = RunCreate(
             role=AgentRole.CI,
@@ -385,7 +522,21 @@ def _queue_check_run(
         )
     except ValidationError:
         return None, "invalid_head_sha"
-    return create_queued_run(session, data, source, "github_webhook"), None
+    run = create_queued_run(session, data, source, "github_webhook")
+    run.pull_number = pull_number
+    assessor = session.scalar(
+        select(Run)
+        .where(
+            Run.role == AgentRole.ASSESSOR,
+            Run.repository_id == repository_id,
+            Run.pull_number == pull_number,
+            Run.pinned_sha == head_sha,
+        )
+        .order_by(Run.created_at.desc())
+    )
+    if assessor is not None:
+        link_runs(session, assessor, run, "failed_check_after_assessment")
+    return run, None
 
 
 def _summary(run: Run) -> RunSummary:
@@ -397,10 +548,36 @@ def _summary(run: Run) -> RunSummary:
         pinned_sha=run.pinned_sha,
         status=run.status,
         created_at=run.created_at,
+        terminal_at=run.terminal_at,
+        manifest_version=run.manifest_version,
+        policy_version=run.policy_version,
     )
 
 
-def _detail(run: Run, transitions: list[object]) -> RunDetail:
+def _detail(run: Run, transitions: list[object], session: Session | None = None) -> RunDetail:
+    artifacts = (
+        list(session.scalars(select(Artifact.kind).where(Artifact.run_id == run.id)))
+        if session is not None
+        else []
+    )
+    trace_id = (
+        session.scalar(
+            select(ModelCall.langfuse_trace_id)
+            .where(ModelCall.run_id == run.id)
+            .order_by(ModelCall.sequence.desc())
+        )
+        if session is not None
+        else None
+    )
+    delivery_id = (
+        session.scalar(
+            select(WebhookEvent.delivery_id)
+            .join(WebhookRunLink, WebhookRunLink.webhook_event_id == WebhookEvent.id)
+            .where(WebhookRunLink.run_id == run.id)
+        )
+        if session is not None
+        else None
+    )
     return RunDetail(
         **_summary(run).model_dump(),
         transitions=[
@@ -413,7 +590,33 @@ def _detail(run: Run, transitions: list[object]) -> RunDetail:
             )
             for item in transitions
         ],
+        artifacts=artifacts,
+        langfuse_trace_id=trace_id,
+        event_delivery_id=delivery_id,
     )
+
+
+def _record_safe_rejection(
+    session: Session,
+    delivery_id: str,
+    event_name: str | None,
+    body: bytes,
+    reason: str,
+) -> None:
+    try:
+        with session.begin():
+            session.add(
+                WebhookEvent(
+                    delivery_id=delivery_id,
+                    event_name=event_name,
+                    repository_id=None,
+                    payload_hash=payload_hash(body),
+                    signature_valid=True,
+                    rejection_reason=reason,
+                )
+            )
+    except IntegrityError:
+        session.rollback()
 
 
 app = create_app()

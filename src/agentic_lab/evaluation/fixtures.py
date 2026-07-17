@@ -1,26 +1,46 @@
 from __future__ import annotations
 
+from datetime import datetime
+from typing import Literal
+
 from pydantic import BaseModel, Field, field_validator
+
+from agentic_lab.domain.enums import AgentRole
+
+
+class LabelChange(BaseModel):
+    reason: str = Field(min_length=1)
+    author: str = Field(min_length=1)
+    timestamp: datetime
+    old_value_hash: str = Field(min_length=64, max_length=64)
+    new_value_hash: str = Field(min_length=64, max_length=64)
 
 
 class EvaluationCase(BaseModel):
     case_id: str
-    role: str
-    repository_id: int
+    role: AgentRole
+    repository_id: int = Field(gt=0)
     pinned_sha: str = Field(min_length=40, max_length=64)
-    task_input: str
-    source_provenance: str
-    expected_evidence: list[str]
-    deterministic_assertions: list[str]
-    human_rubric: str
-    split: str
-    label_change_log: list[dict[str, str]] = Field(default_factory=list)
+    task_input: str = Field(min_length=1)
+    source_provenance: str = Field(min_length=1)
+    expected_evidence: list[str] = Field(min_length=1)
+    deterministic_assertions: list[str] = Field(min_length=1)
+    human_rubric: str = Field(min_length=1)
+    split: Literal["development", "held_out"]
+    label_change_log: list[LabelChange] = Field(default_factory=list)
 
     @field_validator("split")
     @classmethod
     def approved_split(cls, value: str) -> str:
-        if value not in {"development", "held_out"}:
-            raise ValueError("split must be development or held_out")
+        return value
+
+    @field_validator("pinned_sha")
+    @classmethod
+    def immutable_sha(cls, value: str) -> str:
+        if len(value) not in {40, 64} or any(
+            character not in "0123456789abcdef" for character in value
+        ):
+            raise ValueError("fixture SHA must be immutable lowercase hexadecimal")
         return value
 
     def agent_input(self) -> dict[str, object]:
