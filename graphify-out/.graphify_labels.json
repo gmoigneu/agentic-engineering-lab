@@ -9,6 +9,7 @@
   "7": "TraceExporter",
   "8": "LeaseHeartbeat",
   "9": "What You Must Do When Invoked",
+  "10": "AgentRole",
   "11": "Settings",
   "12": "PolicyOutcome",
   "13": "Product requirements document",
@@ -18,6 +19,7 @@
   "17": "API, webhook, and tool contracts",
   "18": "Evaluation specification",
   "19": "Security and policy specification",
+  "20": "ExecutionManifest",
   "21": "Implementation rules",
   "22": "graphify reference: query, path, explain",
   "23": "Data model and state machine",
@@ -57,5 +59,10 @@
   "57": "README.md",
   "58": "noop.py",
   "59": "ValueError",
-  "62": "seed"
+  "60": "ValueError",
+  "61": "ExecutorTransport",
+  "62": "seed",
+  "63": "apply_text_diff",
+  "64": "ContainerRunner",
+  "65": "Runner"
 }

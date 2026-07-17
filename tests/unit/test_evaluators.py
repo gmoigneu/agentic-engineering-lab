@@ -6,7 +6,7 @@ from agentic_lab.evaluation.evaluators import citation_coverage
 
 
 def test_material_claim_requires_resolvable_citation() -> None:
-    artifact = ScoutArtifact(
+    artifact = ScoutArtifact.model_construct(
         run_id=uuid4(),
         role=AgentRole.SCOUT,
         pinned_sha="a" * 40,

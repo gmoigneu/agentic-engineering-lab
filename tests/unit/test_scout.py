@@ -1,6 +1,9 @@
 import hashlib
 from uuid import uuid4
 
+import pytest
+from pydantic import ValidationError
+
 from agentic_lab.agents.scout import run_scout
 from agentic_lab.domain.enums import AgentRole
 from agentic_lab.domain.schemas import Citation, Claim, ScoutArtifact
@@ -11,24 +14,18 @@ from agentic_lab.tools.snapshot import RepositorySnapshot
 
 def test_scout_rejects_uncited_material_claim() -> None:
     run_id = uuid4()
-    artifact = ScoutArtifact(
-        run_id=run_id,
-        role=AgentRole.SCOUT,
-        pinned_sha="a" * 40,
-        claims=[Claim(id="one", statement="claim")],
-        relevant_files=[],
-        dependency_analysis="none",
-        blast_radius="none",
-        plan=[],
-        confidence=0.5,
-    )
-    gateway = ScriptedModelGateway(artifact)
-    try:
-        run_scout(gateway, run_id, "a" * 40, "map", "model@1", ModelBudget(1, 1, 1))
-    except ValueError as error:
-        assert "unsupported" in str(error)
-    else:
-        raise AssertionError("uncited scout claim was accepted")
+    with pytest.raises(ValidationError, match="material claims require citations"):
+        ScoutArtifact(
+            run_id=run_id,
+            role=AgentRole.SCOUT,
+            pinned_sha="a" * 40,
+            claims=[Claim(id="one", statement="claim")],
+            relevant_files=[],
+            dependency_analysis="none",
+            blast_radius="none",
+            plan=[],
+            confidence=0.5,
+        )
 
 
 def test_scout_accepts_cited_output() -> None:

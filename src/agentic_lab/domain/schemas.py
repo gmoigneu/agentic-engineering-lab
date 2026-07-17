@@ -154,6 +154,17 @@ class ScoutArtifact(ArtifactBase):
     risks: list[str] = Field(default_factory=list)
     confidence: float = Field(ge=0, le=1)
 
+    @model_validator(mode="after")
+    def material_claims_have_citations(self) -> ScoutArtifact:
+        material_claims = {claim.id for claim in self.claims if claim.material}
+        cited_claims = {citation.claim_id for citation in self.citations}
+        missing = sorted(material_claims - cited_claims)
+        if missing:
+            raise ValueError(
+                "material claims require citations: " + ",".join(missing)
+            )
+        return self
+
 
 class TerminalError(ArtifactBase):
     code: str

@@ -1,0 +1,17 @@
+{
+  "schema_version": "evaluation-exclusions-v1",
+  "exclusions": [
+    {
+      "run_id": "8712f30d-4eab-4faf-a8f3-f9b1739d0ca0",
+      "evaluation_case_id": "scout-dev-01",
+      "model_id": "deepseek/deepseek-v4-flash",
+      "provider": "StreamLake",
+      "billed_cost": 0.00171186792,
+      "failure_category": "harness",
+      "reason": "Citation coverage was enforced after the configured typed-output repair opportunity.",
+      "disposition": "excluded_and_rerun_after_contract_fix",
+      "included_in_scorecard": false,
+      "occurred_at": "2026-07-17T09:17:00.803362Z"
+    }
+  ]
+}
