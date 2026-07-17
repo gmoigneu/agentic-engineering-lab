@@ -1,0 +1,57 @@
+{
+  "manifest_version": "eval-v1",
+  "repository_id": 1303663681,
+  "repository": "gmoigneu/agentic-engineering-lab-eval",
+  "allowed_source_paths": [
+    "src/eval_service/*.py"
+  ],
+  "protected_paths": [
+    ".github/**",
+    "tests/**",
+    "pyproject.toml",
+    "uv.lock",
+    "src/eval_service/records.py"
+  ],
+  "recipes": {
+    "reproduce": {
+      "kind": "reproduce",
+      "image": "ghcr.io/gmoigneu/agentic-lab-eval-executor:eval-v1-5826873ec58a30cab18c6a8c61889988640d5f81@sha256:3c77a98a70a2cead5c7c97da52a05e4fb68c99c7dadd4a5451e4e5b888ae944d",
+      "adapter": "pytest_v1",
+      "working_directory": "/work/workspace",
+      "arguments_schema": "test_selector_v1",
+      "timeout_seconds": 120,
+      "network": "none",
+      "required_local_services": [],
+      "expected_output_artifacts": []
+    },
+    "validate_patch": {
+      "kind": "validate",
+      "image": "ghcr.io/gmoigneu/agentic-lab-eval-executor:eval-v1-5826873ec58a30cab18c6a8c61889988640d5f81@sha256:3c77a98a70a2cead5c7c97da52a05e4fb68c99c7dadd4a5451e4e5b888ae944d",
+      "adapter": "pytest_after_patch_v1",
+      "working_directory": "/work/workspace",
+      "arguments_schema": "patch_test_selector_v1",
+      "timeout_seconds": 120,
+      "network": "none",
+      "required_local_services": [],
+      "expected_output_artifacts": []
+    },
+    "lint": {
+      "kind": "validate",
+      "image": "ghcr.io/gmoigneu/agentic-lab-eval-executor:eval-v1-5826873ec58a30cab18c6a8c61889988640d5f81@sha256:3c77a98a70a2cead5c7c97da52a05e4fb68c99c7dadd4a5451e4e5b888ae944d",
+      "adapter": "ruff_check_v1",
+      "working_directory": "/work/workspace",
+      "arguments_schema": "none_v1",
+      "timeout_seconds": 120,
+      "network": "none",
+      "required_local_services": [],
+      "expected_output_artifacts": []
+    }
+  },
+  "redaction_patterns": [],
+  "budgets": {
+    "max_model_turns": 8,
+    "max_tool_calls": 24,
+    "max_wall_seconds": 300,
+    "max_usd": 0.2
+  }
+}
