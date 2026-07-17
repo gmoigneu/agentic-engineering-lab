@@ -190,8 +190,8 @@
     "semantic_hash": ""
   },
   "src/agentic_lab/gateway/model.py": {
-    "mtime": 1784283855.299669,
-    "ast_hash": "e338ff4b36cc83f705b7841510233af4",
+    "mtime": 1784284091.4196525,
+    "ast_hash": "60c17fa617f512112c72618f7c8f5ace",
     "semantic_hash": ""
   },
   "src/agentic_lab/gateway/redaction.py": {
@@ -370,8 +370,8 @@
     "semantic_hash": ""
   },
   "tests/unit/test_model_gateway.py": {
-    "mtime": 1784283842.5732446,
-    "ast_hash": "65c95edd739ed75b5fea103970d68bbd",
+    "mtime": 1784284051.690797,
+    "ast_hash": "bd68b373d661e91b575926baab4e05a5",
     "semantic_hash": ""
   },
   "tests/unit/test_orchestrator.py": {
@@ -520,8 +520,8 @@
     "semantic_hash": ""
   },
   "docs/implementation-plan.md": {
-    "mtime": 1784283899.472141,
-    "ast_hash": "ecd99a1e5be091186efcecd4aab0af00",
+    "mtime": 1784284120.7372897,
+    "ast_hash": "7f7bb27f264fda1ef5e1ec29a4e787a3",
     "semantic_hash": ""
   },
   "docs/repository-manifest.md": {
@@ -830,8 +830,8 @@
     "semantic_hash": ""
   },
   "evaluation/exclusions-v1.json": {
-    "mtime": 1784283899.4716716,
-    "ast_hash": "796d4ab2a111ff333dcdba5ae2140f2d",
+    "mtime": 1784284120.7368634,
+    "ast_hash": "8b2b65a86d81b012019f4d779d983657",
     "semantic_hash": ""
   },
   "tests/unit/test_settings.py": {

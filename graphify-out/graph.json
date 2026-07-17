@@ -354,8 +354,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "scripts_probe_evaluation_executor",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "probe_evaluation_executor.py"
     },
     {
@@ -365,8 +365,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "scripts_probe_evaluation_executor_run",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "_run()"
     },
     {
@@ -376,8 +376,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "scripts_probe_evaluation_executor_py_path",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "path"
     },
     {
@@ -387,8 +387,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "scripts_probe_evaluation_executor_snapshot_at",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "_snapshot_at()"
     },
     {
@@ -398,8 +398,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "scripts_probe_evaluation_executor_execute",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "_execute()"
     },
     {
@@ -409,8 +409,8 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "scripts_probe_evaluation_executor_probe",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "probe()"
     },
     {
@@ -420,8 +420,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "snapshotloader",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "snapshotloader"
     },
     {
@@ -431,8 +431,8 @@
       "source_location": "L139",
       "_origin": "ast",
       "id": "scripts_probe_evaluation_executor_main",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "main()"
     },
     {
@@ -629,8 +629,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_agents_ci",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "ci.py"
     },
     {
@@ -640,8 +640,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_agentic_lab_agents_ci_run_ci_diagnosis",
-      "community": 1,
-      "community_name": "Run",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": "run_ci_diagnosis()"
     },
     {
@@ -651,8 +651,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_agents_ci_py_uuid",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "uuid"
     },
     {
@@ -662,8 +662,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "src_agentic_lab_agents_ci_requires_refusal",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "requires_refusal()"
     },
     {
@@ -673,8 +673,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_agentic_lab_agents_ci_build_refusal",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "build_refusal()"
     },
     {
@@ -684,8 +684,8 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "src_agentic_lab_agents_ci_classify_failure",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "classify_failure()"
     },
     {
@@ -695,8 +695,8 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "src_agentic_lab_agents_ci_rationale_82",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "conservative classification. ambiguous logs never enable patching."
     },
     {
@@ -805,8 +805,8 @@
       "source_location": "L297",
       "_origin": "ast",
       "id": "src_agentic_lab_api_app_validate_manual_request",
-      "community": 10,
-      "community_name": "AgentRole",
+      "community": 11,
+      "community_name": "Settings",
       "norm_label": "_validate_manual_request()"
     },
     {
@@ -1179,8 +1179,8 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "src_agentic_lab_db_models_runlease",
-      "community": 10,
-      "community_name": "AgentRole",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "runlease"
     },
     {
@@ -1322,8 +1322,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_db_session",
-      "community": 1,
-      "community_name": "Run",
+      "community": 10,
+      "community_name": "AgentRole",
       "norm_label": "session.py"
     },
     {
@@ -1333,8 +1333,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_agentic_lab_db_session_build_session_factory",
-      "community": 1,
-      "community_name": "Run",
+      "community": 10,
+      "community_name": "AgentRole",
       "norm_label": "build_session_factory()"
     },
     {
@@ -1344,8 +1344,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_db_session_py_sessionmaker",
-      "community": 1,
-      "community_name": "Run",
+      "community": 10,
+      "community_name": "AgentRole",
       "norm_label": "sessionmaker"
     },
     {
@@ -1355,8 +1355,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_db_session_py_session",
-      "community": 1,
-      "community_name": "Run",
+      "community": 10,
+      "community_name": "AgentRole",
       "norm_label": "session"
     },
     {
@@ -1476,7 +1476,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_runcreate_immutable_sha",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".immutable_sha()"
     },
@@ -1575,7 +1575,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_citation_hexadecimal_excerpt_hash",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".hexadecimal_excerpt_hash()"
     },
@@ -1619,7 +1619,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_artifactbase_stable_claims_and_citations",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".stable_claims_and_citations()"
     },
@@ -1663,8 +1663,8 @@
       "source_location": "L158",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_scoutartifact_material_claims_have_citations",
-      "community": 60,
-      "community_name": "ValueError",
+      "community": 12,
+      "community_name": "PolicyOutcome",
       "norm_label": ".material_claims_have_citations()"
     },
     {
@@ -1751,7 +1751,7 @@
       "source_location": "L224",
       "_origin": "ast",
       "id": "src_agentic_lab_domain_schemas_patchartifact_patch_identity",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".patch_identity()"
     },
@@ -2356,8 +2356,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_adapter",
-      "community": 60,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "adapter.py"
     },
     {
@@ -2367,8 +2367,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_adapter_execute_request",
-      "community": 60,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "execute_request()"
     },
     {
@@ -2378,8 +2378,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_adapter_py_path",
-      "community": 60,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "path"
     },
     {
@@ -2389,8 +2389,8 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_adapter_main",
-      "community": 60,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "main()"
     },
     {
@@ -2400,8 +2400,8 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_adapter_safe_artifact_path",
-      "community": 60,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "_safe_artifact_path()"
     },
     {
@@ -2411,8 +2411,8 @@
       "source_location": "L139",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_adapter_apply_workspace_diff",
-      "community": 60,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "_apply_workspace_diff()"
     },
     {
@@ -2422,8 +2422,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_adapters",
-      "community": 60,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "adapters.py"
     },
     {
@@ -2433,8 +2433,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_adapters_adapter_argv",
-      "community": 60,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "adapter_argv()"
     },
     {
@@ -2466,8 +2466,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_launcher_containerrunner",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "containerrunner"
     },
     {
@@ -2477,8 +2477,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_launcher_py_protocol",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "protocol"
     },
     {
@@ -2576,8 +2576,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "manifest.py"
     },
     {
@@ -2587,7 +2587,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_recipe",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": "recipe"
     },
@@ -2598,8 +2598,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_py_basemodel",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "basemodel"
     },
     {
@@ -2609,7 +2609,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_recipe_immutable_image",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".immutable_image()"
     },
@@ -2620,7 +2620,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_recipe_confined_working_directory",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".confined_working_directory()"
     },
@@ -2631,7 +2631,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_recipe_safe_output_artifacts",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".safe_output_artifacts()"
     },
@@ -2642,7 +2642,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_recipe_network_disabled",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".network_disabled()"
     },
@@ -2653,7 +2653,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_recipe_adapter_matches_arguments",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".adapter_matches_arguments()"
     },
@@ -2664,8 +2664,8 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_manifestbudgets",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "manifestbudgets"
     },
     {
@@ -2675,8 +2675,8 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_executionmanifest",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "executionmanifest"
     },
     {
@@ -2686,8 +2686,8 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_executionmanifest_canonical_repository",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".canonical_repository()"
     },
     {
@@ -2697,8 +2697,8 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_executionmanifest_safe_globs",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".safe_globs()"
     },
     {
@@ -2708,8 +2708,8 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_reciperequest",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "reciperequest"
     },
     {
@@ -2719,8 +2719,8 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_validate_recipe_request",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "validate_recipe_request()"
     },
     {
@@ -2730,8 +2730,8 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_contains_command_key",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "_contains_command_key()"
     },
     {
@@ -2741,8 +2741,8 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_validate_arguments",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "_validate_arguments()"
     },
     {
@@ -2752,8 +2752,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_manifest_py_any",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "any"
     },
     {
@@ -2785,8 +2785,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_service",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "service.py"
     },
     {
@@ -2796,8 +2796,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_service_recipelaunchpayload",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "recipelaunchpayload"
     },
     {
@@ -2807,8 +2807,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_service_py_basemodel",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "basemodel"
     },
     {
@@ -2818,8 +2818,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_service_recipelaunchpayload_bounded_snapshot",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".bounded_snapshot()"
     },
     {
@@ -2829,8 +2829,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_service_create_app",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "create_app()"
     },
     {
@@ -2840,8 +2840,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_service_py_fastapi",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "fastapi"
     },
     {
@@ -2884,7 +2884,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_transport_recipeexecutionrequest_immutable_sha",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".immutable_sha()"
     },
@@ -2895,7 +2895,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_agentic_lab_executor_transport_recipeexecutionrequest_safe_artifact_paths",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".safe_artifact_paths()"
     },
@@ -3313,8 +3313,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_githubappbranchwriter",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "githubappbranchwriter"
     },
     {
@@ -3346,8 +3346,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_githubappbranchwriter_head_sha",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".head_sha()"
     },
     {
@@ -3357,8 +3357,8 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_githubappbranchwriter_apply_unified_diff",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".apply_unified_diff()"
     },
     {
@@ -3368,8 +3368,8 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_githubappbranchwriter_file_content",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "._file_content()"
     },
     {
@@ -3379,8 +3379,8 @@
       "source_location": "L181",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_githubappbranchwriter_repository_name",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "._repository_name()"
     },
     {
@@ -3390,8 +3390,8 @@
       "source_location": "L191",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_githubappbranchwriter_authorize",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "._authorize()"
     },
     {
@@ -3434,8 +3434,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_rationale_29",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "narrow github app writer using an atomic non-force git ref update."
     },
     {
@@ -3555,7 +3555,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_untrustedevidencetext_hexadecimal_hash",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".hexadecimal_hash()"
     },
@@ -3588,7 +3588,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_difffileevidence_safe_path",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".safe_path()"
     },
@@ -3610,7 +3610,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_pullrequestdiffevidence_immutable_sha",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".immutable_sha()"
     },
@@ -3654,7 +3654,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_github_evidence_checkevidence_immutable_sha",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": ".immutable_sha()"
     },
@@ -3937,7 +3937,7 @@
       "label": "ModelBudget",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L27",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_modelbudget",
       "community": 2,
@@ -3948,7 +3948,7 @@
       "label": "ModelRequest",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L35",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_modelrequest",
       "community": 2,
@@ -3959,18 +3959,18 @@
       "label": ".prompt_hash()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L48",
+      "source_location": "L47",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_modelrequest_prompt_hash",
-      "community": 1,
-      "community_name": "Run",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
       "norm_label": ".prompt_hash()"
     },
     {
       "label": "ModelGateway",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L52",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_modelgateway",
       "community": 1,
@@ -3992,7 +3992,7 @@
       "label": ".run_agent_loop()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L53",
+      "source_location": "L52",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_modelgateway_run_agent_loop",
       "community": 2,
@@ -4003,7 +4003,7 @@
       "label": "ScriptedModelGateway",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L56",
+      "source_location": "L55",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_scriptedmodelgateway",
       "community": 12,
@@ -4014,7 +4014,7 @@
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L59",
+      "source_location": "L58",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_scriptedmodelgateway_init",
       "community": 12,
@@ -4025,7 +4025,7 @@
       "label": ".run_agent_loop()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L64",
+      "source_location": "L63",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_scriptedmodelgateway_run_agent_loop",
       "community": 2,
@@ -4036,7 +4036,7 @@
       "label": "ModelCallMetadata",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L71",
+      "source_location": "L70",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_modelcallmetadata",
       "community": 2,
@@ -4047,7 +4047,7 @@
       "label": "BudgetExhaustedError",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L78",
+      "source_location": "L77",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_budgetexhaustederror",
       "community": 2,
@@ -4069,7 +4069,7 @@
       "label": "ModelGatewayError",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L82",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_modelgatewayerror",
       "community": 2,
@@ -4080,7 +4080,7 @@
       "label": "OpenRouterChatModel",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L86",
+      "source_location": "L85",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_openrouterchatmodel",
       "community": 2,
@@ -4099,15 +4099,15 @@
       "norm_label": "openaichatmodel"
     },
     {
-      "label": "._process_provider_details()",
+      "label": ".__init__()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L89",
+      "source_location": "L88",
       "_origin": "ast",
-      "id": "src_agentic_lab_gateway_model_openrouterchatmodel_process_provider_details",
+      "id": "src_agentic_lab_gateway_model_openrouterchatmodel_init",
       "community": 2,
       "community_name": "SnapshotToolRegistry",
-      "norm_label": "._process_provider_details()"
+      "norm_label": ".__init__()"
     },
     {
       "label": "Any",
@@ -4121,10 +4121,21 @@
       "norm_label": "any"
     },
     {
+      "label": "._process_provider_details()",
+      "file_type": "code",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L92",
+      "_origin": "ast",
+      "id": "src_agentic_lab_gateway_model_openrouterchatmodel_process_provider_details",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
+      "norm_label": "._process_provider_details()"
+    },
+    {
       "label": "validate_model_id()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L102",
+      "source_location": "L107",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_validate_model_id",
       "community": 2,
@@ -4135,7 +4146,7 @@
       "label": "OpenRouterModelGateway",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L107",
+      "source_location": "L112",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_openroutermodelgateway",
       "community": 2,
@@ -4146,7 +4157,7 @@
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L110",
+      "source_location": "L115",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_openroutermodelgateway_init",
       "community": 2,
@@ -4168,7 +4179,7 @@
       "label": ".run_agent_loop()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L125",
+      "source_location": "L130",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_openroutermodelgateway_run_agent_loop",
       "community": 2,
@@ -4179,7 +4190,7 @@
       "label": "PydanticAIModelGateway",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L232",
+      "source_location": "L237",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_pydanticaimodelgateway",
       "community": 2,
@@ -4190,7 +4201,7 @@
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L235",
+      "source_location": "L240",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_pydanticaimodelgateway_init",
       "community": 2,
@@ -4212,7 +4223,7 @@
       "label": ".run_agent_loop()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L251",
+      "source_location": "L256",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
       "community": 2,
@@ -4220,10 +4231,43 @@
       "norm_label": ".run_agent_loop()"
     },
     {
+      "label": "_pydantic_call_metadata()",
+      "file_type": "code",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L332",
+      "_origin": "ast",
+      "id": "src_agentic_lab_gateway_model_pydantic_call_metadata",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
+      "norm_label": "_pydantic_call_metadata()"
+    },
+    {
+      "label": "RunUsage",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "runusage",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
+      "norm_label": "runusage"
+    },
+    {
+      "label": "_validate_returned_providers()",
+      "file_type": "code",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L360",
+      "_origin": "ast",
+      "id": "src_agentic_lab_gateway_model_validate_returned_providers",
+      "community": 2,
+      "community_name": "SnapshotToolRegistry",
+      "norm_label": "_validate_returned_providers()"
+    },
+    {
       "label": "_pydantic_tools()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L341",
+      "source_location": "L372",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_pydantic_tools",
       "community": 59,
@@ -4234,7 +4278,7 @@
       "label": "_content()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L404",
+      "source_location": "L435",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_content",
       "community": 2,
@@ -4245,7 +4289,7 @@
       "label": "_message()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L414",
+      "source_location": "L445",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_message",
       "community": 2,
@@ -4256,7 +4300,7 @@
       "label": "_tool_request()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L424",
+      "source_location": "L455",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_tool_request",
       "community": 2,
@@ -4267,7 +4311,7 @@
       "label": "_metadata()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L444",
+      "source_location": "L475",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_metadata",
       "community": 2,
@@ -4278,7 +4322,7 @@
       "label": "_float_cost()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L458",
+      "source_location": "L489",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_float_cost",
       "community": 2,
@@ -4289,7 +4333,7 @@
       "label": "_safe_provider_error()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L465",
+      "source_location": "L496",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_safe_provider_error",
       "community": 2,
@@ -4311,7 +4355,7 @@
       "label": "_safe_model_behavior_error()",
       "file_type": "code",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L487",
+      "source_location": "L518",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_model_safe_model_behavior_error",
       "community": 2,
@@ -4333,9 +4377,9 @@
       "label": "Test adapter. Production configuration must use a provider-backed gateway.",
       "file_type": "rationale",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L57",
+      "source_location": "L56",
       "_origin": "ast",
-      "id": "src_agentic_lab_gateway_model_rationale_57",
+      "id": "src_agentic_lab_gateway_model_rationale_56",
       "community": 12,
       "community_name": "PolicyOutcome",
       "norm_label": "test adapter. production configuration must use a provider-backed gateway."
@@ -4344,9 +4388,9 @@
       "label": "Preserve OpenRouter billing metadata dropped by the OpenAI schema.",
       "file_type": "rationale",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L87",
+      "source_location": "L86",
       "_origin": "ast",
-      "id": "src_agentic_lab_gateway_model_rationale_87",
+      "id": "src_agentic_lab_gateway_model_rationale_86",
       "community": 2,
       "community_name": "SnapshotToolRegistry",
       "norm_label": "preserve openrouter billing metadata dropped by the openai schema."
@@ -4355,9 +4399,9 @@
       "label": "Provider adapter. The API key exists only in this trusted process.",
       "file_type": "rationale",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L108",
+      "source_location": "L113",
       "_origin": "ast",
-      "id": "src_agentic_lab_gateway_model_rationale_108",
+      "id": "src_agentic_lab_gateway_model_rationale_113",
       "community": 2,
       "community_name": "SnapshotToolRegistry",
       "norm_label": "provider adapter. the api key exists only in this trusted process."
@@ -4366,9 +4410,9 @@
       "label": "Production Pydantic AI adapter for typed output and bounded snapshot tools.",
       "file_type": "rationale",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L233",
+      "source_location": "L238",
       "_origin": "ast",
-      "id": "src_agentic_lab_gateway_model_rationale_233",
+      "id": "src_agentic_lab_gateway_model_rationale_238",
       "community": 2,
       "community_name": "SnapshotToolRegistry",
       "norm_label": "production pydantic ai adapter for typed output and bounded snapshot tools."
@@ -4380,8 +4424,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_patch_apply",
-      "community": 63,
-      "community_name": "apply_text_diff",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "patch_apply.py"
     },
     {
@@ -4391,8 +4435,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_patch_apply_texthunk",
-      "community": 63,
-      "community_name": "apply_text_diff",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "texthunk"
     },
     {
@@ -4402,8 +4446,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_patch_apply_textfilepatch",
-      "community": 63,
-      "community_name": "apply_text_diff",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "textfilepatch"
     },
     {
@@ -4413,8 +4457,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_patch_apply_appliedfile",
-      "community": 63,
-      "community_name": "apply_text_diff",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "appliedfile"
     },
     {
@@ -4424,8 +4468,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_patch_apply_parse_text_diff",
-      "community": 63,
-      "community_name": "apply_text_diff",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "parse_text_diff()"
     },
     {
@@ -4435,8 +4479,8 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_patch_apply_apply_text_diff",
-      "community": 63,
-      "community_name": "apply_text_diff",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "apply_text_diff()"
     },
     {
@@ -4446,8 +4490,8 @@
       "source_location": "L150",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_patch_apply_header_path",
-      "community": 63,
-      "community_name": "apply_text_diff",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "_header_path()"
     },
     {
@@ -4490,8 +4534,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "tracing.py"
     },
     {
@@ -4501,8 +4545,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_tracesink",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "tracesink"
     },
     {
@@ -4512,8 +4556,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_py_protocol",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "protocol"
     },
     {
@@ -4523,8 +4567,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_tracesink_emit",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": ".emit()"
     },
     {
@@ -4534,8 +4578,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_langfuseclient",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "langfuseclient"
     },
     {
@@ -4545,8 +4589,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_langfuseclient_start_as_current_observation",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": ".start_as_current_observation()"
     },
     {
@@ -4556,8 +4600,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_py_any",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "any"
     },
     {
@@ -4567,8 +4611,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_langfuseclient_flush",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": ".flush()"
     },
     {
@@ -4578,8 +4622,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_langfusetracesink",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 63,
+      "community_name": "apply_text_diff",
       "norm_label": "langfusetracesink"
     },
     {
@@ -4589,8 +4633,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_langfusetracesink_emit",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": ".emit()"
     },
     {
@@ -4600,8 +4644,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_traceexportresult",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "traceexportresult"
     },
     {
@@ -4611,8 +4655,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_trace_id_for_run",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "trace_id_for_run()"
     },
     {
@@ -4633,8 +4677,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_traceexporter_export",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": ".export()"
     },
     {
@@ -4644,8 +4688,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_agentic_lab_gateway_tracing_rationale_43",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 5,
+      "community_name": "ValueError",
       "norm_label": "match langfuse's deterministic w3c trace-id derivation."
     },
     {
@@ -5018,8 +5062,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "heartbeat.py"
     },
     {
@@ -5029,8 +5073,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaselosterror",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "leaselosterror"
     },
     {
@@ -5040,8 +5084,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_py_runtimeerror",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "runtimeerror"
     },
     {
@@ -5051,8 +5095,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "leaseheartbeat"
     },
     {
@@ -5062,8 +5106,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_init",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": ".__init__()"
     },
     {
@@ -5073,8 +5117,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_py_any",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "any"
     },
     {
@@ -5084,8 +5128,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_enter",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": ".__enter__()"
     },
     {
@@ -5095,8 +5139,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_exit",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": ".__exit__()"
     },
     {
@@ -5106,8 +5150,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_is_alive",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": ".is_alive()"
     },
     {
@@ -5117,8 +5161,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_wait_until_renewed",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": ".wait_until_renewed()"
     },
     {
@@ -5128,8 +5172,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_wait_until_lost",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": ".wait_until_lost()"
     },
     {
@@ -5139,8 +5183,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_leaseheartbeat_run",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "._run()"
     },
     {
@@ -5150,8 +5194,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_heartbeat_rationale_14",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "renew one durable lease while its worker attempt is active."
     },
     {
@@ -5161,8 +5205,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_leases",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "leases.py"
     },
     {
@@ -5183,8 +5227,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_leases_py_session",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "session"
     },
     {
@@ -5194,8 +5238,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_leases_heartbeat_lease",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "heartbeat_lease()"
     },
     {
@@ -5205,8 +5249,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_leases_release_lease",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "release_lease()"
     },
     {
@@ -5216,8 +5260,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_leases_py_uuid",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "uuid"
     },
     {
@@ -5227,8 +5271,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_leases_new_lease",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "_new_lease()"
     },
     {
@@ -5238,8 +5282,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_leases_py_datetime",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "datetime"
     },
     {
@@ -5392,8 +5436,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_service_invalidtransitionerror",
-      "community": 10,
-      "community_name": "AgentRole",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "invalidtransitionerror"
     },
     {
@@ -5403,7 +5447,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "valueerror",
-      "community": 60,
+      "community": 59,
       "community_name": "ValueError",
       "norm_label": "valueerror"
     },
@@ -5414,8 +5458,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_service_runnotfounderror",
-      "community": 1,
-      "community_name": "Run",
+      "community": 10,
+      "community_name": "AgentRole",
       "norm_label": "runnotfounderror"
     },
     {
@@ -5425,8 +5469,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "lookuperror",
-      "community": 1,
-      "community_name": "Run",
+      "community": 10,
+      "community_name": "AgentRole",
       "norm_label": "lookuperror"
     },
     {
@@ -5568,8 +5612,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "src_agentic_lab_runs_worker_build_dependencies",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 63,
+      "community_name": "apply_text_diff",
       "norm_label": "build_dependencies()"
     },
     {
@@ -5788,8 +5832,8 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_registry_snapshottoolregistry_available_inputs",
-      "community": 2,
-      "community_name": "SnapshotToolRegistry",
+      "community": 0,
+      "community_name": "RepositorySnapshot",
       "norm_label": "._available_inputs()"
     },
     {
@@ -5799,8 +5843,8 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_registry_snapshottoolregistry_configure_evidence_window",
-      "community": 2,
-      "community_name": "SnapshotToolRegistry",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": ".configure_evidence_window()"
     },
     {
@@ -5975,8 +6019,8 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_repositorysnapshot",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "repositorysnapshot"
     },
     {
@@ -6085,8 +6129,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_agentic_lab_tools_snapshot_rationale_61",
-      "community": 59,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "an immutable, credential-free source snapshot supplied by the gateway."
     },
     {
@@ -6118,8 +6162,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_contract_test_api_contract",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 20,
+      "community_name": "ExecutionManifest",
       "norm_label": "test_api_contract.py"
     },
     {
@@ -6129,8 +6173,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_contract_test_api_contract_test_manual_run_requires_operator_and_allowlisted_repository",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 20,
+      "community_name": "ExecutionManifest",
       "norm_label": "test_manual_run_requires_operator_and_allowlisted_repository()"
     },
     {
@@ -6162,8 +6206,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_contract_test_executor_api",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 20,
+      "community_name": "ExecutionManifest",
       "norm_label": "test_executor_api.py"
     },
     {
@@ -6173,8 +6217,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_contract_test_executor_api_runner",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 20,
+      "community_name": "ExecutionManifest",
       "norm_label": "runner"
     },
     {
@@ -6184,8 +6228,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_contract_test_executor_api_runner_run",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 20,
+      "community_name": "ExecutionManifest",
       "norm_label": ".run()"
     },
     {
@@ -6195,8 +6239,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "tests_contract_test_executor_api_test_executor_api_requires_operator_auth_allowlist_and_exact_image_digest",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 20,
+      "community_name": "ExecutionManifest",
       "norm_label": "test_executor_api_requires_operator_auth_allowlist_and_exact_image_digest()"
     },
     {
@@ -6206,8 +6250,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 60,
+      "community_name": "ValueError",
       "norm_label": "test_intake_and_leases.py"
     },
     {
@@ -6217,8 +6261,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_app",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 60,
+      "community_name": "ValueError",
       "norm_label": "_app()"
     },
     {
@@ -6228,8 +6272,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "testclient",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 20,
+      "community_name": "ExecutionManifest",
       "norm_label": "testclient"
     },
     {
@@ -6239,8 +6283,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_py_sessionmaker",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 60,
+      "community_name": "ValueError",
       "norm_label": "sessionmaker"
     },
     {
@@ -6250,8 +6294,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_signature",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 60,
+      "community_name": "ValueError",
       "norm_label": "_signature()"
     },
     {
@@ -6261,8 +6305,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_test_valid_signed_delivery_creates_one_queued_run_and_deduplicates",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 60,
+      "community_name": "ValueError",
       "norm_label": "test_valid_signed_delivery_creates_one_queued_run_and_deduplicates()"
     },
     {
@@ -6272,8 +6316,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_test_invalid_signature_records_safe_metadata_without_a_run",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 60,
+      "community_name": "ValueError",
       "norm_label": "test_invalid_signature_records_safe_metadata_without_a_run()"
     },
     {
@@ -6283,8 +6327,8 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_test_signed_fixture_replay_uses_the_intake_path",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 60,
+      "community_name": "ValueError",
       "norm_label": "test_signed_fixture_replay_uses_the_intake_path()"
     },
     {
@@ -6294,8 +6338,8 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "tests_integration_test_intake_and_leases_test_worker_claims_heartbeats_expires_and_reclaims_lease",
-      "community": 11,
-      "community_name": "Settings",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_worker_claims_heartbeats_expires_and_reclaims_lease()"
     },
     {
@@ -6305,8 +6349,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_integration_test_worker_heartbeat",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_worker_heartbeat.py"
     },
     {
@@ -6316,8 +6360,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_integration_test_worker_heartbeat_sessions",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "_sessions()"
     },
     {
@@ -6327,8 +6371,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "tests_integration_test_worker_heartbeat_claimed_run",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "_claimed_run()"
     },
     {
@@ -6338,8 +6382,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_integration_test_worker_heartbeat_test_heartbeat_renews_lease_during_long_work",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_heartbeat_renews_lease_during_long_work()"
     },
     {
@@ -6349,8 +6393,8 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "tests_integration_test_worker_heartbeat_test_heartbeat_reports_lease_ownership_loss",
-      "community": 8,
-      "community_name": "LeaseHeartbeat",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_heartbeat_reports_lease_ownership_loss()"
     },
     {
@@ -6382,8 +6426,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_ci_classification",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "test_ci_classification.py"
     },
     {
@@ -6393,8 +6437,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "tests_unit_test_ci_classification_test_failure_taxonomy_is_conservative",
-      "community": 1,
-      "community_name": "Run",
+      "community": 8,
+      "community_name": "LeaseHeartbeat",
       "norm_label": "test_failure_taxonomy_is_conservative()"
     },
     {
@@ -6426,8 +6470,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts",
-      "community": 12,
-      "community_name": "PolicyOutcome",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_completion_contracts.py"
     },
     {
@@ -6437,8 +6481,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_patch_policy_checks_both_sides_of_a_rename",
-      "community": 12,
-      "community_name": "PolicyOutcome",
+      "community": 4,
+      "community_name": "push_validated_patch",
       "norm_label": "test_patch_policy_checks_both_sides_of_a_rename()"
     },
     {
@@ -6459,8 +6503,8 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_snapshot_locator_hash_matches_the_exact_cited_excerpt",
-      "community": 12,
-      "community_name": "PolicyOutcome",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_snapshot_locator_hash_matches_the_exact_cited_excerpt()"
     },
     {
@@ -6470,8 +6514,8 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_snapshot_bounds_model_visible_file_and_search_content",
-      "community": 12,
-      "community_name": "PolicyOutcome",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_snapshot_bounds_model_visible_file_and_search_content()"
     },
     {
@@ -6481,8 +6525,8 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_ci_orchestration_persists_evidence_bearing_refusal",
-      "community": 12,
-      "community_name": "PolicyOutcome",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_ci_orchestration_persists_evidence_bearing_refusal()"
     },
     {
@@ -6514,8 +6558,8 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_recipe_contract_rejects_nested_command_keys",
-      "community": 12,
-      "community_name": "PolicyOutcome",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_recipe_contract_rejects_nested_command_keys()"
     },
     {
@@ -6525,8 +6569,8 @@
       "source_location": "L200",
       "_origin": "ast",
       "id": "tests_unit_test_completion_contracts_test_durable_ci_push_uses_opt_in_and_exact_sha_recheck",
-      "community": 10,
-      "community_name": "AgentRole",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_durable_ci_push_uses_opt_in_and_exact_sha_recheck()"
     },
     {
@@ -6657,8 +6701,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_evaluation_executor_probe",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_evaluation_executor_probe.py"
     },
     {
@@ -6668,8 +6712,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_unit_test_evaluation_executor_probe_runner",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "runner"
     },
     {
@@ -6679,8 +6723,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_unit_test_evaluation_executor_probe_runner_run",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": ".run()"
     },
     {
@@ -6690,8 +6734,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "tests_unit_test_evaluation_executor_probe_test_probe_requires_expected_reproduction_patch_and_lint_outcomes",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_probe_requires_expected_reproduction_patch_and_lint_outcomes()"
     },
     {
@@ -6701,8 +6745,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_unit_test_evaluation_executor_probe_py_path",
-      "community": 64,
-      "community_name": "ContainerRunner",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "path"
     },
     {
@@ -6844,8 +6888,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_executor_manifest",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "test_executor_manifest.py"
     },
     {
@@ -6855,8 +6899,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "tests_unit_test_executor_manifest_test_named_recipe_rejects_model_command_text",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "test_named_recipe_rejects_model_command_text()"
     },
     {
@@ -6866,8 +6910,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_executor_transport",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_executor_transport.py"
     },
     {
@@ -6877,8 +6921,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_unit_test_executor_transport_request",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "_request()"
     },
     {
@@ -6888,8 +6932,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "tests_unit_test_executor_transport_result",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "_result()"
     },
     {
@@ -6899,8 +6943,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "tests_unit_test_executor_transport_test_transport_materializes_read_only_source_and_typed_identity",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_transport_materializes_read_only_source_and_typed_identity()"
     },
     {
@@ -6910,8 +6954,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tests_unit_test_executor_transport_py_path",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "path"
     },
     {
@@ -6921,8 +6965,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "tests_unit_test_executor_transport_test_fixed_adapter_runs_without_shell_or_inherited_secrets",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_fixed_adapter_runs_without_shell_or_inherited_secrets()"
     },
     {
@@ -6932,8 +6976,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "tests_unit_test_executor_transport_test_ruff_adapter_disables_ephemeral_cache",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_ruff_adapter_disables_ephemeral_cache()"
     },
     {
@@ -6943,8 +6987,8 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "tests_unit_test_executor_transport_test_patch_adapter_applies_diff_then_runs_fixed_pytest",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_patch_adapter_applies_diff_then_runs_fixed_pytest()"
     },
     {
@@ -6954,8 +6998,8 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "tests_unit_test_executor_transport_test_docker_runner_builds_a_credential_free_hardened_invocation",
-      "community": 5,
-      "community_name": "ValueError",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_docker_runner_builds_a_credential_free_hardened_invocation()"
     },
     {
@@ -7086,8 +7130,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_github_writer",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "test_github_writer.py"
     },
     {
@@ -7097,8 +7141,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_unit_test_github_writer_test_github_app_writer_creates_git_objects_and_non_force_updates_the_branch",
-      "community": 4,
-      "community_name": "push_validated_patch",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "test_github_app_writer_creates_git_objects_and_non_force_updates_the_branch()"
     },
     {
@@ -7141,8 +7185,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_launcher",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_launcher.py"
     },
     {
@@ -7152,8 +7196,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_unit_test_launcher_runner",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "runner"
     },
     {
@@ -7163,8 +7207,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_unit_test_launcher_runner_run",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": ".run()"
     },
     {
@@ -7174,8 +7218,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_unit_test_launcher_test_launcher_has_no_executor_secrets",
-      "community": 20,
-      "community_name": "ExecutionManifest",
+      "community": 61,
+      "community_name": "ExecutorTransport",
       "norm_label": "test_launcher_has_no_executor_secrets()"
     },
     {
@@ -7314,7 +7358,7 @@
       "label": "test_pydantic_gateway_refuses_tools_when_the_evidence_window_closes()",
       "file_type": "code",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L459",
+      "source_location": "L471",
       "_origin": "ast",
       "id": "tests_unit_test_model_gateway_test_pydantic_gateway_refuses_tools_when_the_evidence_window_closes",
       "community": 2,
@@ -7325,7 +7369,7 @@
       "label": "test_provider_repairs_one_invalid_response()",
       "file_type": "code",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L594",
+      "source_location": "L606",
       "_origin": "ast",
       "id": "tests_unit_test_model_gateway_test_provider_repairs_one_invalid_response",
       "community": 2,
@@ -7336,7 +7380,7 @@
       "label": "test_provider_rejects_unpinned_model()",
       "file_type": "code",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L611",
+      "source_location": "L623",
       "_origin": "ast",
       "id": "tests_unit_test_model_gateway_test_provider_rejects_unpinned_model",
       "community": 2,
@@ -7347,7 +7391,7 @@
       "label": "test_provider_executes_only_typed_snapshot_tools()",
       "file_type": "code",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L624",
+      "source_location": "L636",
       "_origin": "ast",
       "id": "tests_unit_test_model_gateway_test_provider_executes_only_typed_snapshot_tools",
       "community": 2,
@@ -7372,8 +7416,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_unit_test_orchestrator_test_orchestrator_stores_valid_scout_artifact",
-      "community": 12,
-      "community_name": "PolicyOutcome",
+      "community": 1,
+      "community_name": "Run",
       "norm_label": "test_orchestrator_stores_valid_scout_artifact()"
     },
     {
@@ -7427,8 +7471,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_patch_apply",
-      "community": 63,
-      "community_name": "apply_text_diff",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "test_patch_apply.py"
     },
     {
@@ -7438,8 +7482,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "tests_unit_test_patch_apply_test_text_patch_applies_exact_context_and_supports_add_delete",
-      "community": 63,
-      "community_name": "apply_text_diff",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "test_text_patch_applies_exact_context_and_supports_add_delete()"
     },
     {
@@ -7449,8 +7493,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tests_unit_test_patch_apply_test_text_patch_rejects_context_that_does_not_match_the_pinned_base",
-      "community": 63,
-      "community_name": "apply_text_diff",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "test_text_patch_rejects_context_that_does_not_match_the_pinned_base()"
     },
     {
@@ -7460,8 +7504,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "tests_unit_test_patch_apply_test_text_patch_accepts_removed_line_that_looks_like_a_header",
-      "community": 63,
-      "community_name": "apply_text_diff",
+      "community": 59,
+      "community_name": "ValueError",
       "norm_label": "test_text_patch_accepts_removed_line_that_looks_like_a_header()"
     },
     {
@@ -7504,8 +7548,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_policy_audit",
-      "community": 1,
-      "community_name": "Run",
+      "community": 4,
+      "community_name": "push_validated_patch",
       "norm_label": "test_policy_audit.py"
     },
     {
@@ -7515,8 +7559,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_unit_test_policy_audit_test_policy_decisions_are_durable",
-      "community": 1,
-      "community_name": "Run",
+      "community": 4,
+      "community_name": "push_validated_patch",
       "norm_label": "test_policy_decisions_are_durable()"
     },
     {
@@ -7966,8 +8010,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_test_worker_dependencies",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 63,
+      "community_name": "apply_text_diff",
       "norm_label": "test_worker_dependencies.py"
     },
     {
@@ -7977,8 +8021,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "tests_unit_test_worker_dependencies_test_worker_provider_requires_key_and_pinned_model",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 63,
+      "community_name": "apply_text_diff",
       "norm_label": "test_worker_provider_requires_key_and_pinned_model()"
     },
     {
@@ -7988,8 +8032,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_unit_test_worker_dependencies_test_worker_builds_the_narrow_github_app_writer_only_in_the_trusted_process",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 63,
+      "community_name": "apply_text_diff",
       "norm_label": "test_worker_builds_the_narrow_github_app_writer_only_in_the_trusted_process()"
     },
     {
@@ -7999,8 +8043,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_unit_test_worker_dependencies_test_worker_builds_private_langfuse_trace_exporter",
-      "community": 3,
-      "community_name": "AgentRole",
+      "community": 63,
+      "community_name": "apply_text_diff",
       "norm_label": "test_worker_builds_private_langfuse_trace_exporter()"
     },
     {
@@ -23575,7 +23619,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L78",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23586,7 +23630,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L404",
+      "source_location": "L435",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23597,7 +23641,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L458",
+      "source_location": "L489",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23608,7 +23652,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L414",
+      "source_location": "L445",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23619,7 +23663,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L444",
+      "source_location": "L475",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23630,7 +23674,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L27",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23641,7 +23685,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L71",
+      "source_location": "L70",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23652,7 +23696,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L52",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23663,7 +23707,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L82",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23674,7 +23718,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L35",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23685,7 +23729,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L86",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23696,7 +23740,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L107",
+      "source_location": "L112",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23707,7 +23751,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L341",
+      "source_location": "L332",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model",
+      "target": "src_agentic_lab_gateway_model_pydantic_call_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L372",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23718,7 +23773,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L232",
+      "source_location": "L237",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23729,7 +23784,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L487",
+      "source_location": "L518",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23740,7 +23795,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L465",
+      "source_location": "L496",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23751,7 +23806,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L56",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23762,7 +23817,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L424",
+      "source_location": "L455",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23773,7 +23828,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L102",
+      "source_location": "L107",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model",
@@ -23781,10 +23836,21 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L360",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model",
+      "target": "src_agentic_lab_gateway_model_validate_returned_providers",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelbudget",
@@ -23795,7 +23861,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelbudget",
@@ -23867,7 +23933,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L672",
+      "source_location": "L684",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_executes_only_typed_snapshot_tools",
@@ -23879,7 +23945,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L618",
+      "source_location": "L630",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_rejects_unpinned_model",
@@ -23891,7 +23957,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L606",
+      "source_location": "L618",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_repairs_one_invalid_response",
@@ -23939,7 +24005,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L449",
+      "source_location": "L451",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_preserves_the_exhausted_budget_reason",
@@ -23963,7 +24029,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L581",
+      "source_location": "L593",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_refuses_tools_when_the_evidence_window_closes",
@@ -24058,7 +24124,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L53",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelgateway_run_agent_loop",
@@ -24069,7 +24135,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L48",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelrequest",
@@ -24080,7 +24146,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelrequest",
@@ -24091,7 +24157,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelrequest",
@@ -24103,7 +24169,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L125",
+      "source_location": "L130",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway_run_agent_loop",
@@ -24115,7 +24181,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L251",
+      "source_location": "L256",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
@@ -24127,7 +24193,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L64",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_scriptedmodelgateway_run_agent_loop",
@@ -24151,7 +24217,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L665",
+      "source_location": "L677",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_executes_only_typed_snapshot_tools",
@@ -24163,7 +24229,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L617",
+      "source_location": "L629",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_rejects_unpinned_model",
@@ -24175,7 +24241,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L605",
+      "source_location": "L617",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_repairs_one_invalid_response",
@@ -24223,7 +24289,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L442",
+      "source_location": "L444",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_preserves_the_exhausted_budget_reason",
@@ -24247,7 +24313,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L574",
+      "source_location": "L586",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_refuses_tools_when_the_evidence_window_closes",
@@ -24293,7 +24359,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L53",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelgateway",
@@ -24304,7 +24370,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L52",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelgateway",
@@ -24315,7 +24381,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelgateway",
@@ -24326,7 +24392,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelgateway",
@@ -24397,7 +24463,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L53",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelgateway_run_agent_loop",
@@ -24408,10 +24474,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L57",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_agentic_lab_gateway_model_rationale_57",
+      "source": "src_agentic_lab_gateway_model_rationale_56",
       "target": "src_agentic_lab_gateway_model_scriptedmodelgateway",
       "confidence_score": 1.0
     },
@@ -24419,7 +24485,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L59",
+      "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_scriptedmodelgateway",
@@ -24430,7 +24496,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L64",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_scriptedmodelgateway",
@@ -24441,7 +24507,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_scriptedmodelgateway",
@@ -24452,7 +24518,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_scriptedmodelgateway",
@@ -24560,7 +24626,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L59",
+      "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_scriptedmodelgateway_init",
@@ -24572,7 +24638,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L64",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_scriptedmodelgateway_run_agent_loop",
@@ -24584,7 +24650,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L444",
+      "source_location": "L475",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_metadata",
@@ -24595,7 +24661,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelcallmetadata",
@@ -24606,7 +24672,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelcallmetadata",
@@ -24618,7 +24684,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L180",
+      "source_location": "L185",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway_run_agent_loop",
@@ -24626,14 +24692,14 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "references",
+      "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L327",
+      "source_location": "L332",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
+      "source": "src_agentic_lab_gateway_model_pydantic_call_metadata",
       "target": "src_agentic_lab_gateway_model_modelcallmetadata",
       "confidence_score": 1.0
     },
@@ -24665,7 +24731,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L78",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_budgetexhaustederror",
@@ -24676,7 +24742,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_budgetexhaustederror",
@@ -24687,7 +24753,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_budgetexhaustederror",
@@ -24699,7 +24765,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L134",
+      "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway_run_agent_loop",
@@ -24711,7 +24777,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L300",
+      "source_location": "L309",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
@@ -24735,7 +24801,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L453",
+      "source_location": "L455",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_preserves_the_exhausted_budget_reason",
@@ -24745,7 +24811,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L82",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelgatewayerror",
@@ -24756,7 +24822,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelgatewayerror",
@@ -24767,7 +24833,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_modelgatewayerror",
@@ -24779,7 +24845,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L302",
+      "source_location": "L313",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
@@ -24837,7 +24903,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L86",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openrouterchatmodel",
@@ -24848,7 +24914,18 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L89",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model_openrouterchatmodel",
+      "target": "src_agentic_lab_gateway_model_openrouterchatmodel_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openrouterchatmodel",
@@ -24859,7 +24936,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openrouterchatmodel",
@@ -24870,7 +24947,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openrouterchatmodel",
@@ -24878,11 +24955,23 @@
       "confidence_score": 0.5
     },
     {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L332",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model_pydantic_call_metadata",
+      "target": "src_agentic_lab_gateway_model_openrouterchatmodel",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L264",
+      "source_location": "L269",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
@@ -24893,23 +24982,47 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L87",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_agentic_lab_gateway_model_rationale_87",
+      "source": "src_agentic_lab_gateway_model_rationale_86",
       "target": "src_agentic_lab_gateway_model_openrouterchatmodel",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
-      "context": "generic_arg",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L360",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model_validate_returned_providers",
+      "target": "src_agentic_lab_gateway_model_openrouterchatmodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model_openrouterchatmodel_init",
+      "target": "src_agentic_lab_gateway_model_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
       "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_agentic_lab_gateway_model_openrouterchatmodel_process_provider_details",
-      "target": "src_agentic_lab_gateway_model_py_any",
+      "source": "src_agentic_lab_gateway_model_openrouterchatmodel_init",
+      "target": "src_agentic_lab_gateway_model_pydanticaimodelgateway_init",
       "confidence_score": 1.0
     },
     {
@@ -24917,7 +25030,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L404",
+      "source_location": "L435",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_content",
@@ -24929,7 +25042,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L414",
+      "source_location": "L445",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_message",
@@ -24941,7 +25054,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L444",
+      "source_location": "L475",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_metadata",
@@ -24953,7 +25066,19 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L341",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model_openrouterchatmodel_process_provider_details",
+      "target": "src_agentic_lab_gateway_model_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L372",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydantic_tools",
@@ -24965,7 +25090,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L424",
+      "source_location": "L455",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_tool_request",
@@ -24977,7 +25102,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L128",
+      "source_location": "L133",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway_run_agent_loop",
@@ -24989,7 +25114,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L254",
+      "source_location": "L259",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
@@ -25002,7 +25127,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L104",
+      "source_location": "L109",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_validate_model_id",
@@ -25012,7 +25137,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L110",
+      "source_location": "L115",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway",
@@ -25023,7 +25148,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L125",
+      "source_location": "L130",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway",
@@ -25034,7 +25159,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway",
@@ -25045,7 +25170,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway",
@@ -25056,10 +25181,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L108",
+      "source_location": "L113",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_agentic_lab_gateway_model_rationale_108",
+      "source": "src_agentic_lab_gateway_model_rationale_113",
       "target": "src_agentic_lab_gateway_model_openroutermodelgateway",
       "confidence_score": 1.0
     },
@@ -25080,7 +25205,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L662",
+      "source_location": "L674",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_executes_only_typed_snapshot_tools",
@@ -25092,7 +25217,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L612",
+      "source_location": "L624",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_rejects_unpinned_model",
@@ -25104,7 +25229,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L602",
+      "source_location": "L614",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_repairs_one_invalid_response",
@@ -25115,7 +25240,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L110",
+      "source_location": "L115",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway_init",
@@ -25127,7 +25252,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L214",
+      "source_location": "L219",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway_run_agent_loop",
@@ -25139,7 +25264,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L194",
+      "source_location": "L199",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway_run_agent_loop",
@@ -25151,7 +25276,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L178",
+      "source_location": "L183",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway_run_agent_loop",
@@ -25163,7 +25288,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L204",
+      "source_location": "L209",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway_run_agent_loop",
@@ -25175,7 +25300,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L125",
+      "source_location": "L130",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway_run_agent_loop",
@@ -25188,7 +25313,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L142",
+      "source_location": "L147",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_openroutermodelgateway_run_agent_loop",
@@ -25198,7 +25323,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L235",
+      "source_location": "L240",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway",
@@ -25209,7 +25334,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L251",
+      "source_location": "L256",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway",
@@ -25220,7 +25345,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway",
@@ -25231,7 +25356,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 0.8,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway",
@@ -25242,10 +25367,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L233",
+      "source_location": "L238",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_agentic_lab_gateway_model_rationale_233",
+      "source": "src_agentic_lab_gateway_model_rationale_238",
       "target": "src_agentic_lab_gateway_model_pydanticaimodelgateway",
       "confidence_score": 1.0
     },
@@ -25325,7 +25450,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L436",
+      "source_location": "L438",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_preserves_the_exhausted_budget_reason",
@@ -25349,7 +25474,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L568",
+      "source_location": "L580",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_refuses_tools_when_the_evidence_window_closes",
@@ -25384,7 +25509,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L235",
+      "source_location": "L240",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_init",
@@ -25396,7 +25521,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L235",
+      "source_location": "L240",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_init",
@@ -25408,11 +25533,11 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L321",
+      "source_location": "L296",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
-      "target": "src_agentic_lab_gateway_model_float_cost",
+      "target": "runusage",
       "confidence_score": 1.0
     },
     {
@@ -25420,7 +25545,19 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L263",
+      "source_location": "L307",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
+      "target": "src_agentic_lab_gateway_model_pydantic_call_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L268",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
@@ -25432,7 +25569,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L304",
+      "source_location": "L317",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
@@ -25444,7 +25581,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L302",
+      "source_location": "L313",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
@@ -25452,11 +25589,23 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L308",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
+      "target": "src_agentic_lab_gateway_model_validate_returned_providers",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L251",
+      "source_location": "L256",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
@@ -25469,7 +25618,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L262",
+      "source_location": "L267",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydanticaimodelgateway_run_agent_loop",
@@ -25480,7 +25629,43 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L341",
+      "source_location": "L332",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model_pydantic_call_metadata",
+      "target": "runusage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L346",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model_pydantic_call_metadata",
+      "target": "src_agentic_lab_gateway_model_float_cost",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L369",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_agentic_lab_gateway_model_validate_returned_providers",
+      "target": "valueerror"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_lab/gateway/model.py",
+      "source_location": "L372",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydantic_tools",
@@ -25493,7 +25678,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L401",
+      "source_location": "L432",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydantic_tools",
@@ -25505,7 +25690,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L401",
+      "source_location": "L432",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydantic_tools",
@@ -25517,7 +25702,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L401",
+      "source_location": "L432",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydantic_tools",
@@ -25529,7 +25714,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L401",
+      "source_location": "L432",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydantic_tools",
@@ -25541,7 +25726,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L401",
+      "source_location": "L432",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_pydantic_tools",
@@ -25552,7 +25737,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L405",
+      "source_location": "L436",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_content",
@@ -25565,7 +25750,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L411",
+      "source_location": "L442",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_content",
@@ -25577,7 +25762,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L418",
+      "source_location": "L449",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_message",
@@ -25589,7 +25774,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L426",
+      "source_location": "L457",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_tool_request",
@@ -25600,7 +25785,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L465",
+      "source_location": "L496",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_safe_provider_error",
@@ -25613,7 +25798,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L479",
+      "source_location": "L510",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_safe_provider_error",
@@ -25625,7 +25810,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L495",
+      "source_location": "L526",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_safe_model_behavior_error",
@@ -25636,7 +25821,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_lab/gateway/model.py",
-      "source_location": "L487",
+      "source_location": "L518",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_agentic_lab_gateway_model_safe_model_behavior_error",
@@ -30025,7 +30210,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L657",
+      "source_location": "L669",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_executes_only_typed_snapshot_tools",
@@ -30037,7 +30222,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L430",
+      "source_location": "L432",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_preserves_the_exhausted_budget_reason",
@@ -30049,7 +30234,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L561",
+      "source_location": "L573",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_refuses_tools_when_the_evidence_window_closes",
@@ -30743,7 +30928,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L659",
+      "source_location": "L671",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_executes_only_typed_snapshot_tools",
@@ -30755,7 +30940,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L432",
+      "source_location": "L434",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_preserves_the_exhausted_budget_reason",
@@ -30767,7 +30952,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L563",
+      "source_location": "L575",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_refuses_tools_when_the_evidence_window_closes",
@@ -32293,7 +32478,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L624",
+      "source_location": "L636",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway",
@@ -32304,7 +32489,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L611",
+      "source_location": "L623",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway",
@@ -32315,7 +32500,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L594",
+      "source_location": "L606",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway",
@@ -32381,7 +32566,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L459",
+      "source_location": "L471",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway",
@@ -32426,7 +32611,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L675",
+      "source_location": "L687",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_executes_only_typed_snapshot_tools",
@@ -32438,7 +32623,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L621",
+      "source_location": "L633",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_rejects_unpinned_model",
@@ -32450,7 +32635,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L608",
+      "source_location": "L620",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_provider_repairs_one_invalid_response",
@@ -32498,7 +32683,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L454",
+      "source_location": "L456",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_preserves_the_exhausted_budget_reason",
@@ -32522,7 +32707,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "tests/unit/test_model_gateway.py",
-      "source_location": "L585",
+      "source_location": "L597",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_unit_test_model_gateway_test_pydantic_gateway_refuses_tools_when_the_evidence_window_closes",
@@ -34808,5 +34993,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "161504f418a87e3b5085f228bd9c457c12f6e149"
+  "built_at_commit": "5e788fee3e9ac780af507f9f33b160fd9b4052c2"
 }

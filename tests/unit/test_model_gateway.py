@@ -398,6 +398,7 @@ def test_pydantic_gateway_preserves_the_exhausted_budget_reason() -> None:
                 "object": "chat.completion",
                 "created": 1,
                 "model": "model@1",
+                "provider": "StreamLake",
                 "choices": [
                     {
                         "index": 0,
@@ -422,6 +423,7 @@ def test_pydantic_gateway_preserves_the_exhausted_budget_reason() -> None:
                     "prompt_tokens": 1,
                     "completion_tokens": 1,
                     "total_tokens": 2,
+                    "cost": 0.004,
                 },
             },
         )
@@ -454,6 +456,16 @@ def test_pydantic_gateway_preserves_the_exhausted_budget_reason() -> None:
             gateway.run_agent_loop(request, Output)
     finally:
         asyncio.run(client.aclose())
+
+    assert gateway.last_call is not None
+    assert gateway.last_call.provider == "StreamLake"
+    assert gateway.last_call.billed_cost == pytest.approx(0.004)
+    assert gateway.last_call.usage == {
+        "requests": 1,
+        "tool_calls": 1,
+        "input_tokens": 1,
+        "output_tokens": 1,
+    }
 
 
 def test_pydantic_gateway_refuses_tools_when_the_evidence_window_closes() -> None:

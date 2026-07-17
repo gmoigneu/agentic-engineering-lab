@@ -11,10 +11,9 @@ import httpx
 from pydantic import BaseModel, ValidationError
 from pydantic_ai import Agent, PromptedOutput, RunContext, UsageLimitExceeded
 from pydantic_ai.exceptions import ModelHTTPError, UnexpectedModelBehavior
-from pydantic_ai.messages import ModelResponse
 from pydantic_ai.models.openai import OpenAIChatModel, OpenAIModelProfile
 from pydantic_ai.providers.openrouter import OpenRouterProvider
-from pydantic_ai.usage import UsageLimits
+from pydantic_ai.usage import RunUsage, UsageLimits
 
 from agentic_lab.gateway.redaction import redact
 from agentic_lab.gateway.tracing import TraceExporter
@@ -86,6 +85,10 @@ class ModelGatewayError(RuntimeError):
 class OpenRouterChatModel(OpenAIChatModel):
     """Preserve OpenRouter billing metadata dropped by the OpenAI schema."""
 
+    def __init__(self, model_name: str, **kwargs: Any) -> None:
+        super().__init__(model_name, **kwargs)
+        self.recorded_provider_details: list[dict[str, Any]] = []
+
     def _process_provider_details(self, response: Any) -> dict[str, Any] | None:
         details = dict(super()._process_provider_details(response) or {})
         response_extra = response.model_extra or {}
@@ -96,6 +99,8 @@ class OpenRouterChatModel(OpenAIChatModel):
             details["provider"] = provider
         if cost is not None:
             details["cost"] = cost
+        if details:
+            self.recorded_provider_details.append(details.copy())
         return details or None
 
 
@@ -288,6 +293,7 @@ class PydanticAIModelGateway:
             },
         )
         started = monotonic()
+        usage = RunUsage()
         try:
             result = agent.run_sync(
                 request.task,
@@ -295,47 +301,72 @@ class PydanticAIModelGateway:
                     request_limit=request.budget.max_turns,
                     tool_calls_limit=request.budget.max_tool_calls,
                 ),
+                usage=usage,
             )
         except UsageLimitExceeded as error:
+            self.last_call = _pydantic_call_metadata(model, usage)
+            _validate_returned_providers(model, providers)
             raise BudgetExhaustedError(str(error)) from error
         except ModelHTTPError as error:
+            self.last_call = _pydantic_call_metadata(model, usage)
+            _validate_returned_providers(model, providers)
             raise ModelGatewayError(_safe_provider_error(error)) from error
         except UnexpectedModelBehavior as error:
+            self.last_call = _pydantic_call_metadata(model, usage)
+            _validate_returned_providers(model, providers)
             raise ModelGatewayError(_safe_model_behavior_error(error)) from error
-        if monotonic() - started > request.budget.max_wall_seconds:
-            raise BudgetExhaustedError("model wall-time budget exhausted")
         response = result.response
-        provider_responses = [
-            message for message in result.all_messages() if isinstance(message, ModelResponse)
-        ]
-        returned_providers = [
-            str(message.provider_details["provider"])
-            for message in provider_responses
-            if message.provider_details
-            and isinstance(message.provider_details.get("provider"), str)
-        ]
-        if providers and any(provider not in providers for provider in returned_providers):
-            raise ValueError("provider response came from outside the configured allowlist")
-        actual_provider = returned_providers[-1] if returned_providers else "unknown"
-        billed_cost = sum(
-            _float_cost((message.provider_details or {}).get("cost", 0.0))
-            for message in provider_responses
-        )
-        if billed_cost > request.budget.max_usd:
-            raise BudgetExhaustedError("provider billed cost exceeded the run budget")
-        usage = result.usage
-        self.last_call = ModelCallMetadata(
-            str(actual_provider),
-            {
-                "requests": usage.requests,
-                "tool_calls": usage.tool_calls,
-                "input_tokens": usage.input_tokens,
-                "output_tokens": usage.output_tokens,
-            },
-            billed_cost,
+        self.last_call = _pydantic_call_metadata(
+            model,
+            usage,
             response.provider_response_id,
         )
+        _validate_returned_providers(model, providers)
+        if monotonic() - started > request.budget.max_wall_seconds:
+            raise BudgetExhaustedError("model wall-time budget exhausted")
+        if self.last_call is not None and self.last_call.billed_cost > request.budget.max_usd:
+            raise BudgetExhaustedError("provider billed cost exceeded the run budget")
         return output_type.model_validate(result.output)
+
+
+def _pydantic_call_metadata(
+    model: OpenRouterChatModel,
+    usage: RunUsage,
+    response_id: str | None = None,
+) -> ModelCallMetadata | None:
+    details = model.recorded_provider_details
+    if usage.requests == 0 and not details:
+        return None
+    returned_providers = [
+        str(detail["provider"])
+        for detail in details
+        if isinstance(detail.get("provider"), str)
+    ]
+    actual_provider = returned_providers[-1] if returned_providers else "unknown"
+    billed_cost = sum(_float_cost(detail.get("cost", 0.0)) for detail in details)
+    return ModelCallMetadata(
+        actual_provider,
+        {
+            "requests": usage.requests,
+            "tool_calls": usage.tool_calls,
+            "input_tokens": usage.input_tokens,
+            "output_tokens": usage.output_tokens,
+        },
+        billed_cost,
+        response_id,
+    )
+
+
+def _validate_returned_providers(
+    model: OpenRouterChatModel, providers: tuple[str, ...]
+) -> None:
+    returned_providers = [
+        str(detail["provider"])
+        for detail in model.recorded_provider_details
+        if isinstance(detail.get("provider"), str)
+    ]
+    if providers and any(provider not in providers for provider in returned_providers):
+        raise ValueError("provider response came from outside the configured allowlist")
 
 
 def _pydantic_tools(registry: SnapshotToolRegistry | None) -> list[Any]:

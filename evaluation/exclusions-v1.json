@@ -26,6 +26,19 @@
       "occurred_at": "2026-07-17T09:52:55.359781Z"
     },
     {
+      "run_id": "cb1cf2e0-8182-4c10-9ee3-0baae2d32fcf",
+      "evaluation_case_id": "scout-dev-04",
+      "model_id": "deepseek/deepseek-v4-flash",
+      "provider": "StreamLake",
+      "billed_cost": null,
+      "recorded_billed_cost": 0.00336759192,
+      "failure_category": "harness",
+      "reason": "The model exhausted its request limit, but the reusable gateway persisted the prior run's call metadata instead of this run's partial usage and cost.",
+      "disposition": "excluded_and_rerun_after_terminal_usage_capture",
+      "included_in_scorecard": false,
+      "occurred_at": "2026-07-17T10:18:27.398694Z"
+    },
+    {
       "run_id": "17a4d18c-e76b-4e76-a227-6edc5553035f",
       "evaluation_case_id": "scout-dev-05",
       "model_id": "deepseek/deepseek-v4-flash",

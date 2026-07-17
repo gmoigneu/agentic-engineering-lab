@@ -1,16 +1,16 @@
 # Graph Report - agentic-engineering-lab  (2026-07-17)
 
 ## Corpus Check
-- 167 files · ~53,665 words
+- 167 files · ~53,832 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 890 nodes · 2176 edges · 65 communities (54 shown, 11 thin omitted)
-- Extraction: 59% EXTRACTED · 41% INFERRED · 0% AMBIGUOUS · INFERRED: 883 edges (avg confidence: 0.68)
+- 894 nodes · 2188 edges · 64 communities (53 shown, 11 thin omitted)
+- Extraction: 60% EXTRACTED · 40% INFERRED · 0% AMBIGUOUS · INFERRED: 884 edges (avg confidence: 0.68)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `161504f4`
+- Built from commit: `5e788fee`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -63,7 +63,6 @@
 - ExecutorTransport
 - seed
 - apply_text_diff
-- ContainerRunner
 
 ## God Nodes (most connected - your core abstractions)
 1. `RepositorySnapshot` - 68 edges
@@ -78,45 +77,45 @@
 10. `Output` - 27 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `test_snapshot_bounds_model_visible_file_and_search_content()` --calls--> `RepositorySnapshot`  [INFERRED]
-  tests/unit/test_completion_contracts.py → src/agentic_lab/tools/snapshot.py
-- `test_snapshot_locator_hash_matches_the_exact_cited_excerpt()` --calls--> `RepositorySnapshot`  [INFERRED]
-  tests/unit/test_completion_contracts.py → src/agentic_lab/tools/snapshot.py
-- `_execute()` --calls--> `launch_recipe()`  [INFERRED]
-  scripts/probe_evaluation_executor.py → src/agentic_lab/executor/launcher.py
-- `_execute()` --calls--> `RecipeRequest`  [INFERRED]
-  scripts/probe_evaluation_executor.py → src/agentic_lab/executor/manifest.py
-- `probe()` --calls--> `default_docker_runner()`  [INFERRED]
-  scripts/probe_evaluation_executor.py → src/agentic_lab/executor/launcher.py
+- `test_assessor_requires_evidence_coverage()` --calls--> `run_assessor()`  [INFERRED]
+  tests/unit/test_assessor.py → src/agentic_lab/agents/assessor.py
+- `test_failed_check_routes_to_ci()` --calls--> `_queue_check_run()`  [INFERRED]
+  tests/unit/test_webhook_routing.py → src/agentic_lab/api/app.py
+- `test_manual_run_requires_operator_and_allowlisted_repository()` --calls--> `Settings`  [INFERRED]
+  tests/contract/test_api_contract.py → src/agentic_lab/config/settings.py
+- `Runner` --uses--> `Settings`  [INFERRED]
+  tests/contract/test_executor_api.py → src/agentic_lab/config/settings.py
+- `test_executor_api_requires_operator_auth_allowlist_and_exact_image_digest()` --calls--> `Settings`  [INFERRED]
+  tests/contract/test_executor_api.py → src/agentic_lab/config/settings.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (65 total, 11 thin omitted)
+## Communities (64 total, 11 thin omitted)
 
 ### Community 0 - "RepositorySnapshot"
-Cohesion: 0.07
+Cohesion: 0.06
 Nodes (36): CapabilityAuditPort, CapabilityGateway, GitHubReadPort, Protocol, Role-gated facade. It deliberately has no generic REST method or write method., GitHubAppInstallationAuth, Client, bounded_untrusted_text() (+28 more)
 
 ### Community 1 - "Run"
-Cohesion: 0.07
-Nodes (60): LookupError, build_refusal(), classify_failure(), UUID, Conservative classification. Ambiguous logs never enable patching., requires_refusal(), run_ci_diagnosis(), _queue_check_run() (+52 more)
+Cohesion: 0.06
+Nodes (68): _queue_check_run(), _queue_webhook_run(), Run, RunLease, RunCreate, ModelGateway, Protocol, get_artifact() (+60 more)
 
 ### Community 2 - "SnapshotToolRegistry"
 Cohesion: 0.07
-Nodes (51): AsyncClient, ModelHTTPError, OpenAIChatModel, UUID, run_assessor(), BudgetExhaustedError, _content(), _float_cost() (+43 more)
+Nodes (55): AsyncClient, ModelHTTPError, OpenAIChatModel, RunUsage, UUID, run_assessor(), run_ci_diagnosis(), BudgetExhaustedError (+47 more)
 
 ### Community 3 - "AgentRole"
-Cohesion: 0.09
-Nodes (18): LangfuseClient, LangfuseTraceSink, Any, Protocol, Match Langfuse's deterministic W3C trace-ID derivation., trace_id_for_run(), TraceExportResult, TraceSink (+10 more)
+Cohesion: 0.20
+Nodes (6): LangfuseClient, ObservationContext, Sink, test_langfuse_sink_emits_private_metadata_only(), test_trace_export_blocks_sink_when_secret_is_detected(), test_trace_export_uses_deterministic_run_correlation_id()
 
 ### Community 4 - "push_validated_patch"
-Cohesion: 0.07
-Nodes (37): main(), Path, render(), apply_validated_patch(), GitHubAppBranchWriter, GitHubBranchWriter, Protocol, Narrow port implemented only by the trusted GitHub App adapter. (+29 more)
+Cohesion: 0.08
+Nodes (36): main(), Path, render(), apply_validated_patch(), GitHubBranchWriter, Protocol, Narrow port implemented only by the trusted GitHub App adapter., Sole write path. It rechecks the head SHA after policy evaluation. (+28 more)
 
 ### Community 5 - "ValueError"
-Cohesion: 0.44
-Nodes (8): Path, _request(), _result(), test_docker_runner_builds_a_credential_free_hardened_invocation(), test_fixed_adapter_runs_without_shell_or_inherited_secrets(), test_patch_adapter_applies_diff_then_runs_fixed_pytest(), test_ruff_adapter_disables_ephemeral_cache(), test_transport_materializes_read_only_source_and_typed_identity()
+Cohesion: 0.21
+Nodes (7): LangfuseClient, Any, Protocol, Match Langfuse's deterministic W3C trace-ID derivation., trace_id_for_run(), TraceExportResult, TraceSink
 
 ### Community 6 - "EvaluationCase"
 Cohesion: 0.08
@@ -127,24 +126,24 @@ Cohesion: 0.27
 Nodes (9): Runner, _collect_check(), _fixture(), _load_seed(), main(), materialize(), Path, Path (+1 more)
 
 ### Community 8 - "LeaseHeartbeat"
-Cohesion: 0.11
-Nodes (15): LeaseHeartbeat, LeaseLostError, Any, RuntimeError, Renew one durable lease while its worker attempt is active., heartbeat_lease(), _new_lease(), datetime (+7 more)
+Cohesion: 0.29
+Nodes (6): build_refusal(), classify_failure(), UUID, Conservative classification. Ambiguous logs never enable patching., requires_refusal(), test_failure_taxonomy_is_conservative()
 
 ### Community 9 - "What You Must Do When Invoked"
 Cohesion: 0.08
 Nodes (24): For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Part A - Structural extraction for code files (+16 more)
 
 ### Community 10 - "AgentRole"
-Cohesion: 0.09
-Nodes (64): DeclarativeBase, create_app(), _detail(), _effective_budget(), _process_github_delivery(), FastAPI, Session, sessionmaker (+56 more)
+Cohesion: 0.08
+Nodes (65): DeclarativeBase, LookupError, create_app(), _detail(), _effective_budget(), _process_github_delivery(), FastAPI, Session (+57 more)
 
 ### Community 11 - "Settings"
-Cohesion: 0.09
-Nodes (18): BaseSettings, get_settings(), Process configuration. Secrets are intentionally never serialized or logged., Settings, create_app(), FastAPI, TestClient, test_manual_run_requires_operator_and_allowlisted_repository() (+10 more)
+Cohesion: 0.15
+Nodes (6): BaseSettings, _validate_manual_request(), get_settings(), Process configuration. Secrets are intentionally never serialized or logged., Settings, test_allowlists_decode_from_json_arrays()
 
 ### Community 12 - "PolicyOutcome"
-Cohesion: 0.10
-Nodes (32): UUID, run_scout(), Citation, Claim, ScoutArtifact, citation_coverage(), citation_resolution(), EvaluationResult (+24 more)
+Cohesion: 0.12
+Nodes (26): UUID, run_scout(), Citation, Claim, ScoutArtifact, citation_coverage(), citation_resolution(), EvaluationResult (+18 more)
 
 ### Community 13 - "Product requirements document"
 Cohesion: 0.25
@@ -175,8 +174,8 @@ Cohesion: 0.25
 Nodes (7): Audit and incident response, Authoritative inputs, Credential policy, Patch policy, Redaction policy, Security and policy specification, Trust boundaries
 
 ### Community 20 - "ExecutionManifest"
-Cohesion: 0.15
-Nodes (13): _contains_command_key(), ExecutionManifest, ManifestBudgets, Any, BaseModel, RecipeRequest, _validate_arguments(), validate_recipe_request() (+5 more)
+Cohesion: 0.33
+Nodes (4): TestClient, test_manual_run_requires_operator_and_allowlisted_repository(), Runner, test_executor_api_requires_operator_auth_allowlist_and_exact_image_digest()
 
 ### Community 21 - "Implementation rules"
 Cohesion: 0.33
@@ -223,28 +222,24 @@ Cohesion: 0.29
 Nodes (5): Approval gate, Development split, Evaluation fixture plan v1, Held-out split, Evaluation fixture approval
 
 ### Community 59 - "ValueError"
-Cohesion: 0.22
-Nodes (12): _pydantic_tools(), FileReadResult, HistoryEntry, BaseModel, Search parsed structure without exposing ast-grep or shell command text., An immutable, credential-free source snapshot supplied by the gateway., RepositorySnapshot, SourceLocator (+4 more)
+Cohesion: 0.05
+Nodes (31): _contains_command_key(), ManifestBudgets, Any, BaseModel, Recipe, _validate_arguments(), validate_recipe_request(), GitHubAppBranchWriter (+23 more)
 
 ### Community 60 - "ValueError"
-Cohesion: 0.12
-Nodes (8): _apply_workspace_diff(), execute_request(), main(), Path, _safe_artifact_path(), adapter_argv(), Recipe, ValueError
+Cohesion: 0.52
+Nodes (6): _app(), sessionmaker, _signature(), test_invalid_signature_records_safe_metadata_without_a_run(), test_signed_fixture_replay_uses_the_intake_path(), test_valid_signed_delivery_creates_one_queued_run_and_deduplicates()
 
 ### Community 61 - "ExecutorTransport"
-Cohesion: 0.18
-Nodes (15): default_docker_runner(), DockerContainerRunner, ExecutorSpec, launch_recipe(), Any, Path, ExecutorTransport, PreparedTransport (+7 more)
+Cohesion: 0.07
+Nodes (54): _execute(), main(), probe(), Path, _run(), _snapshot_at(), SnapshotLoader, _apply_workspace_diff() (+46 more)
 
 ### Community 62 - "seed"
 Cohesion: 0.40
 Nodes (8): main(), Path, _run(), seed(), _write(), _materialize(), Path, test_seed_base_passes_and_every_scenario_has_one_failing_check()
 
 ### Community 63 - "apply_text_diff"
-Cohesion: 0.31
-Nodes (9): AppliedFile, apply_text_diff(), _header_path(), parse_text_diff(), TextFilePatch, TextHunk, test_text_patch_accepts_removed_line_that_looks_like_a_header(), test_text_patch_applies_exact_context_and_supports_add_delete() (+1 more)
-
-### Community 64 - "ContainerRunner"
-Cohesion: 0.21
-Nodes (12): _execute(), main(), probe(), Path, _run(), _snapshot_at(), SnapshotLoader, ContainerRunner (+4 more)
+Cohesion: 0.53
+Nodes (5): LangfuseTraceSink, build_dependencies(), test_worker_builds_private_langfuse_trace_exporter(), test_worker_builds_the_narrow_github_app_writer_only_in_the_trusted_process(), test_worker_provider_requires_key_and_pinned_model()
 
 ## Knowledge Gaps
 - **116 isolated node(s):** `agentic-engineering-lab`, `Usage`, `What graphify is for`, `Step 0 - GitHub repos and multi-path merge (only if a URL or several paths)`, `Step 1 - Ensure graphify is installed` (+111 more)
@@ -256,12 +251,12 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `AgentRole` connect `AgentRole` to `RepositorySnapshot`, `Run`, `SnapshotToolRegistry`, `EvaluationCase`, `TraceExporter`, `PolicyOutcome`?**
   _High betweenness centrality (0.089) - this node is a cross-community bridge._
-- **Why does `RepositorySnapshot` connect `ValueError` to `ContainerRunner`, `RepositorySnapshot`, `SnapshotToolRegistry`, `ValueError`, `PolicyOutcome`, `ExecutionManifest`, `ExecutorTransport`?**
+- **Why does `RepositorySnapshot` connect `ExecutorTransport` to `RepositorySnapshot`, `SnapshotToolRegistry`, `ValueError`, `PolicyOutcome`?**
   _High betweenness centrality (0.084) - this node is a cross-community bridge._
-- **Why does `SnapshotToolRegistry` connect `SnapshotToolRegistry` to `RepositorySnapshot`, `Run`, `AgentRole`, `PolicyOutcome`, `ValueError`?**
-  _High betweenness centrality (0.038) - this node is a cross-community bridge._
-- **Are the 91 inferred relationships involving `ValueError` (e.g. with `_collect_check()` and `_load_seed()`) actually correct?**
-  _`ValueError` has 91 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `SnapshotToolRegistry` connect `SnapshotToolRegistry` to `RepositorySnapshot`, `Run`, `AgentRole`, `PolicyOutcome`, `ValueError`, `ExecutorTransport`?**
+  _High betweenness centrality (0.039) - this node is a cross-community bridge._
+- **Are the 92 inferred relationships involving `ValueError` (e.g. with `_collect_check()` and `_load_seed()`) actually correct?**
+  _`ValueError` has 92 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 47 inferred relationships involving `RepositorySnapshot` (e.g. with `EvaluationResult` and `ContainerRunner`) actually correct?**
   _`RepositorySnapshot` has 47 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 56 inferred relationships involving `AgentRole` (e.g. with `Artifact` and `CitationRecord`) actually correct?**

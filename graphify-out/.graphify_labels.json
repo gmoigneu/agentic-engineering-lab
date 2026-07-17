@@ -62,6 +62,5 @@
   "60": "ValueError",
   "61": "ExecutorTransport",
   "62": "seed",
-  "63": "apply_text_diff",
-  "64": "ContainerRunner"
+  "63": "apply_text_diff"
 }
